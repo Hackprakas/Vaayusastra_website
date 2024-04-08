@@ -1,15 +1,12 @@
 import Image from "next/image";
+// app/page.tsx
+import { Button } from '@nextui-org/button';
 
-export default function Home() {
+export default function Page() {
   return (
     <div>
-      <h1>Home</h1>
-      <Image
-        src="/vercel.svg"
-        alt="Vercel Logo"
-        width={72}
-        height={16}
-      />
+      <Button>Click me</Button>
     </div>
-  );
+  )
 }
+
