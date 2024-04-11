@@ -38,23 +38,25 @@ export default function Page() {
       className=" bg-transparent p-2 "
       isBlurred={true}
       isBordered
+      
+
     >
-      <NavbarContent>
+      <NavbarContent justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
+          className="sm:hidden "
         />
          <Image
          src={logo}
-         width={70}
-         height={70}
+         width={66}
+         height={66}
          alt="logo"
          
          />
         <p className="font-medium text-inherit">VAAYUSASTRA AEROSPACE</p>
       </NavbarContent>
 
-      <NavbarContent className="hidden md:hidden lg:flex  gap-4" justify="center">
+      <NavbarContent className="hidden md:hidden lg:flex  gap-4" justify="end">
         <NavbarItem >
           <Link color="primary" href="#">
             About us
@@ -81,7 +83,7 @@ export default function Page() {
           <ThemeToggle />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex ml-4">
-            <Button >
+            <Button className="">
 
           <Link href="#" className="text-white">Register</Link>
             </Button>
