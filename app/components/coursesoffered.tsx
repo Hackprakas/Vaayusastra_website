@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Coursesoffered() {
+function coursesoffered() {
   return (
     <div>coursesoffered</div>
   )
 }
 
-export default Coursesoffered
+export default coursesoffered
