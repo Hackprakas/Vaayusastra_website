@@ -34,7 +34,10 @@ import {
   telegram,
   twitter,
   yourlogo,
-} from "../assets";
+    
+} from "../components/assets/index";
+
+
 
 export interface NavigationItem {
   id: string;
@@ -104,7 +107,7 @@ export interface RoadmapItem {
   text: string;
   date: string;
   status: string;
-  imageUrl: string;
+  imageUrl: any;
   colorful?: boolean;
 }
 
@@ -176,7 +179,7 @@ export const collabContent: CollabContentItem[] = [
 export interface CollabAppItem {
   id: string;
   title: string;
-  icon: string;
+  icon: any;
   width: number;
   height: number;
 }

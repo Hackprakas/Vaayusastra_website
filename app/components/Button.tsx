@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import ButtonSvg from "../assets/svg/ButtonSvg";
+import ButtonSvg from "./assets/svg/ButtonSvg";
 
 interface ButtonProps {
   className?: string;
