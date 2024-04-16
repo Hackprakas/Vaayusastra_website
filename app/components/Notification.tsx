@@ -1,6 +1,7 @@
 import React from "react";
-import { notification1 } from "../assets";
+import { notification1 } from "./assets";
 import { notificationImages } from "../constants";
+import Image from "next/image";
 
 interface Props {
   className?: string;
@@ -14,7 +15,7 @@ const Notification: React.FC<Props> = ({ className, title }) => {
         className || ""
       } flex items-center p-4 pr-6 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl gap-5`}
     >
-      <img
+      <Image
         src={notification1}
         width={62}
         height={62}
@@ -32,12 +33,12 @@ const Notification: React.FC<Props> = ({ className, title }) => {
                 key={index}
                 className="flex w-6 h-6 border-2 border-n-12 rounded-full overflow-hidden"
               >
-                <img
+                <Image
                   src={item}
                   className="w-full"
                   width={20}
                   height={20}
-                  alt={item}
+                  alt="image"
                 />
               </li>
             ))}

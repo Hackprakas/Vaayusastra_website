@@ -1,5 +1,6 @@
 import React from "react";
-import { loading } from "../assets";
+import { loading } from "./assets";
+import Image from "next/image";
 
 interface Props {
   className?: string;
@@ -12,7 +13,7 @@ const Generating: React.FC<Props> = ({ className }) => {
         className || ""
       } text-base`}
     >
-      <img className="w-5 h-5 mr-4" src={loading} alt="Loading" />
+      <Image className="w-5 h-5 mr-4" src={loading} alt="Loading" />
       AI is generating
     </div>
   );

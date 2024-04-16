@@ -1,5 +1,6 @@
+"use client"
 import React, { useRef } from "react";
-import { curve, heroBackground, robot } from "../assets";
+import { curve, heroBackground, robot } from "./assets";
 import Button from "./Button";
 import Section from "./Section";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
@@ -8,6 +9,7 @@ import { ScrollParallax } from "react-just-parallax";
 import Generating from "./Generating";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
+import Image from "next/image";
 
 const Hero: React.FC = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -26,7 +28,7 @@ const Hero: React.FC = () => {
             Explore the Possibilities of&nbsp;AI&nbsp;Chatting with {` `}
             <span className="inline-block relative">
               Brainwave{" "}
-              <img
+              <Image
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2"
                 width={624}
@@ -49,7 +51,7 @@ const Hero: React.FC = () => {
               <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
 
               <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
-                <img
+                <Image
                   src={robot}
                   className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]"
                   width={1024}
@@ -81,7 +83,7 @@ const Hero: React.FC = () => {
             <Gradient />
           </div>
           <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
-            <img
+            <Image
               src={heroBackground}
               className="w-full"
               width={1440}
@@ -90,7 +92,7 @@ const Hero: React.FC = () => {
             />
           </div>
 
-          <BackgroundCircles />
+          {/* <BackgroundCircles /> */}
         </div>
 
         <CompanyLogos className="hidden relative z-10 mt-20 lg:block" />

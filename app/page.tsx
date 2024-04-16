@@ -4,13 +4,14 @@ import { Button } from '../components/ui/button';
 import { ThemeToggle } from "./components/themetoggle";
 import Coursesoffered from "./components/coursesoffered";
 import Herosection from "./components/herosection";
+import Hero from "./components/Hero";
 import Header from "./components/Header";
 
 export default function Page() {
   return (
     <div>
       <Header/>
-      <Herosection /> 
+      <Hero/>
       {/* <Coursesoffered /> */}
       <ThemeToggle/>
       
