@@ -7,7 +7,7 @@ interface ButtonProps {
   onClick?: () => void;
   children: React.ReactNode;
   px?: string;
-  white?: boolean;
+  white: boolean;
 }
 
 const Button: FunctionComponent<ButtonProps> = ({
@@ -25,14 +25,15 @@ const Button: FunctionComponent<ButtonProps> = ({
   const renderButton = (): JSX.Element => (
     <button className={classes} onClick={onClick}>
       <span className={spanClasses}>{children}</span>
-      {ButtonSvg(white)}
+      {/* {ButtonSvg(white)} */}
+      <ButtonSvg white={white} />
     </button>
   );
 
   const renderLink = (): JSX.Element => (
     <a href={href} className={classes}>
       <span className={spanClasses}>{children}</span>
-      {ButtonSvg(white)}
+      <ButtonSvg white={white} />
     </a>
   );
 
