@@ -1,4 +1,6 @@
-const brackets = (position) =>
+import React from 'react';
+
+const Brackets: React.FC<{ position: string }> = ({ position }) =>
   position === "left" ? (
     <svg
       width="5"
@@ -42,4 +44,4 @@ const brackets = (position) =>
     </svg>
   );
 
-export default brackets;
+export default Brackets;

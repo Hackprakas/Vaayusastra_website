@@ -1,4 +1,10 @@
-const MenuSvg = ({ openNavigation }) => {
+import React from 'react';
+
+interface MenuSvgProps {
+  openNavigation: boolean;
+}
+
+const MenuSvg: React.FC<MenuSvgProps> = ({ openNavigation }) => {
   return (
     <svg
       className="overflow-visible"

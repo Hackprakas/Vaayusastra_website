@@ -1,6 +1,11 @@
+import React from 'react';
 import PlusSvg from "./PlusSvg";
 
-const SectionSvg = ({ crossesOffset }) => {
+interface SectionSvgProps {
+  crossesOffset?: string;
+}
+
+const SectionSvg: React.FC<SectionSvgProps> = ({ crossesOffset }) => {
   return (
     <>
       <PlusSvg
@@ -10,7 +15,7 @@ const SectionSvg = ({ crossesOffset }) => {
       />
 
       <PlusSvg
-        className={`hidden absolute  -top-[0.3125rem] right-[1.5625rem] ${
+        className={`hidden absolute -top-[0.3125rem] right-[1.5625rem] ${
           crossesOffset && crossesOffset
         } pointer-events-none lg:block xl:right-[2.1875rem]`}
       />
