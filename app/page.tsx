@@ -10,8 +10,9 @@ export default function Page() {
   return (
     <div>
       <Header/>
-      {/* <Herosection /> */}
+      <Herosection /> 
       {/* <Coursesoffered /> */}
+      <ThemeToggle/>
       
       
     </div>

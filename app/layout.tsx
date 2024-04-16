@@ -27,7 +27,7 @@ export default function RootLayout({
          
           >
           <Providers>
-            <Page />
+            {/* <Page /> */}
             {children}
           </Providers>
         </ThemeProvider>
