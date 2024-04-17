@@ -9,6 +9,7 @@ import Button from "./Button";
 import MenuSvg from "./assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import Image from "next/image";
+import logo from "../components/assets/logo.webp"
 
 const Header: React.FC = () => {
   // const pathname = useLocation();
@@ -38,9 +39,10 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <a className="block w-[12rem] xl:mr-8" href="#hero">
-          <Image src={brainwave} width={190} height={40} alt="Brainwave" />
+        <a className="block  xl:mr-8" href="#hero">
+          <Image src={logo} width={70} height={70} alt="Brainwave"  />
         </a>
+          <p className=" h5 font-bold">Vaayusastra Aerospace</p>
 
         <nav
           className={`${

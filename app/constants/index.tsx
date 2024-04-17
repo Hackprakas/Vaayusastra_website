@@ -33,7 +33,8 @@ import {
   sliders04,
   telegram,
   twitter,
-  yourlogo,
+  yourlogo
+
 } from "../components/assets";
 
 interface NavigationItem {

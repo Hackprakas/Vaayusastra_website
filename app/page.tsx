@@ -13,7 +13,7 @@ export default function Page() {
       <Header/>
       <Hero/>
       {/* <Coursesoffered /> */}
-      <ThemeToggle/>
+      
       
       
     </div>

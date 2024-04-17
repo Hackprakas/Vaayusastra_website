@@ -1,5 +1,6 @@
 import React from 'react';
 import { companyLogos } from "../constants";
+import Image from 'next/image';
 
 interface Props {
   className: string;
@@ -9,7 +10,7 @@ const CompanyLogos: React.FC<Props> = ({ className }) => {
   return (
     <div className={className}>
       <h5 className="tagline mb-6 text-center text-n-1/50">
-        Helping people create beautiful content at
+        Helping students to learn space in easier way
       </h5>
       <ul className="flex">
         {companyLogos.map((logo: string, index: number) => (
@@ -17,7 +18,7 @@ const CompanyLogos: React.FC<Props> = ({ className }) => {
             className="flex items-center justify-center flex-1 h-[8.5rem]"
             key={index}
           >
-            <img src={logo} width={134} height={28} alt={logo} />
+            <Image src={logo} width={134} height={28} alt={logo} />
           </li>
         ))}
       </ul>
