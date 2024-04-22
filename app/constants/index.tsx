@@ -35,7 +35,10 @@ import {
   twitter,
   yourlogo
 
+
 } from "../components/assets";
+import rounded1 from "../components/assets/roadmap/rounded-1.jpg"
+import rounded2 from "../components/assets/roadmap/rounded2.jpg"
 
 interface NavigationItem {
   id: string;
@@ -103,7 +106,7 @@ interface RoadmapItem {
   title: string;
   text: string;
   date: string;
-  imageUrl: any;
+  imageUrl?: any;
   colorful?: boolean;
 }
 
@@ -113,7 +116,7 @@ export const roadmap: RoadmapItem[] = [
     title: "G. JAGADEESH KANNA",
     text: "Jagadeesh Kanna, CEO of Vaayusastra Aerospace, merges aeronautical expertise with artistic flair, democratizing aerospace education in India. A versatile talent in stage acting, film direction, and writing, his innovative approach blends arts and science, showcased in The Hindu Young World Magazine",
     date: "CEO/Founder",
-    imageUrl: roadmap1,
+    imageUrl: rounded1,
     colorful: true,
   },
   {
@@ -121,22 +124,29 @@ export const roadmap: RoadmapItem[] = [
     title: "Dr. K JAYARAMAN",
     text: "Dr. K. Jayaraman, METU Ankara Research Professor, specializes in aerospace propulsion, nanotechnology, and renewable energy. With a Ph.D. from IIT Madras, his research spans coal and biomass gasification optimization, solid propellant combustion, and high-speed rotor configurations, showcased through extensive publications and international presentations.",
     date: " Director of Research",
-    imageUrl:roadmap2,
+    imageUrl:rounded2,
   },
   
   {
     id: "2",
-    title: "Chatbot customization",
-    text: "Allow users to customize the chatbot's appearance and behavior, making it more engaging and fun to interact with.",
-    date: "May 2023",
-    imageUrl: roadmap3,
+    title: "TIMOTHY A GONSALVES",
+    text: "Founding Director,IIT MANDI, & PROF CSE RETD,IIT Madras",
+    date: "Mentors",
+    // imageUrl: roadmap3,
   },
   {
     id: "3",
     title: "Integration with APIs",
     text: "Allow the chatbot to access external data sources, such as weather APIs or news APIs, to provide more relevant recommendations.",
-    date: "May 2023",
-    imageUrl: roadmap4,
+    date: "Mentors",
+    // imageUrl: roadmap4,
+  },
+  {
+    id: "3",
+    title: "Integration with APIs",
+    text: "Allow the chatbot to access external data sources, such as weather APIs or news APIs, to provide more relevant recommendations.",
+    date: "Mentors",
+    // imageUrl: roadmap4,
   },
 ];
 

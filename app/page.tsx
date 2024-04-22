@@ -7,6 +7,7 @@ import Herosection from "./components/herosection";
 import Hero from "./components/Hero";
 import Header from "./components/Header";
 import Benefits from "./components/Benefits";
+import Roadmap from "./components/Roadmap";
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
       <Header/>
       <Hero/>
       <Benefits/>
+      <Roadmap/>
       {/* <Coursesoffered /> */}
       
       
