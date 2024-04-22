@@ -27,20 +27,20 @@ const Services: React.FC = () => {
         <div className="z-3">
           <div className="relative z-1 flex  h-[39rem]  p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[56rem] bg-n-8">
             <div className="absolute top-0  w-full h-full pointer-events-none md:w-3/5 xl:w-auto">
-              <Image
+              {/* <Image
                 className="w-full h-full object-cover blur-3xl md:object-right"
                 width={800}
                 alt="Smartest AI"
                 height={730}
                 src={service1}
-              />
+              /> */}
             </div>
             <div className="absolute top-0 left-0 max-w-full">
                   <Image
-                    className="w-full"
+                    className="object-cover"
                     src={grid}
-                    width={1000}
-                    height={1000}
+                    width={1300}
+                    height={1300}
                     alt="Grid"
                   />
                 </div>
