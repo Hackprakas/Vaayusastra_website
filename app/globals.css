@@ -125,5 +125,6 @@
   body {
    
     @apply font-sans  text-base;
+    @apply bg-n-8;
   }
 }

@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
 
   return (
     <Section
-      className="pt-[17rem] -mt-[5.25rem] bg-gradient-to-r from-[#0C0517] via-[#0e031d] via-50% to-black"
+      className="pt-[17rem] -mt-[5.25rem] "
       crosses
       crossesOffset="lg:translate-y-[5.25rem]"
       customPaddings
@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
       Get Started with vaayusastra aerospace and learn the basics of aerospace engineering and rocket science.
           </p>
-          <Button href="/pricing" white>
+          <Button href="#features" white>
             Get started
           </Button>
         </div>
@@ -87,7 +87,13 @@ const Hero: React.FC = () => {
             <Gradient />
           </div>
           <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
-            
+          <Image
+              src={heroBackground}
+              className="w-full blur-xl"
+              width={1440}
+              height={1800}
+              alt="hero"
+            />
           </div>
 
           <BackgroundCircles parallaxRef={parallaxRef} />
