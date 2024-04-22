@@ -1,7 +1,7 @@
 import React from "react";
 import Section from "./Section";
 import Heading from "./Heading";
-import { service1, service2, service3, check } from "./assets/assets";
+import { service1, service2, service3, check, grid } from "./assets";
 import { brainwaveServices, brainwaveServicesIcons } from "../constants";
 import {
   PhotoChatMessage,
@@ -11,120 +11,68 @@ import {
 } from "./design/Services";
 
 import Generating from "./Generating";
+import Image from "next/image";
 
 const Services: React.FC = () => {
   return (
     <Section id="how-to-use">
       <div className="container">
         <Heading
-          title="Generative AI made for creators."
-          text="Brainwave unlocks the potential of AI-powered applications"
+          title="How Vaayusastra Aerospace Works"
+          text="Vaayusastra unlocks the potential of Space"
         />
+<div className="bg-conic-gradient p-0.5 rounded-3xl">
 
-        <div className="relative">
-          <div className="relative z-1 flex items-center h-[39rem] mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem]">
-            <div className="absolute top-0 left-0 w-full h-full pointer-events-none md:w-3/5 xl:w-auto">
-              <img
-                className="w-full h-full object-cover md:object-right"
+
+        <div className="z-3">
+          <div className="relative z-1 flex  h-[39rem]  p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[56rem] bg-n-8">
+            <div className="absolute top-0  w-full h-full pointer-events-none md:w-3/5 xl:w-auto">
+              <Image
+                className="w-full h-full object-cover blur-3xl md:object-right"
                 width={800}
                 alt="Smartest AI"
                 height={730}
                 src={service1}
               />
             </div>
+            <div className="absolute top-0 left-0 max-w-full">
+                  <Image
+                    className="w-full"
+                    src={grid}
+                    width={1000}
+                    height={1000}
+                    alt="Grid"
+                  />
+                </div>
+            <div className="relative bg-transparent z-2  space-y-10 rounded-3xl p-8 overflow-y-auto" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+            
+            <h2 className="h4 ">What Vaayusastra does ?</h2>
+              <p className="body-2 mt-4 text-zinc-400 text-lg ">
+                1. Basic Science rooted to Aeronautics, Aerospace along hands-on science model making activities embedded in mythological sci-fi stories, with theatrical enactments for school children as per NCERT, CBSE, ICSE & NASA curriculum.<br /><br />
 
-            <div className="relative z-1 max-w-[17rem] ml-auto">
-              <h4 className="h4 mb-4">Smartest AI</h4>
-              <p className="body-2 mb-[3rem] text-n-3">
-                Brainwave unlocks the potential of AI-powered applications
+                2. An integrated and Hands-on training/Internship program for college students under various electives segregated by Earth's atmospheric altitude. Vimaan (0km-12km), Agni (12km-160km), Akaash (160km and above), Adhisaya Parimana (3D printing technology), Vaayu (Basic Aerodynamics)
               </p>
-              <ul className="body-2">
-                {brainwaveServices.map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start py-4 border-t border-n-6"
-                  >
-                    <img width={24} height={24} src={check} alt="Check" />
-                    <p className="ml-4">{item}</p>
-                  </li>
-                ))}
-              </ul>
+              <h3 className="h4">What are those students doing about it now ?</h3>
+              <p className="body-2 mt-4 text-zinc-400 text-lg ">
+                1. They find an online / offline shop and buy DIY Physical models to practice in home,<br/><br/>
+
+                2. Visit planetariums, Science Exhibitions etc.,<br/><br/>
+
+                3. They get a specialised short span training program like building advanced level Aero models or workshops<br/><br/>
+
+                4.Other piecemeal activities which are not integrated or customised for children or college students knowledge level.<br/><br/>
+              </p>
+
             </div>
 
-            <Generating className="absolute left-4 right-4 bottom-4 border-n-1/10 border lg:left-1/2 lg-right-auto lg:bottom-8 lg:-translate-x-1/2" />
+
+
+
           </div>
 
-          <div className="relative z-1 grid gap-5 lg:grid-cols-2">
-            <div className="relative min-h-[39rem] border border-n-1/10 rounded-3xl overflow-hidden">
-              <div className="absolute inset-0">
-                <img
-                  src={service2}
-                  className="h-full w-full object-cover"
-                  width={630}
-                  height={750}
-                  alt="robot"
-                />
-              </div>
-
-              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15">
-                <h4 className="h4 mb-4">Photo editing</h4>
-                <p className="body-2 mb-[3rem] text-n-3">
-                  Automatically enhance your photos using our AI app&apos;s
-                  photo editing feature. Try it now!
-                </p>
-              </div>
-
-              <PhotoChatMessage />
-            </div>
-
-            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem]">
-              <div className="py-12 px-4 xl:px-8">
-                <h4 className="h4 mb-4">Video generation</h4>
-                <p className="body-2 mb-[2rem] text-n-3">
-                  The world’s most powerful AI photo and video art generation
-                  engine. What will you create?
-                </p>
-
-                <ul className="flex items-center justify-between">
-                  {brainwaveServicesIcons.map((item, index) => (
-                    <li
-                      key={index}
-                      className={`rounded-2xl flex items-center justify-center ${
-                        index === 2
-                          ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]"
-                          : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
-                      }`}
-                    >
-                      <div
-                        className={
-                          index === 2
-                            ? "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"
-                            : ""
-                        }
-                      >
-                        <img src={item} width={24} height={24} alt="Icon" />
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
-                <img
-                  src={service3}
-                  className="w-full h-full object-cover"
-                  width={520}
-                  height={400}
-                  alt="Scary robot"
-                />
-
-                <VideoChatMessage />
-                <VideoBar />
-              </div>
-            </div>
-          </div>
 
           <Gradient />
+        </div>
         </div>
       </div>
     </Section>

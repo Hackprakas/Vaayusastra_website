@@ -8,6 +8,7 @@ import Hero from "./components/Hero";
 import Header from "./components/Header";
 import Benefits from "./components/Benefits";
 import Roadmap from "./components/Roadmap";
+import Services from "./components/Services";
 
 export default function Page() {
   return (
@@ -15,6 +16,7 @@ export default function Page() {
       <Header/>
       <Hero/>
       <Benefits/>
+      <Services/>
       <Roadmap/>
       {/* <Coursesoffered /> */}
       
