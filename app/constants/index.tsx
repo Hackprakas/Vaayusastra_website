@@ -287,6 +287,7 @@ interface BenefitItem {
   iconUrl: string;
   imageUrl: any;
   light?: boolean;
+  url:string
 }
 
 export const benefits: BenefitItem[] = [
@@ -297,6 +298,7 @@ export const benefits: BenefitItem[] = [
     backgroundUrl: "./src/assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSebE2XSGVP4iR9xD97bYDVoW3npARfH6TaN6cc7lNPJv0PqqA/viewform",
   },
   {
     id: "1",
@@ -306,6 +308,7 @@ export const benefits: BenefitItem[] = [
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
     light: true,
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSd8hAT8Ja9qqPpM_vPuu-gU-O8X859HlBsryVpo6SyX9PO1Zw/viewform",
   },
   {
     id: "2",
@@ -314,6 +317,7 @@ export const benefits: BenefitItem[] = [
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     iconUrl: benefitIcon3,
     imageUrl: benefitImage2,
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSd8hAT8Ja9qqPpM_vPuu-gU-O8X859HlBsryVpo6SyX9PO1Zw/viewform",
   },
   {
     id: "3",
@@ -323,6 +327,7 @@ export const benefits: BenefitItem[] = [
     iconUrl: benefitIcon4,
     imageUrl: benefitImage2,
     light: true,
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSe4UNinNksujeVkuf21jgEjz-juJzOHE46G5qkJQTwW55rB4Q/viewform",
   },
   {
     id: "4",
@@ -331,6 +336,7 @@ export const benefits: BenefitItem[] = [
     backgroundUrl: "./src/assets/benefits/card-5.svg",
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSe-a_kLr4c_cIgHCzBUIE1VzF75KVZW_4Y-E-7O9e_DJ81AaQ/viewform",
   },
   {
     id: "5",
@@ -339,8 +345,12 @@ export const benefits: BenefitItem[] = [
     backgroundUrl: "./src/assets/benefits/card-6.svg",
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSd8hAT8Ja9qqPpM_vPuu-gU-O8X859HlBsryVpo6SyX9PO1Zw/viewform",
+
   },
 ];
+
+
 
 interface SocialItem {
   id: string;

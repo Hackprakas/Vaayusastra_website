@@ -6,12 +6,14 @@ import Coursesoffered from "./components/coursesoffered";
 import Herosection from "./components/herosection";
 import Hero from "./components/Hero";
 import Header from "./components/Header";
+import Benefits from "./components/Benefits";
 
 export default function Page() {
   return (
     <div>
       <Header/>
       <Hero/>
+      <Benefits/>
       {/* <Coursesoffered /> */}
       
       
