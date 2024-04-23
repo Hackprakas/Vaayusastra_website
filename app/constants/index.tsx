@@ -125,6 +125,7 @@ export const roadmap: RoadmapItem[] = [
     text: "Dr. K. Jayaraman, METU Ankara Research Professor, specializes in aerospace propulsion, nanotechnology, and renewable energy. With a Ph.D. from IIT Madras, his research spans coal and biomass gasification optimization, solid propellant combustion, and high-speed rotor configurations, showcased through extensive publications and international presentations.",
     date: " Director of Research",
     imageUrl:rounded2,
+    colorful: true,
   },
   
   {
