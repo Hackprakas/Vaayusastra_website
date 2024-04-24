@@ -39,6 +39,7 @@ import {
 } from "../components/assets";
 import rounded1 from "../components/assets/roadmap/rounded-1.jpg"
 import rounded2 from "../components/assets/roadmap/rounded2.jpg"
+import youtube from "../components/assets/socials/youtube.svg"
 
 interface NavigationItem {
   id: string;
@@ -404,7 +405,7 @@ export const socials: SocialItem[] = [
     id: "2",
     title: "Instagram",
     iconUrl: instagram,
-    url: "#",
+    url: "https://www.instagram.com/vaayusastra/",
   },
   {
     id: "3",
@@ -416,6 +417,12 @@ export const socials: SocialItem[] = [
     id: "4",
     title: "Facebook",
     iconUrl: facebook,
-    url: "#",
+    url: "https://www.facebook.com/vaayusastra",
+  },
+  {
+    id: "5",
+    title: "youtube",
+    iconUrl: youtube,
+    url: "https://www.youtube.com/channel/UCEyY2OX6I4D9ij7lAQIcyJg",
   },
 ];
