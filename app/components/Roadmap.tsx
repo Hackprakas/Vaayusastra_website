@@ -75,7 +75,7 @@ const Roadmap: React.FC = () => (
       </div>
 
       <div className="flex justify-center mt-12 md:mt-15 xl:mt-20">
-        <Button white href="/roadmap">Our roadmap</Button>
+        <Button white href="#">Go Back</Button>
       </div>
     </div>
   </Section>

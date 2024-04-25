@@ -49,29 +49,21 @@ const Header: React.FC = () => {
             openNavigation ? "flex" : "hidden"
           } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
         >
-          <div className="relative z-2 flex items-center justify-center m-auto lg:flex-row">
-            
-               
-              
-              
-                
-                  <div className="block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:leading-5 lg:hover:text-n-1 xl:px-12">
-                  About Us
-                  </div>
-                  <div className="block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:leading-5 lg:hover:text-n-1 xl:px-12">
-                  Courses offered
-                  </div>
-                  <div className="block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:leading-5 lg:hover:text-n-1 xl:px-12">
-                  Contact us
-                  </div>
-                  <div className="block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:leading-5 lg:hover:text-n-1 xl:px-12">
-                  Papers
-                  </div>
-
-
-              
-            
+         <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
+            {navigation.map((item) => (
+              <a
+                key={item.id}
+                href={item.url}
+                onClick={handleClick}
+                className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
+                  item.onlyMobile ? "lg:hidden" : ""
+                } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:text-n-1/50 lg:leading-5 lg:hover:text-n-1 xl:px-12`}
+              >
+                {item.title}
+              </a>
+            ))}
           </div>
+
 
           <HamburgerMenu />
         </nav>

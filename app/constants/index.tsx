@@ -38,7 +38,7 @@ import {
 
 } from "../components/assets";
 import rounded1 from "../components/assets/roadmap/rounded-1.jpg"
-import rounded2 from "../components/assets/roadmap/rounded2.jpg"
+import rounded3 from "../components/assets/roadmap/rounded3.jpg"
 import youtube from "../components/assets/socials/youtube.svg"
 
 interface NavigationItem {
@@ -51,23 +51,23 @@ interface NavigationItem {
 export const navigation: NavigationItem[] = [
   {
     id: "0",
-    title: "Features",
-    url: "#features",
+    title: "About",
+    url: "#roadmap",
   },
   {
     id: "1",
-    title: "Pricing",
-    url: "#pricing",
+    title: "Courses",
+    url: "#features",
   },
   {
     id: "2",
-    title: "How to use",
-    url: "#how-to-use",
+    title: "Papers",
+    url: "#",
   },
   {
     id: "3",
-    title: "Roadmap",
-    url: "#roadmap",
+    title: "Contact us",
+    url: "#",
   },
   {
     id: "4",
@@ -122,11 +122,10 @@ export const roadmap: RoadmapItem[] = [
   },
   {
     id: "1",
-    title: "Dr. K JAYARAMAN",
-    text: "Dr. K. Jayaraman, METU Ankara Research Professor, specializes in aerospace propulsion, nanotechnology, and renewable energy. With a Ph.D. from IIT Madras, his research spans coal and biomass gasification optimization, solid propellant combustion, and high-speed rotor configurations, showcased through extensive publications and international presentations.",
-    date: " Director of Research",
-    imageUrl:rounded2,
-    colorful: true,
+    title: "S Pooja",
+    text: "Pooja - Manager of vaayusastra aerospace She is an experienced content creator, & specialize in crafting engaging visuals and stories that inspire the audience. She have been completed her space training in Russia🇷🇺 and developed a strong passion for space exploration and research...She is the student of Dr. Sivathanupillai (father of brahmos missile) As a space enthusiast, she got a chance to be in ISRO programs and successfully made satellites and launched them into space.",
+    date: "Manager",
+    imageUrl:rounded3,
   },
   
   {
@@ -170,6 +169,13 @@ export const roadmap: RoadmapItem[] = [
     title: "KRISHNAKUMAR BALASUBRAMANIAM",
     text: "Actor, Creative Director 'The Little Theatre'",
     date: "Mentors",
+  },
+  {
+    id: "9",
+    title: "Dr. K JAYARAMAN",
+    text: " METU Ankara Research Professor",
+    date: " Mentors",
+
   },
 ];
 
