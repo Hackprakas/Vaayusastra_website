@@ -59,7 +59,7 @@ const Roadmap: React.FC = () => (
 
                       {/* <div className="tagline">{status}</div> */}
                     </div>
-                  {item.imageUrl &&(<Image className="w-24 h-24 p-1 rounded-full bg-blend-normal ring-2 ring-gray-300 dark:ring-gray-500" src={item.imageUrl} alt="Bordered avatar"/>)}  
+                  {item.imageUrl &&(<Image className="w-32 h-32 p-1 rounded-full bg-blend-normal ring-2 ring-gray-300 dark:ring-gray-500" src={item.imageUrl} alt="Bordered avatar"/>)}  
                   </div>
 
                   

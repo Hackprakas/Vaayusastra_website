@@ -38,7 +38,8 @@ import {
 
 } from "../components/assets";
 import rounded1 from "../components/assets/roadmap/rounded-1.jpg"
-import rounded3 from "../components/assets/roadmap/rounded3.jpg"
+import rounded4 from "../components/assets/roadmap/rounded4.jpg"
+
 import youtube from "../components/assets/socials/youtube.svg"
 
 interface NavigationItem {
@@ -115,17 +116,17 @@ export const roadmap: RoadmapItem[] = [
   {
     id: "0",
     title: "G. JAGADEESH KANNA",
-    text: "Jagadeesh Kanna, CEO of Vaayusastra Aerospace, merges aeronautical expertise with artistic flair, democratizing aerospace education in India. A versatile talent in stage acting, film direction, and writing, his innovative approach blends arts and science, showcased in The Hindu Young World Magazine",
+    text: "CEO of Vaayusastra Aerospace, merges aeronautical expertise with artistic flair, democratizing aerospace education in India. A versatile talent in stage acting, film direction, writing, theatre trainer, lyricist whose work has primarily been in Chennai based productions, independent films. His innovative approach blends arts and science, showcased in The Hindu Young World Magazine. ",
     date: "CEO/Founder",
     imageUrl: rounded1,
     colorful: true,
   },
   {
     id: "1",
-    title: "S Pooja",
-    text: "Pooja - Manager of vaayusastra aerospace She is an experienced content creator, & specialize in crafting engaging visuals and stories that inspire the audience. She have been completed her space training in Russia🇷🇺 and developed a strong passion for space exploration and research...She is the student of Dr. Sivathanupillai (father of brahmos missile) As a space enthusiast, she got a chance to be in ISRO programs and successfully made satellites and launched them into space.",
+    title: "S. Pooja",
+    text: "Manager of vaayusastra aerospace She is an experienced content creator, & specialize in crafting engaging visuals and stories that inspire the audience. She have been completed her space training in Russia and developed a strong passion for space exploration and research...She is the student of Dr. Sivathanupillai (father of brahmos missile) As a space enthusiast, she got a chance to be in ISRO programs and successfully made satellites and launched them into space.",
     date: "Manager",
-    imageUrl:rounded3,
+    imageUrl:rounded4,
   },
   
   {

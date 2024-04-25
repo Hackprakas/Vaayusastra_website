@@ -28,7 +28,7 @@ const Collaboration: React.FC = () => {
           </h2>
 
           <ul className="max-w-[22rem] mb-10 md:mb-14">
-            {collabContent.map((item: CollabContent) => (
+            {collabContent.map((item: any) => (
               <li className="mb-3 py-3" key={item.id}>
                 <div className="flex items-center">
                   <img src={check} width={24} height={24} alt="check" />
@@ -41,7 +41,7 @@ const Collaboration: React.FC = () => {
             ))}
           </ul>
 
-          <Button>Try it now</Button>
+          <Button white>Try it now</Button>
         </div>
 
         <div className="lg:ml-auto xl:w-[38rem] mt-4">
@@ -64,7 +64,7 @@ const Collaboration: React.FC = () => {
             </div>
 
             <ul>
-              {collabApps.map((app: CollabApp, index: number) => (
+              {collabApps.map((app: any, index: number) => (
                 <li
                   key={app.id}
                   className={`absolute top-0 left-1/2 h-1/2 -ml-[1.6rem] origin-bottom rotate-${
