@@ -123,7 +123,7 @@ export const roadmap: RoadmapItem[] = [
   {
     id: "1",
     title: "S Pooja",
-    text: "Pooja - Manager of vaayusastra aerospace She is an experienced content creator, & specialize in crafting engaging visuals and stories that inspire the audience. She have been completed her space training in Russia🇷🇺 and developed a strong passion for space exploration and research...She is the student of Dr. Sivathanupillai (father of brahmos missile) As a space enthusiast, she got a chance to be in ISRO programs and successfully made satellites and launched them into space.",
+    text: "Pooja - Manager of vaayusastra aerospace.She is an experienced content creator & specialize in crafting engaging visuals and stories that inspire the audience. She have been completed her space training in Russia and developed a strong passion for space exploration and research.She is the student of Dr. Sivathanupillai (father of brahmos missile).As a space enthusiast, she got a chance to be in ISRO programs and successfully made satellites and launched them into space.",
     date: "Manager",
     imageUrl:rounded3,
   },
