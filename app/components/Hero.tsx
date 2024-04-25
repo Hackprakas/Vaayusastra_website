@@ -32,6 +32,7 @@ const Hero: React.FC = () => {
             We Trigger The &nbsp;Creative&nbsp;Spark with {` `}
             <span className="inline-block relative">
               Ingenuity{" "}
+              
               <Image
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2"
