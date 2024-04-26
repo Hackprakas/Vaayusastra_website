@@ -10,6 +10,7 @@ import Benefits from "./components/Benefits";
 import Roadmap from "./components/Roadmap";
 import Services from "./components/Services";
 import Footer from "./components/Footer";
+import Contactus from "./components/design/Contactus";
 
 export default function Page() {
   return (
@@ -20,6 +21,7 @@ export default function Page() {
       <Services/>
       <Roadmap/>
       <Footer/>
+      <Contactus/>
       {/* <Coursesoffered /> */}
       
       
