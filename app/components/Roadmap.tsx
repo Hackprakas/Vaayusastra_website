@@ -8,6 +8,7 @@ import { check2, grid, loading1 } from "./assets";
 import { Gradient } from "./design/Roadmap";
 import Image from "next/image";
 
+
 interface RoadmapItem {
   id: string;
   date: string;
@@ -78,6 +79,7 @@ const Roadmap: React.FC = () => (
         <Button white href="#">Go Back</Button>
       </div>
     </div>
+    
   </Section>
 );
 
