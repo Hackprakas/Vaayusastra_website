@@ -16,9 +16,7 @@ export default function Page() {
   return (
     <div>
       <Header/>
-      <Hero/>
       <Benefits/>
-      <Services/>
       <Roadmap/>
       <Footer/>
       <Contactus/>
