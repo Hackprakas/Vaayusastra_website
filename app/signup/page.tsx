@@ -53,8 +53,9 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-            <div className="hidden  md:hidden lg:hidden xl:flex lg:flex-1 justify-end lg:w-auto">
-                <Image src={image} alt="loginlogo" width={300} height={300} />
+            <div className="hidden  md:hidden lg:hidden  xl:block justify-end lg:w-auto">
+                <Image src={image} alt="loginlogo" className='mb-8' width={300} height={300} />
+                <h4 className="font-extrabold h5 text-center">Authentication Redefined</h4>
             </div>
         </div>
     );
