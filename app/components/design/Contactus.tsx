@@ -23,8 +23,8 @@ function Contactus() {
     </div>
 
     {isOpen && (
-      <div id="authentication-modal z-1"  aria-hidden="true" className="shadow-md fixed px-4 inset-0 z-50 flex justify-center items-center w-full h-full overflow-y-auto overflow-x-hidden duration-300 ">
-        <div className="relative  w-full max-w-md max-h-full">
+      <div id="authentication-modal z-1"  aria-hidden="true" className="shadow-md fixed px-4 inset-0 z-50 flex justify-center items-center w-full h-full overflow-y-auto overflow-x-hidden bg-black backdrop-blur-sm   bg-opacity-30 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`} ">
+        <div className="relative  w-full max-w-md max-h-full ">
           <div className="relative bg-n-7 rounded-lg  ">
             <div className="flex items-center justify-between px-8 pt-8 rounded-md">
               <h3 className="text-xl font-semibold text-white">

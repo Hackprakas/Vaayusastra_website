@@ -1,114 +1,93 @@
-"use client";
-import React from "react";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
-  Link,
-  
-} from "@nextui-org/react";
-import { ThemeToggle } from "./themetoggle";
-import { Button } from "@/components/ui/button";
+
+"use client"
+import React, { useState } from "react";
+// import { useLocation } from "react-router-dom";
+import { disablePageScroll, enablePageScroll } from "scroll-lock";
+import { brainwave } from "./assets";
+import { navigation } from "../constants";
+import Button from "./Button";
+import MenuSvg from "./assets/svg/MenuSvg";
+import { HamburgerMenu } from "./design/Header";
 import Image from "next/image";
-import logo from "../../public/VS Logo New 1_edited_edited.webp"
+import logo from "../components/assets/logo.webp"
 
-export default function Page() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+const Header: React.FC = () => {
+  // const pathname = useLocation();
+  const [openNavigation, setOpenNavigation] = useState(false);
 
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
+  const toggleNavigation = () => {
+    if (openNavigation) {
+      setOpenNavigation(false);
+      enablePageScroll();
+    } else {
+      setOpenNavigation(true);
+      disablePageScroll();
+    }
+  };
+
+  const handleClick = () => {
+    if (!openNavigation) return;
+
+    enablePageScroll();
+    setOpenNavigation(false);
+  };
 
   return (
-    <Navbar
-      onMenuOpenChange={setIsMenuOpen}
-      className=" bg-transparent p-2 "
-      isBlurred={true}
-      isBordered
-      
-
+    <div
+      className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${
+        openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
+      }`}
     >
-      <NavbarContent justify="start">
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden "
-        />
-         <Image
-         src={logo}
-         width={66}
-         height={66}
-         alt="logo"
-         
-         />
-        <p className="font-medium text-inherit">VAAYUSASTRA AEROSPACE</p>
-      </NavbarContent>
+      <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
+        <a className="block  xl:mr-8" href="#hero">
+          <Image src={logo} width={70} height={70} alt="Brainwave"  />
+        </a>
+          <p className=" h5 font-bold">Vaayusastra Aerospace</p>
 
-      <NavbarContent className="hidden md:hidden lg:flex  gap-4" justify="end">
-        <NavbarItem >
-          <Link color="primary" href="#">
-            About us
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="#" color="foreground">
-            Courses
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Contact
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Admin
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem>
-          <ThemeToggle />
-        </NavbarItem>
-        <NavbarItem className="hidden lg:flex ml-4">
-            <Button className="">
+        <nav
+          className={`${
+            openNavigation ? "flex" : "hidden"
+          } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
+        >
+         <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
+            {navigation.map((item) => (
+              <a
+                key={item.id}
+                href={item.url}
+                onClick={handleClick}
+                className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
+                  item.onlyMobile ? "lg:hidden" : ""
+                } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:text-n-1/50 lg:leading-5 lg:hover:text-n-1 xl:px-12`}
+              >
+                {item.title}
+              </a>
+            ))}
+          </div>
 
-          <Link href="#" className="text-white">Register</Link>
-            </Button>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              className="w-full"
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-    </Navbar>
+
+          <HamburgerMenu />
+        </nav>
+
+        <a
+          href="#signup"
+          className="button hidden mr-8 text-n-1/50 transition-colors bg hover:text-n-1 lg:block"
+        >
+          New account
+        </a>
+        <Button white={false}className=" sim-card-button hidden lg:flex " href="#login">
+          Sign in
+        </Button>
+
+        <Button white={false}
+          className="ml-auto lg:hidden"
+          px="px-3"
+          onClick={toggleNavigation}
+        >
+          <MenuSvg openNavigation={openNavigation} />
+        </Button>
+      </div>
+    </div>
   );
-}
+};
+
+export default Header;
