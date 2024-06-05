@@ -14,13 +14,16 @@ function Contactus() {
   };
   return (
     <>
-    <button className = "bg- rounded-lg" onClick={toggleModal} >
+    <div className='fixed bottom-0 right-4 transform -translate-y-1/2 z-100'> 
+    <button className = "bg-purple-700 rounded-md p-4" onClick={toggleModal} >
+
       
-      <MessageCircle />
+      <MessageCircle color='white'/>
     </button>
+    </div>
 
     {isOpen && (
-      <div id="authentication-modal z-1"  aria-hidden="true" className="fixed px-4 inset-0 z-50 flex justify-center items-center w-full h-full overflow-y-auto overflow-x-hidden">
+      <div id="authentication-modal z-1"  aria-hidden="true" className="shadow-md fixed px-4 inset-0 z-50 flex justify-center items-center w-full h-full overflow-y-auto overflow-x-hidden duration-300 ">
         <div className="relative  w-full max-w-md max-h-full">
           <div className="relative bg-n-7 rounded-lg  ">
             <div className="flex items-center justify-between px-8 pt-8 rounded-md">
