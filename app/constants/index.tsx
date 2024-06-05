@@ -123,12 +123,10 @@ export const roadmap: RoadmapItem[] = [
   },
   {
     id: "1",
-    title: "S. Pooja",
-    text: "Manager of vaayusastra aerospace She is an experienced content creator, & specialize in crafting engaging visuals and stories that inspire the audience. She have been completed her space training in Russia and developed a strong passion for space exploration and research...She is the student of Dr. Sivathanupillai (father of brahmos missile) As a space enthusiast, she got a chance to be in ISRO programs and successfully made satellites and launched them into space.",
-    date: "Manager",
-    imageUrl:rounded4,
+    title: "Dr.Mohana Lakshmi",
+    text: "Founder at American World School,associate executive director/board of directors at american international accrediation association of school and college ",
+    date: "Mentors",
   },
-  
   {
     id: "2",
     title: "TIMOTHY A GONSALVES",
