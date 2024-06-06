@@ -46,7 +46,8 @@ interface NavigationItem {
   id: string;
   title: string;
   url: string;
-  onlyMobile?: boolean;
+  onlyMobile?: boolean; 
+  link:any;
 }
 
 export const navigation: NavigationItem[] = [
@@ -54,33 +55,39 @@ export const navigation: NavigationItem[] = [
     id: "0",
     title: "About",
     url: "#roadmap",
+    link:null
   },
   {
     id: "1",
     title: "Courses",
     url: "#features",
+    link:null
   },
   {
     id: "2",
     title: "Papers",
     url: "#",
+    link:null
   },
   {
     id: "3",
-    title: "Contact us",
+    title: "Recognitions",
     url: "#",
+    link:"/recognitions"
   },
   {
     id: "4",
     title: "New account",
     url: "#signup",
     onlyMobile: true,
+    link:null,
   },
   {
     id: "5",
     title: "Sign in",
     url: "#login",
     onlyMobile: true,
+    link:null
   },
 ];
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
