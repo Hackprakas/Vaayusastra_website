@@ -66,6 +66,17 @@ function Contactus() {
                   />
                 </div>
                 <div>
+                  <label htmlFor="phone number"  className="block mb-2 mt-3 md:mt-0 lg:mt-0 text-sm font-medium ">Phone number</label>
+                  <input 
+                    type="phone number" 
+                    name="phone number" 
+                    id="phone number" 
+                    className="bg-gray-800  text-white text-sm rounded-lg block w-full p-2.5" 
+                    placeholder="Phone number"
+                    required 
+                  />
+                </div>
+                <div>
                   <label htmlFor="password" className="block mb-2 text-sm font-medium text-white">Message</label>
                   <textarea 
                   name='message'
