@@ -16,8 +16,12 @@ function Testimonials() {
     { id: 3, image: grid, text: "Aviation has a special place for itself in the emerging courses. Our Vaayusastra gives such a study in a very beautiful form in the form of drama. This quality educational system is in the form of a play by the best trainers to make it easy for children to understand. They have been doing this endeavor for the last 2 years with excellent teaching skills", name:"Nivash",designation:"Customer Agent",company:"AIAPSL Chennai International Airport"},
   ];
 
-  return (
-    <div className="p-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4">
+  return (<>
+  <div className="flex justify-center mb-7">
+
+      <h4 className="h4">Testimonials</h4>
+  </div>
+    <div className="p-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 ">
       
       {cards.map((card) => (
         
@@ -52,6 +56,7 @@ function Testimonials() {
         </Button>
       </div>
     </div>
+    </>
   );
 }
 
