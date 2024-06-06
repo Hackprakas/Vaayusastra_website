@@ -45,7 +45,7 @@ import youtube from "../components/assets/socials/youtube.svg"
 interface NavigationItem {
   id: string;
   title: string;
-  url: string;
+  url: any;
   onlyMobile?: boolean; 
   link:any;
 }
@@ -82,13 +82,7 @@ export const navigation: NavigationItem[] = [
     onlyMobile: true,
     link:null,
   },
-  {
-    id: "5",
-    title: "Sign in",
-    url: "#login",
-    onlyMobile: true,
-    link:null
-  },
+  
 ];
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 

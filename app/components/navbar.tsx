@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
          <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
             {navigation.map((item) => (
               <>
-                {item.link==null ? (
+                {item.link==null && item.url ? (
                   <a
                     key={item.id}
                     href={item.url}
@@ -83,9 +83,13 @@ const Navbar: React.FC = () => {
         >
           New account
         </a>
-        <Button white={false}className=" sim-card-button hidden lg:flex " href="#login">
+        <Link href="/signup">
+
+
+        <Button white={false}className=" sim-card-button hidden lg:flex " >
           Sign in
         </Button>
+        </Link>
 
         <Button white={false}
           className="ml-auto lg:hidden"
