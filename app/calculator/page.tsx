@@ -26,9 +26,9 @@ const WeightConverter: React.FC = () => {
 
     return (
         <div className="flex justify-center items-center h-screen p-8">
-            <div className="flex flex-col items-center bg-n-7 p-8 rounded-[2.5rem] lg:min-w-[300px] lg:max-w-[800px] h-full overflow-auto max-h-screen">
+            <div className="flex flex-col items-center bg-n-7 p-8 rounded-[2.5rem] lg:min-w-[300px] lg:max-w-[800px] h-full overflow-auto max-h-screen space-y-4 shadow-2xl">
                 <h4 className="h4 mb-4 font-extrabold text-center">Weight on Other Planets</h4>
-                <div className="flex flex-col space-y-4 w-full">
+                <div className="flex flex-col space-y-2 w-full">
                     <div className="flex items-center justify-center w-full mb-6">
                         <label htmlFor="weight" className="block mb-2 text-sm font-medium text-white space-y-4">Enter your weight on Earth (kg)</label>
                         <input 
