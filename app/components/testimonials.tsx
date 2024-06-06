@@ -41,7 +41,7 @@ function Testimonials() {
             <div className="bg-purple-700 h-10 w-10 rounded-full flex justify-center items-center mb-8">
             <Quote />
             </div>
-            <div className="p-4">
+            <div className="p-4 text-n-4">
              {card.text}
 
             </div>
