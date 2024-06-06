@@ -11,7 +11,7 @@ import { HamburgerMenu } from "./design/Header";
 import Image from "next/image";
 import logo from "../components/assets/logo.webp"
 
-const Header: React.FC = () => {
+const Navbar: React.FC = () => {
   // const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
 
@@ -90,4 +90,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default Navbar;

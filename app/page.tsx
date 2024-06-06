@@ -2,7 +2,7 @@
 import Coursesoffered from "./components/coursesoffered";
 import Hero from "./components/Hero";
 
-import Header from "./components/navbar";
+import Header from "./components/Navbar";
 import Benefits from "./components/Benefits";
 import Roadmap from "./components/About";
 import Services from "./components/Services";
