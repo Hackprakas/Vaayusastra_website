@@ -7,6 +7,7 @@ import { roadmap } from "../constants";
 import { check2, grid, loading1 } from "./assets";
 import { Gradient } from "./design/Roadmap";
 import Image from "next/image";
+import Link from "next/link";
 
 
 interface RoadmapItem {
@@ -75,9 +76,11 @@ const Roadmap: React.FC = () => (
         <Gradient />
       </div>
       <div className="flex justify-center w-full mt-6 md:mt-8 xl:mt-10">
-        <Button white href="#">
+        <Link href="/calculator">
+        <Button white >
           SpaceGen
         </Button>
+        </Link>
       </div>
 
     </div>
