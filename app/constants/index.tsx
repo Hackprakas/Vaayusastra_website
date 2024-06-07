@@ -38,7 +38,16 @@ import {
 
 } from "../components/assets";
 import rounded1 from "../components/assets/roadmap/rounded-1.jpg"
-import rounded4 from "../components/assets/roadmap/rounded4.jpg"
+import rounded2 from "../components/assets/roadmap/rounded2.jpg"
+import rounded3 from "../components/assets/roadmap/rounded 3.jpg"
+import rounded4 from "../components/assets/roadmap/rounded 4.jpg"
+import rounded5 from "../components/assets/roadmap/rounded 5.jpg"
+import rounded6 from "../components/assets/roadmap/rounded 6.jpg"
+import rounded7 from "../components/assets/roadmap/rounded 7.jpg"
+import rounded8 from "../components/assets/roadmap/rounded 8.jpg"
+import rounded9 from "../components/assets/roadmap/rounded 9.jpg"
+import rounded10 from "../components/assets/roadmap/rounded 10.jpg"
+
 import grid from "../components/assets/grid.png"
 
 import youtube from "../components/assets/socials/youtube.svg"
@@ -128,54 +137,66 @@ export const roadmap: RoadmapItem[] = [
     title: "Dr.Mohana Lakshmi",
     text: "Founder at American World School,associate executive director/board of directors at american international accrediation association of school and college ",
     date: "Mentors",
+    colorful: false,
   },
   {
     id: "2",
     title: "TIMOTHY A GONSALVES",
     text: "Founding Director,IIT MANDI, & PROF CSE RETD,IIT Madras",
     date: "Mentors",
+    colorful: false,
   },
   {
     id: "3",
     title: "Dr. A. KAVIYARASU",
     text: "Asst. Professor, Department of Aerospace, MIT, Anna University.",
     date: "Mentors",
+    colorful: false,
   },
   {
     id: "4",
     title: "Prof. KANNAN",
     text: "Prof of practice, Engg design dept.,  IIT-MADRAS, Founder, VORTEX Engineering.",
     date: "Mentors",
+    colorful: false,
   },
   {
     id: "5",
     title: "Mr.RAVICHANDRAN",
     text: "Former MD, TTK Prestige Group & Mentor IIT IC.",
     date: "Mentors",
+    colorful: false,
   },
   {
     id: "6",
     title: "Dr. VIDYA MURALI",
     text: "co-Founder, Kubos Consultancy & Mentor IIT IC",
     date: "Mentors",
+    colorful: false,
   },
   {
     id: "7",
     title: "YOG JEPPE",
     text: "Actor, Founder Theatre",
     date: "Mentors",
+    imageUrl: rounded4,
+    colorful: false,
   },
   {
     id: "8",
     title: "KRISHNAKUMAR BALASUBRAMANIAM",
     text: "Actor, Creative Director 'The Little Theatre'",
     date: "Mentors",
+    imageUrl: rounded3,
+    colorful: false,
   },
   {
     id: "9",
     title: "Dr. K JAYARAMAN",
     text: " METU Ankara Research Professor",
     date: " Mentors",
+    imageUrl: rounded2,
+    colorful: false,
 
   },
 ];
