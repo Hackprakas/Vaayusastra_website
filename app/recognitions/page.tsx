@@ -30,7 +30,7 @@ function Recognitions() {
                   <p className="text-white text-xs">{card.text}</p>
                   <Tagline className="text-white text-xs">Abc</Tagline>
                   <h4 className="h4 mb-2 text-white"></h4>
-                  <p className="body-2 text-n-4 text-white">77f7f6d6rd</p>
+                  <p className="body-2  text-white">77f7f6d6rd</p>
                 </div>
               </div>
             </div>
