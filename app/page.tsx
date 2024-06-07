@@ -1,5 +1,3 @@
-
-import Coursesoffered from "./components/coursesoffered";
 import Hero from "./components/Hero";
 import { navigation } from "./constants";
 import Header from "./components/Navbar";
