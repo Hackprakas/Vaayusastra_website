@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora} from "next/font/google";
 import "./globals.css";
+import CustomCursor from "./custom/page";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,7 +22,7 @@ export default function RootLayout({
       <body className={sora.className}>
         
          
-
+            <CustomCursor />
             {children}
          
       </body>
