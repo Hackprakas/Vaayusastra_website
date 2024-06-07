@@ -45,8 +45,8 @@ import rounded5 from "../components/assets/roadmap/rounded 5.jpg"
 import rounded6 from "../components/assets/roadmap/rounded 6.jpg"
 import rounded7 from "../components/assets/roadmap/rounded 7.jpg"
 import rounded8 from "../components/assets/roadmap/rounded 8.jpg"
-import rounded9 from "../components/assets/roadmap/rounded 9.jpg"
-import rounded10 from "../components/assets/roadmap/rounded 10.jpg"
+import rounded9 from "../components/assets/roadmap/rounded9.jpg"
+import rounded10 from "../components/assets/roadmap/rounded10.jpg"
 
 import grid from "../components/assets/grid.png"
 
@@ -123,7 +123,6 @@ interface RoadmapItem {
   imageUrl?: any;
   colorful?: boolean;
 }
-
 export const roadmap: RoadmapItem[] = [
   {
     id: "0",
@@ -138,6 +137,7 @@ export const roadmap: RoadmapItem[] = [
     title: "Dr.Mohana Lakshmi",
     text: "Founder at American World School,associate executive director/board of directors at american international accrediation association of school and college ",
     date: "Mentors",
+    imageUrl: rounded10,
     colorful: false,
   },
   {
@@ -145,6 +145,7 @@ export const roadmap: RoadmapItem[] = [
     title: "TIMOTHY A GONSALVES",
     text: "Founding Director,IIT MANDI, & PROF CSE RETD,IIT Madras",
     date: "Mentors",
+    imageUrl: rounded5,
     colorful: false,
   },
   {
@@ -173,6 +174,7 @@ export const roadmap: RoadmapItem[] = [
     title: "Dr. VIDYA MURALI",
     text: "co-Founder, Kubos Consultancy & Mentor IIT IC",
     date: "Mentors",
+    imageUrl: rounded9,
     colorful: false,
   },
   {
@@ -201,8 +203,6 @@ export const roadmap: RoadmapItem[] = [
 
   },
 ];
-
-export const collabText: string =
   "With smart automation and top-notch security, it's the perfect solution for teams looking to work smarter.";
 
 interface CollabContentItem {
@@ -215,7 +215,7 @@ export const collabContent: CollabContentItem[] = [
   {
     id: "0",
     title: "Seamless Integration",
-    text: collabText,
+
   },
   {
     id: "1",
