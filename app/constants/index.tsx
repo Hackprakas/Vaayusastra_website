@@ -42,9 +42,9 @@ import rounded2 from "../components/assets/roadmap/rounded2.jpg"
 import rounded3 from "../components/assets/roadmap/rounded 3.jpg"
 import rounded4 from "../components/assets/roadmap/rounded 4.jpg"
 import rounded5 from "../components/assets/roadmap/rounded 5.jpg"
-import rounded6 from "../components/assets/roadmap/rounded 6.jpg"
-import rounded7 from "../components/assets/roadmap/rounded 7.jpg"
-import rounded8 from "../components/assets/roadmap/rounded 8.jpg"
+import rounded6 from "../components/assets/roadmap/rounded6.png"
+import rounded7 from "../components/assets/roadmap/rounded7.png"
+import rounded8 from "../components/assets/roadmap/rounded8.png"
 import rounded9 from "../components/assets/roadmap/rounded9.jpg"
 import rounded10 from "../components/assets/roadmap/rounded10.jpg"
 
@@ -153,6 +153,7 @@ export const roadmap: RoadmapItem[] = [
     title: "Dr. A. KAVIYARASU",
     text: "Asst. Professor, Department of Aerospace, MIT, Anna University.",
     date: "Mentors",
+    imageUrl: rounded6,
     colorful: false,
   },
   {
@@ -160,6 +161,7 @@ export const roadmap: RoadmapItem[] = [
     title: "Prof. KANNAN",
     text: "Prof of practice, Engg design dept.,  IIT-MADRAS, Founder, VORTEX Engineering.",
     date: "Mentors",
+    imageUrl: rounded8,
     colorful: false,
   },
   {
@@ -167,6 +169,7 @@ export const roadmap: RoadmapItem[] = [
     title: "Mr.RAVICHANDRAN",
     text: "Former MD, TTK Prestige Group & Mentor IIT IC.",
     date: "Mentors",
+    imageUrl: rounded7,
     colorful: false,
   },
   {
