@@ -12,7 +12,7 @@ import Testimonials  from "./components/testimonials";
 
 export default function Page() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Header data={navigation} />
       <Hero/>
       <Benefits/>
