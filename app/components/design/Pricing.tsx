@@ -1,5 +1,5 @@
 import React from "react";
-import { lines } from "../../assets";
+import { lines } from "../assets";
 
 export const LeftLine: React.FC = () => {
   return (

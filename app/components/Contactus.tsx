@@ -2,8 +2,8 @@
 import { MessageCircle } from 'lucide-react'
 import { useState } from 'react'
 import React from 'react'
-import Button from '../Button';
-import { sendemail } from '../../../actions/route1';
+import Button from './Button';
+import { sendemail } from '../../actions/route1';
 
 function Contactus() {
 

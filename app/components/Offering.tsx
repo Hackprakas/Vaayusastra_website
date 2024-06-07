@@ -4,16 +4,11 @@ import Heading from "./Heading";
 import { service1, service2, service3, check, grid } from "./assets";
 import { brainwaveServices, brainwaveServicesIcons } from "../constants";
 import {
-  PhotoChatMessage,
   Gradient,
-  VideoBar,
-  VideoChatMessage,
 } from "./design/Services";
-
-import Generating from "./Generating";
 import Image from "next/image";
 
-const Services: React.FC = () => {
+const Offering: React.FC = () => {
   return (
     <Section id="how-to-use">
       <div className="container">
@@ -79,4 +74,4 @@ const Services: React.FC = () => {
   );
 };
 
-export default Services;
+export default Offering;

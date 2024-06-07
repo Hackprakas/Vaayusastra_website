@@ -3,24 +3,13 @@ import { benefits } from "../constants";
 import Heading from "./Heading";
 import Section from "./Section";
 import Arrow from "./assets/svg/Arrow";
-import GradientLight from "./design/Benefits";
+import GradientLight from "./design/Course";
 import ClipPath from "./assets/svg/ClipPath";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
-interface BenefitItem {
-  id: string;
-  title: string;
-  text: string;
-  backgroundUrl: string;
-  iconUrl: string;
-  imageUrl: any;
-  light?: boolean;
-  url: string
-}
 
-const Benefits: React.FC = () => {
+const Course: React.FC = () => {
   return (
     <Section id="features">
       <div className="container relative z-2">
@@ -89,4 +78,4 @@ const Benefits: React.FC = () => {
   );
 };
 
-export default Benefits;
+export default Course;
