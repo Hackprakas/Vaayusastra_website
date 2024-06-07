@@ -55,10 +55,10 @@ const Navbar: React.FC<NavbarProps> = ({data}) => {
         >
          <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
             {data.map((item:any) => (
-              <>
+              < div key={item.id}>
                 {item.link==null && item.url ? (
-                  <a
-                    key={item.id}
+                  <a 
+                  
                     href={item.url}
                     onClick={handleClick}
                     className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
@@ -68,11 +68,11 @@ const Navbar: React.FC<NavbarProps> = ({data}) => {
                     {item.title}
                   </a>
                 ) : (
-                 <Link  href={item.link} className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
+                 <Link key={item.id} href={item.link} className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                   item.onlyMobile ? "lg:hidden" : ""
                 } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:text-n-1/50 lg:leading-5 lg:hover:text-n-1 xl:px-12`} >{item.title}</Link>
                 )}
-              </>
+              </div>
             ))}
           </div>
 
