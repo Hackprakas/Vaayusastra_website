@@ -95,7 +95,7 @@ const Calculator: React.FC = () => {
                             name="weight" 
                             value={earthWeight} 
                             onChange={handleWeightInputChange}
-                            className="bg-gray-800 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                            className="bg-gray-800 text-zinc-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 z-1"
                             placeholder="Your weight on Earth"
                         />
                     </div>
@@ -135,7 +135,7 @@ const Calculator: React.FC = () => {
                             name="age" 
                             value={earthAge} 
                             onChange={handleAgeInputChange}
-                            className="bg-gray-800 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                            className="bg-gray-800 text-zinc-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 z-1"
                             placeholder="Your age on Earth"
                             />
                     </div>
@@ -175,7 +175,7 @@ const Calculator: React.FC = () => {
                             name="celsius" 
                             value={celsius} 
                             onChange={handleCelsiusChange}
-                            className="bg-gray-800 text-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 z-1"
+                            className="bg-gray-800 text-zinc-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 z-1"
                             placeholder="Celsius"
                         />
                     </div>
@@ -189,7 +189,7 @@ const Calculator: React.FC = () => {
                             name="fahrenheit" 
                             value={fahrenheit} 
                             onChange={handleFahrenheitChange}
-                            className="bg-gray-800 text-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 z-1"
+                            className="bg-gray-800 text-zinc-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 z-1"
                             placeholder="Fahrenheit"
                         />
                     </div>
