@@ -1,6 +1,6 @@
 import Hero from "./components/Hero";
 import { navigation } from "./constants";
-import Navbar from "./components/Navbar";
+import Navbar from "../app/components/navbar";
 import Courses from "./components/CourseOffered";
 import About from "./components/About";
 import Offering from "./components/Offering";

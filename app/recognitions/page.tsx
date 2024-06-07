@@ -5,7 +5,7 @@ import Tagline from "../components/Tagline";
 import { Gradient } from "../components/design/Roadmap";
 import Image from "next/image";
 import { cards } from "../constants/index";
-import Header from "../components/Navbar";
+import Header from "../components/navbar";
 import { navigation } from "../constants";
 
 function Recognitions() {
