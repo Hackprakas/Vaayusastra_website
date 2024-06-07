@@ -7,10 +7,10 @@ import google from '../../public/google3.png';
 
 export default function Page() {
     return (
-        <div className="flex flex-col lg:flex-row h-screen justify-center lg:justify-center xl:justify-between items-center px-6 lg:px-64">
-            <div className="flex justify-center items-center w-full lg:w-auto">
-                <div className="flex flex-col items-center bg-conic-gradient p-0.25 min-w-[300px] max-w-[400px] lg:min-w-[400px] lg:max-w-[500px] rounded-[2.5rem]">
-                    <div className="p-8 bg-n-8 rounded-[2.4375rem] overflow-hidden w-full">
+        <div className="flex flex-col lg:flex-row h-screen justify-center  lg:justify-center xl:justify-between items-center px-6 lg:px-64 ">
+            <div className="flex justify-center items-center w-full lg:w-auto lg:mt-40 xl:mt-0">
+                <div className="flex flex-col items-center bg-conic-gradient p-0.25 min-w-[300px] max-w-[400px] lg:min-w-[400px] lg:max-w-[500px] rounded-[2.5rem] my-36">
+                    <div className="p-8 bg-n-8 rounded-[2.4375rem] overflow-hidden w-full ">
                         <div className="absolute top-0 left-0 max-w-full"></div>
                         <div>
                             <div className="flex items-center justify-center w-full mb-6">
