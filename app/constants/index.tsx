@@ -39,6 +39,7 @@ import {
 } from "../components/assets";
 import rounded1 from "../components/assets/roadmap/rounded-1.jpg"
 import rounded4 from "../components/assets/roadmap/rounded4.jpg"
+import grid from "../components/assets/grid.png"
 
 import youtube from "../components/assets/socials/youtube.svg"
 
@@ -431,4 +432,19 @@ export const socials: SocialItem[] = [
     iconUrl: youtube,
     url: "https://www.youtube.com/channel/UCEyY2OX6I4D9ij7lAQIcyJg",
   },
+  
+];
+export const cards = [
+  { id: 1, image: grid, text: "ISRO" },
+  { id: 2, image: grid, text: "CIAA & AIAASC" },
+  { id: 3, image: grid, text: "LEAP-IIT IC" },
+  { id: 4, image: grid, text: "NAAN MUDHALVAN-TNSDC" },
+  { id: 5, image: grid, text: "KNOWLEDGE PARTNER-NITTTR" },
+  { id: 6, image: grid, text: "KNOWLEDGE PARTNER-ICT ACADEMY" },
+  { id: 7, image: grid, text: "DPIIT RECOGNISED STARTUP" },
+  { id: 8, image: grid, text: "FIRST FRANCHISE IN BANGALORE" },
+  { id: 9, image: grid, text: "HUMAN CENTRIC EMERGING" },
+  { id: 10, image: grid, text: "IIT MADRAS IC & IIT MADRAS RTBI" },
+  { id: 11, image: grid, text: "FORTNIGHT SERIES IN HINDU YOUNG WORLD" },
+  { id: 12, image: grid, text: "VAAYUSASTRA-CENTER FOR EXCELLENCE" },
 ];
