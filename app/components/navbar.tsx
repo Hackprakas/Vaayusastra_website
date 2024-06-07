@@ -4,7 +4,7 @@ import React, { useState } from "react";
 // import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import { brainwave } from "./assets";
-import { navigation } from "../constants";
+
 import Button from "./Button";
 import MenuSvg from "./assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
@@ -12,8 +12,11 @@ import Image from "next/image";
 import logo from "../components/assets/logo.webp"
 import Link from "next/link";
 
-const Navbar: React.FC = () => {
-  // const pathname = useLocation();
+interface NavbarProps {
+  data: any; 
+}
+
+const Navbar: React.FC<NavbarProps> = ({data}) => {
   const [openNavigation, setOpenNavigation] = useState(false);
 
   const toggleNavigation = () => {
@@ -51,7 +54,7 @@ const Navbar: React.FC = () => {
           } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
         >
          <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
-            {navigation.map((item) => (
+            {data.map((item:any) => (
               <>
                 {item.link==null && item.url ? (
                   <a

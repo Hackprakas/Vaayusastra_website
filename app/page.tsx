@@ -1,7 +1,7 @@
 
 import Coursesoffered from "./components/coursesoffered";
 import Hero from "./components/Hero";
-
+import { navigation } from "./constants";
 import Header from "./components/Navbar";
 import Benefits from "./components/Benefits";
 import Roadmap from "./components/About";
@@ -13,7 +13,7 @@ import Testimonials  from "./components/testimonials";
 export default function Page() {
   return (
     <div>
-      <Header/>
+      <Header data={navigation} />
       <Hero/>
       <Benefits/>
       <Roadmap/>
