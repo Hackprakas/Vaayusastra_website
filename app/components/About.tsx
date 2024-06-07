@@ -74,6 +74,11 @@ const Roadmap: React.FC = () => (
 
         <Gradient />
       </div>
+      <div className="flex justify-center w-full mt-6 md:mt-8 xl:mt-10">
+        <Button white href="#">
+          SpaceGen
+        </Button>
+      </div>
 
     </div>
     
