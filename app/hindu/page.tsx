@@ -11,7 +11,7 @@ import Section from "../components/Section";
 import Navbar from "../components/navbar";
 import {navigation} from "../constants"
 import Footer from "../components/Footer";
-
+import {hindu} from "../constants"
 function Testimonials() {
   
 
@@ -28,7 +28,7 @@ function Testimonials() {
   </div>
     <div className=" m-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 space-y-2 ">
       
-      {testmon.map((card) => (
+      {hindu.map((card) => (
         
         <div key={card.id} className="rounded-lg ">
          
@@ -40,11 +40,11 @@ function Testimonials() {
             <div className="flex flex-col items-center">
 
             <div className="mt-[-30px] font-extrabold text-center">{card.name}</div>
-            <div className="text-center">{}</div>
+            <div className="text-center">{card.title}</div>
             <div className="mb-10 text-center p-4 text-n-4">{card.text}</div>
 
             <div className="bg-purple-700 h-10 w-10 rounded-full flex justify-center items-center mb-8">
-            <Button white >
+            <Button white href={card.url} >
                 ReadMore 
             </Button>
             </div>
