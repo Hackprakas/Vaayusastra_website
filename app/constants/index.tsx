@@ -91,10 +91,10 @@ export const navigation: NavigationItem[] = [
   },
   {
     id: "4",
-    title: "New account",
-    url: "#signup",
+    title: "Hindu Young World",
+    url: "",
     onlyMobile: true,
-    link:null,
+    link:"/hindu",
   },
   
 ];
