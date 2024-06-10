@@ -80,13 +80,13 @@ const Navbar: React.FC<NavbarProps> = ({data}) => {
           <HamburgerMenu />
         </nav>
 
-        <a
-          href="#signup"
+        <Link
+          href="/hindu"
           className="button hidden mr-8 text-n-1/50 transition-colors bg hover:text-n-1 lg:block"
         >
           Hindu-Young-world
-        </a>
-        <Link href="/hindu">
+        </Link>
+        <Link href="/signup">
 
 
         <Button white={false}className="sim-card-button hidden lg:flex " >
