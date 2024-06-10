@@ -21,13 +21,13 @@ function Testimonials() {
 
       <h4 className="h4">Testimonials</h4>
   </div>
-    <div className="p-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 ">
+    <div className=" p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 ">
       
       {testmon.map((card) => (
         
         <div key={card.id} className="rounded-lg ">
          
-          <div className="relative border border-n-6 rounded-lg mb-14">
+          <div className="relative border border-n-6 rounded-lg mb-14 px-2">
             <div className="flex justify-center">
 
           <Image className="w-32 h-32 z-5 p-1 rounded-full translate-y-[-60px]  bg-blend-normal ring-2 ring-gray-300 dark:ring-gray-500" src={card.image} alt="Bordered avatar"/>
