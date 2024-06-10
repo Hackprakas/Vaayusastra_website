@@ -78,7 +78,7 @@ export const navigation: NavigationItem[] = [
     id: "2",
     title: "Papers",
     url: "#",
-    link:null
+    link:"/papers"
   },
   {
     id: "3",
