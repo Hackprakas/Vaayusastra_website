@@ -411,7 +411,76 @@ export const benefits: BenefitItem[] = [
   },
 ];
 
+interface PaperItem {
+  id: string;
+  title: string;
+  text: string;
+  backgroundUrl: string;
+  iconUrl: string;
+  imageUrl: any;
+  light?: boolean;
+  url:string
+}
 
+export const Papers: PaperItem[] = [
+  {
+    id: "0",
+    title: "Weekend Batches",
+    text: "Engaging tales, theater illuminate aeronautics, teaching rocket, satellite, drone physics",
+    backgroundUrl: "./src/assets/benefits/card-1.svg",
+    iconUrl: benefitIcon1,
+    imageUrl: benefitImage2,
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSebE2XSGVP4iR9xD97bYDVoW3npARfH6TaN6cc7lNPJv0PqqA/viewform",
+  },
+  {
+    id: "1",
+    title: "10-Days Camp",
+    text: "Integrating arts with academics cultivates a holistic skill set, driving both achievement and innovation.",
+    backgroundUrl: "./src/assets/benefits/card-2.svg",
+    iconUrl: benefitIcon2,
+    imageUrl: benefitImage2,
+    light: true,
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSd8hAT8Ja9qqPpM_vPuu-gU-O8X859HlBsryVpo6SyX9PO1Zw/viewform",
+  },
+  {
+    id: "2",
+    title: "Online-Air Science through Mythology",
+    text: "Unique curriculum integrates stories, theater to teach aeronautics, aerospace physics.",
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: benefitIcon3,
+    imageUrl: benefitImage2,
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSd8hAT8Ja9qqPpM_vPuu-gU-O8X859HlBsryVpo6SyX9PO1Zw/viewform",
+  },
+  {
+    id: "3",
+    title: "Advanced Level - College Program",
+    text: "Industry-led hands-on Aeronautics/Aerospace programs tackle college knowledge transfer challenges.",
+    backgroundUrl: "./src/assets/benefits/card-4.svg",
+    iconUrl: benefitIcon4,
+    imageUrl: benefitImage2,
+    light: true,
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSe4UNinNksujeVkuf21jgEjz-juJzOHE46G5qkJQTwW55rB4Q/viewform",
+  },
+  {
+    id: "4",
+    title: "AASSC Certification Program",
+    text: "Integrates CBSE, ICSE, NASA curriculum, hands-on models for aerospace education.",
+    backgroundUrl: "./src/assets/benefits/card-5.svg",
+    iconUrl: benefitIcon1,
+    imageUrl: benefitImage2,
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSe-a_kLr4c_cIgHCzBUIE1VzF75KVZW_4Y-E-7O9e_DJ81AaQ/viewform",
+  },
+  {
+    id: "5",
+    title: "Summer Camp - 2024",
+    text: "Integrating creative disciplines enriches education beyond traditional theoretical learning and marks-based assessment.",
+    backgroundUrl: "./src/assets/benefits/card-6.svg",
+    iconUrl: benefitIcon2,
+    imageUrl: benefitImage2,
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSd8hAT8Ja9qqPpM_vPuu-gU-O8X859HlBsryVpo6SyX9PO1Zw/viewform",
+
+  },
+];
 
 interface SocialItem {
   id: string;

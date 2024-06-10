@@ -89,7 +89,7 @@ const Navbar: React.FC<NavbarProps> = ({data}) => {
         <Link href="/signup">
 
 
-        <Button white={false}className=" sim-card-button hidden lg:flex " >
+        <Button white={false}className="sim-card-button hidden lg:flex " >
           Sign in
         </Button>
         </Link>
