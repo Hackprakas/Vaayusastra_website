@@ -84,7 +84,7 @@ const Navbar: React.FC<NavbarProps> = ({data}) => {
           href="#signup"
           className="button hidden mr-8 text-n-1/50 transition-colors bg hover:text-n-1 lg:block"
         >
-          New account
+          Hindu-Young-world
         </a>
         <Link href="/signup">
 

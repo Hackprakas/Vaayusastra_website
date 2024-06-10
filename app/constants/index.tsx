@@ -597,7 +597,7 @@ export const testmon = [
   {id: 17,image: grid, text: "Instead of teaching students the technical terms of a motion detector, if you explain it to them through a story, it will register in their minds. it makes learning easier. that is the teaching method i prefer.",name:"Balajiram.S",designation:"Trainer",company:"Vaayusastra Aerospace"},
   {id :18,image: grid, text: "By using drama as a learning tool, young people can add purpose and value to their creativity. It lets them find their own unique ways to discover the answers for themselves. It was fun mixing theatre and science.",name:"Shivakumar KM ",designation:"Theatre artist"},
   {id :19,image: grid, text: "When everything seems to be going against you, remember that an airplane takes off against the wind, not with it and sky is the limit. To those who love Aviation and Aerospace, Sky is the home! That i learned from Vaayusastra.",name:"Aravind Muruganandam",designation:"Aeronautical Engineer/Research intern",company:"Vaayusastra Aerospace"},
-  {id :20,image: grid, text: "Legends, myths, poems, stories, and plays used in our stories teach students about social issues and conflicts from cultures past, present, all over the world as well as help them grasp concepts easily. Apart from that, the hands on models we work on is the most interesting part. We never stop researching and developing new ideas",name:"Gopal Research",designation:"Intern",company:"Vaayusastra Aerospace"},
+  {id :20,image: grid, text: "Legends, myths, poems, stories, and plays used in our stories teach students about social issues and conflicts from cultures past, present, all over the world as well as help them grasp concepts easily. Apart from that, the hands on models we work on is the most interesting part. We never stop researching and developing new ideas",name:"Gopal",designation:"Research Intern",company:"Vaayusastra Aerospace"},
   {id :21,image: grid, text: "Theatre in Education encourages young people to develop enquiry skills. It questions what influences are around them, which in turn impacts on behaviours and attitude as well as inspires them to make informed, healthy life choices. The ability to portray topics in a very visual way and to provide a context for the information given is identified as a strength of Theatre in Education in that it allows young people to make inferences about what the information provided means for themselves in everyday life",name:"Puviyarasu Manikandan ",designation:"Trainer",company:"Vaayusastra Aerospace"},
   {id :22,image: grid, text: "First, we just started with Set1. We didnt know much about Vaayusastra but we knew about our daughter's interest in science. Set1 completed and it continued upto Set8 and that's where Jagadeesh Sir identified my daughter's talent and provoked her to do a PPT which received good appreciation from Jagadeesh sir and she started with a complete project study on the same topic. Now, she has been constantly researching more topics like Cobots, Nibiru etc., which always makes her think differently. She also started attending her Level1 in Vayusastra campus and I confidently tell that my daughter will reach her dreams through this team.",name:"Bhairavi KΗ Vivekananda",designation:"Level II"},
   {id :23,image: grid, text: "Very much useful course for beginners to learn about Aeronautical and Space",name:"Aswin",designation:"3rd year Electronic and communication",company:"Rajalakshmi institute of technology"},
@@ -611,12 +611,100 @@ export const testmon = [
   {id :28,image: grid, text: "I think a word can sum up on what I am saying. AMAZING! The Trigger the Spark modules did trigger the little spark inside my body. I have been researching on many topics since I have attended set-7 and All these started, when I got a topic, which was taught during the 2nd Last class of Set-7, I researched a lot. Calculated a lot. And finally, all these calculations were jotted down in a PPT, and after presenting, that day, I felt myself being successful telling me do another research. So, I started doing my second one, and whenever I wanted to present, I used to create a topic quickly and present about it. Vaayusastra Aerospace is a good place for kids who love Science, Space and Aerospace. And now, I have presented more than 10-11 Researches, that I have done. And I feel I need to sum up now by saying tthat,VAAYUSASTRA AERSOPACE'S TRIGGER THE SPARK MODULE WILL TRIGGER A SPARK IN YOUR BODY TO GIVE YOUR IDEAS.",name:"Avinash",company:"Shraddha Children's Academy"},
   {id :29,image: grid, text: "I enjoyed the ,Basic Aerodynamics program which was Innovative, Insightful and helped me to upgrade my knowledge in the field of Aerodynamics. The concepts were explained using prototypes and in a gamified approach which helped in easy understanding of complex topics. Thanks to Vaayusastra and team for the fun filled blended approach and I look forward to sign up for the upcoming levels.",name:"Rakshansai Shivakumar",designation:"Grade:-8",company:"DAV Adambakkam"}
 
-  
-  
-  
-  
-  
+];
 
+export const hindu = [
+  { id: 1, image: grid, text: "Beginning a new fortnightly column that combines storytelling with aeronautical science. In this episode, King Ravana’s son Meghnath undergoes his first flying lesson — with a paper plane!", name:"HINDU YOUNG WORLD:EPISODE 1",title:"Take to the skies",url:"https://www.thehindu.com/children/take-to-the-skies/article33780060.ece"},
+
+  { id: 2, image: grid, text: "Meghnath gets more curious about Ravana’s flying machines. He learns more about them while also teaching his father a lesson of his own.. ",name:"HINDU YOUNG WORLD:EPISODE 2 ",title:"Of flying and freedom" ,url:"https://www.thehindu.com/children/of-flying-and-freedom/article33902666.ece"},
+
+  { id: 3, image: grid, text: "While on a quest to grab a “fruit”, Hanuman makes friends with some invisible matter who, he learns, are not as weak as they seem...", name:"HINDU YOUNG WORLD:EPISODE 3",title:"Lessons in the air",url:"https://www.thehindu.com/children/lessons-in-the-air/article34014526.ece"},
+
+  {id: 4, image: grid, text: "As he travels at a super speed, way above the Earth’s atmosphere, Hanuman encounters an obstacle in his journey towards the “orange”.",name:"HINDU YOUNG WORLD:EPISODE 4",title:"top of the world",url:"https://www.thehindu.com/todays-paper/tp-features/tp-youngworld/on-top-o-f-the-world/article34166502.ece"},
+
+  {id : 5,image: grid, text:"Both Hanuman and Meghnath realise the importance of knowledge and determination. And another lesson in flying...",name:"HINDU YOUNG WORLD:EPISODE 5",title:"The power of perseverance",url:"https://www.thehindu.com/children/the-power-of-perseverance/article34241897.ece"},
+
+  {id: 6,image: grid,text: "Megnath is surprised that the minutest elements have the power to create the most powerful energy.",name:"HINDU YOUNG WORLD:EPISODE 6",title:"The real power",url:"https://www.thehindu.com/children/the-real-power/article34412956.ece"},
+
+  {id: 7,image: grid, text: "The air molecules take the opportunity to teach Hanuman exactly what went on when he flew towards the sun.",name:"HINDU YOUNG WORLD:EPISODE 7",title:"The science behind his flight",url:"https://www.thehindu.com/children/the-science-behind-his-flight/article34749300.ece"},
+
+  {id: 8,image: grid, text: "Hanuman finds out how the Moon orbits the Earth and also makes a new friend.",name:"HINDU YOUNG WORLD:EPISODE 8",title:"Power of the pull",url:"https://www.thehindu.com/children/power-of-the-pull/article34877783.ece"},
+
+  {id: 9,image: grid, text: "Meghnath is eager to learn the secrets behind Lord Vishnu’s weapons and, as it turns out, it’s all Science again!",name:"HINDU YOUNG WORLD:EPISODE 9",title:"Ready for take off",url:"https://www.thehindu.com/todays-paper/tp-features/tp-youngworld/ready-for-take-off/article35227503.ece"},
+
+  {id: 10,image: grid,text: "Aerofoil, wing, inverted fish... what does all of this have to do with flying? Hanuman finds out.",name:"HINDU YOUNG WORLD:EPISODE 10",title:"It's all in the shape",url:"https://www.thehindu.com/todays-paper/tp-features/tp-youngworld/its-all-in-the-shape/article35619267.ece"},
+
+  {id: 11,image: grid, text: "On his way to meet Guru Sukracharya, Meghnath is amazed to learn and experience new ways of flying. And there’s a surprise in store...",name:"HINDU YOUNG WORLD:EPISODE 11",title:"Sailing across space",url:"https://www.thehindu.com/children/sailing-across-space/article36053965.ece"},
+
+  {id: 12,image: grid, text: "On their way to meet Sukracharya, Meghnath is full of questions about buoyancy, how Venus is like Earth, and more...",name:"HINDU YOUNG WORLD:EPISODE 12",title:"Designing a simple spaceship",url:"https://www.thehindu.com/children/designing-a-simple-spaceship/article36296799.ece"},
+
+  {id: 13,image: grid, text: "At Tripura, Meghnath meets Sukracharya and dives straight into learning. His first lesson: about electrolysis.",name:"HINDU YOUNG WORLD:EPISODE 13",title:"The light of knowledge",url:"https://www.thehindu.com/children/the-light-of-knowledge/article36537320.ece"},
+
+  {id: 14,image: grid, text: "Hanuman’s day is turning out to be super exciting with tasty snacks and the rockets he is able to make at home, thanks to Nala.",name:"HINDU YOUNG WORLD:EPISODE 14",title:"Ready for take off!",url:"https://www.thehindu.com/children/ready-for-take-off/article37157885.ece"},
+
+  {id: 15,image: grid, text: "Meghnath learns how sages used to communicate and meet with ethereal beings.",name:"HINDU YOUNG WORLD:EPISODE 15",title:"Across space and time",url:"https://www.thehindu.com/children/across-space-and-time/article37942826.ece"},
+
+  {id: 16,image: grid, text: "Sukracharya tells Meghnath about wormholes and how they were used to communicate with ethereal beings.",name:"HINDU YOUNG WORLD:EPISODE 16",title:"Travelling through time",url:"https://ywc.thehindu.com/articles/travelling-through-time-2/?is_home_article=1"},
+
+  {id: 17,image: grid, text: "Hanuman learns about the Wright Brothers’ determination and perseverance in building the world’s first successful motor-operated aeroplane.",name:"HINDU YOUNG WORLD:EPISODE 17",title:"Inspired by Nature",url:"https://www.thehindu.com/children/inspired-by-nature/article38281179.ece"},
+
+  {id :18,image: grid, text: "Hanuman and Nala meet a wingless warrior Sampati who teaches them the science of flying.",name:"HINDU YOUNG WORLD:EPISODE 18",title:"Swimming in the air",url:"https://www.thehindu.com/children/swimming-in-the-air/article65048207.ece"},
+
+  {id :19,image: grid, text: "Jatayu’s epic flight - Sampati begins the story of how his wings caught fire.",name:"HINDU YOUNG WORLD:EPISODE 19",title:"Jatayu’s epic flight",url:"https://www.thehindu.com/children/jatayus-epic-flight/article65183077.ece"},
+
+  {id :20,image: grid, text: "Nala gives a curious Hanuman a lecture on magnetism, as Jatayu and Sampati listen in.",name:"HINDU YOUNG WORLD:EPISODE 20",title:"Magnetic attraction",url:"https://www.thehindu.com/children/magnetic-attraction/article65230996.ece"},
+
+ {id: 21,image: grid, text: "When things heat up - Sampati finally explains how his wings got burnt.",name:"HINDU YOUNG WORLD:EPISODE 21",title:"When things heat up",url:"https://www.thehindu.com/children/when-things-heat-up/article65267238.ece?fbclid=IwAR1I4csrk9cIH6OvaqQ4oTSYtI5ZiiKiFaLV4L6-XJk5RARyZhyPuE6YvLA"},
+
+  {id: 22,image: grid, text: "Having learnt from the Trinity, Meghnath now seeks to learn more...",name:"HINDU YOUNG WORLD:EPISODE 22",title:"Energy and Quantum physics",url:"https://www.thehindu.com/children/meghnath-meets-shakti/article65477162.ece"},
+
+  {id :23,image: grid, text: "Nala and Hanuman build an air-powered vehicle to help them meet someone who is smarter and stronger than Nala himself!",name:"HINDU YOUNG WORLD:EPISODE 23",title:"Unravelling a surprise",url:"https://www.thehindu.com/children/unravelling-a-surprise/article65578864.ece"},
+
+  {id :24,image: grid, text: "Hanuman hears about the curse on Nala and Nila, one that will have an impact in the future...",name:"HINDU YOUNG WORLD:EPISODE 24",title:"Can stones float",url:"https://www.thehindu.com/children/can-stones-float/article65660738.ece"},
+
+  {id :25,image: grid, text: "Meghnath is intrigued to learn about a technology that takes on another...",name:"HINDU YOUNG WORLD:EPISODE 25",title:"On Stealth mode",url:"https://www.thehindu.com/children/on-stealth-mode/article65753834.ece"},
+
+  {id: 26,image: grid, text: "Nala and Hanuman learn about the centre of gravity from Nila",name:"HINDU YOUNG WORLD:EPISODE 26",title:"Balancing act",url:"https://www.thehindu.com/children/balancing-act/article65827648.ece?homepage=true"},
+
+  {id: 27,image: grid, text: "Nala, Nila and Hanuman try to understand the different types of forces.",name:"HINDU YOUNG WORLD:EPISODE 27",title:"Forces that power us",url:"https://www.thehindu.com/children/forces-that-power-us/article65886470.ece"},
+
+  {id :28,image: grid, text: "Meghnath learns about the different types of weapons that add to Goddess Durga powers",name:"HINDU YOUNG WORLD:EPISODE 28",title:"Weapons of power",url:"https://www.thehindu.com/children/weapons-of-power/article65965548.ece"},
+
+  {id :29,image: grid, text: "Discussions about weapons prompts Meghnath to build his own little rocket launcher. You can too!",name:"HINDU YOUNG WORLD:EPISODE 29",title:"The potential of power",url:"https://www.thehindu.com/children/the-potential-of-power/article66059410.ece"},
+
+  {id :30,image: grid, text: "This vanara king learns an illusionary trick from the master of illusions.",name:"HINDU YOUNG WORLD:EPISODE 30",title:"Smoke effect",url:"https://www.thehindu.com/children/smoke-effect/article66111034.ece"},
+
+  {id: 31,image: grid, text: "Vali reveals the secret to wireless electricity transfer that could work against him in the future...",name:"HINDU YOUNG WORLD:EPISODE 31",title:"electrifying invention",url:"https://www.thehindu.com/children/electrifying-invention/article66168755.ece"},
+
+  {id: 32,image: grid, text: "Sugriva learns that humans owe a lot of their scientific knowledge and inspiration for inventions to Nature.",name:"HINDU YOUNG WORLD:EPISODE 32",title:"Nature, the teacher",url:"https://www.thehindu.com/children/nature-the-teacher/article66232086.ece"},
+
+  {id :33,image: grid, text: "Meghnath learns about a principle that will give him the upper hand against his opponents during war", name:"HINDU YOUNG WORLD:EPISODE 33",title:"Getting crafty",url:"https://www.thehindu.com/children/getting-crafty/article66357853.ece"},
+
+  {id :34,image: grid, text: "Meghnath discovers that Sukracharya’s life could have a connection to quantum physics!",name:"HINDU YOUNG WORLD:EPISODE 34",title:"A matter of favouritism",url:"https://www.thehindu.com/children/a-matter-of-favouritism/article66453068.ece"},
+
+  {id :35,image: grid, text: "On National Science Day, Vali learns about the science behind Nature’s beautiful art.",name:"HINDU YOUNG WORLD:EPISODE 35",title:"The artist in the sky",url:"https://www.thehindu.com/children/the-artist-in-the-sky/article66509643.ece"},
+
+  {id :36,image: grid, text: "Sukracharya draws a parallel between the churning of the ocean and the black hole phenomenon",name:"HINDU YOUNG WORLD:EPISODE 36",title:"Churning the 'matter'",url:"https://www.thehindu.com/children/churning-the-matter/article66562599.ece"},
+
+  {id :37,image: grid, text: "Sukracharya continues to narrate the story of how more matter came into the universe.",name:"HINDU YOUNG WORLD :EPISODE 37",title:"A baffling mystery",url:"https://www.thehindu.com/children/churning-the-matter/article66562599.ece"},
+
+  {id :38,image: grid, text: "Vali learns about the power of sound vibrations and the patterns they create.",name:"HINDU YOUNG WORLD : EPISODE 38",title:"Drawing with music",url:"https://www.thehindu.com/children/drawing-with-music/article66705743.ece"},
+
+    {id :39,image: grid, text: "Vaayu helps Hanuman tick things off his bucket list starting with a supersonic flight and view through the vortex.", name:"HINDU YOUNG WORLD:EPISODE 39",title:"A view like no other",url:"https://www.thehindu.com/children/a-view-like-no-other/article66751540.ece"},
+  
+    {id :40,image: grid, text: "Vaayu explains the relationship between the moon and the stars to Hanuman",name:"HINDU YOUNG WORLD:EPISODE 40",title:"Celestial relationships",url:"https://www.thehindu.com/children/celestial-relationships/article66911944.ece"},
+  
+    {id :41,image: grid, text: "​Hanuman hears a story from Japan and sets off to explore the surface of the Moon remotely",name:"HINDU YOUNG WORLD:EPISODE 41",title:"On a lunar mission",url:"https://www.thehindu.com/children/on-a-lunar-mission/article66959769.ece"},
+  
+    {id :42,image: grid, text: "Hanuman learns about the Indian version of the rabbit on the Moon and is introduced to Sputnik",name:"HINDU YOUNG WORLD:EPISODE 42",title:"View from space",url:"https://www.thehindu.com/children/view-from-space/article67016439.ece"},
+  
+    {id :43,image: grid, text: "Hanuman learns more about aerodynamics as he listens to the story of his birth",name:"HINDU YOUNG WORLD:EPISODE 43",title:"All in the shape",url:"https://www.thehindu.com/children/all-in-the-shape/article67056945.ece"},
+  
+    {id :44,image: grid, text: "Hanuman learns why Jambhavan sleeps for almost six months of the year.",name:"HINDU YOUNG WORLD:EPISODE 44",title:"A hibernating mentor",url:"https://www.thehindu.com/children/a-hibernating-mentor/article67160987.ece"},
+
+  {id :45,image: grid, text: "Hanuman meets Jambhavan and learns more about his mentor.",name:"HINDU YOUNG WORLD:EPISODE 45",title:"The story of Jambhavan",url:"https://www.thehindu.com/children/the-story-of-jambhavan/article67247482.ece"},
+
+  {id :46,image: grid, text: "Hanuman and Nala learn about the various aspects of music from jambhava and also build a spacecraft",name:"HINDU YOUNG WORLD:EPISODE 46",title:"A musical interlude",url:"https://www.thehindu.com/children/a-musical-interlude/article67298183.ece"}
 
   
 
