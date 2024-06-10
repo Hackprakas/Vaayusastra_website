@@ -47,6 +47,9 @@ import rounded7 from "../components/assets/roadmap/rounded7.png"
 import rounded8 from "../components/assets/roadmap/rounded8.png"
 import rounded9 from "../components/assets/roadmap/rounded9.jpg"
 import rounded10 from "../components/assets/roadmap/rounded10.jpg"
+import cards1 from "../components/assets/benefits/card-7.svg"
+import cards2 from "../components/assets/benefits/card-8.svg"
+import cards3 from "../components/assets/benefits/card-9.svg"
 
 import grid from "../components/assets/grid.png"
 
@@ -486,7 +489,7 @@ export const Papers: PaperItem[] = [
     id: "6",
     title: "Vaayusastra combines theatre with learning",
     text: "This Chennai start-up's aeronautics summer camps are delivered using theatre, the epics and lots of Science",
-    backgroundUrl: "./src/assets/benefits/card-6.svg",
+    backgroundUrl:"./src/assets/benefits/card-7.svg",
     iconUrl: benefitIcon3,
     imageUrl: benefitImage2,
     url: "https://www.edexlive.com/happening/2021/may/03/chennai-start-ups-aeronautics-summer-camps-use-theatre-the-epics-and-lots-of-science-20305.html",
@@ -496,7 +499,7 @@ export const Papers: PaperItem[] = [
     id: "7",
     title: "Hindu Young World",
     text: "Mythology + Science stories by Vaayusastra CEO Jagadeesh kanna",
-    backgroundUrl: "./src/assets/benefits/card-6.svg",
+    backgroundUrl: "./src/assets/benefits/card-8.svg",
     iconUrl: benefitIcon4,
     imageUrl: benefitImage2,
     url: "#",
@@ -506,7 +509,7 @@ export const Papers: PaperItem[] = [
     id: "8",
     title: "Naan Mudhalvan",
     text: "Students under ‘Naan Mudhalvan’ scheme will now get to learn about drones and AI",
-    backgroundUrl: "./src/assets/benefits/card-6.svg",
+    backgroundUrl: "./src/assets/benefits/card-9.svg",
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
     url: "https://www.thehindu.com/news/national/tamil-nadu/students-under-naan-mudhalvan-scheme-will-now-get-to-learn-about-drones-and-ai/article67106626.ece",
