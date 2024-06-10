@@ -614,25 +614,25 @@ export const testmon = [
 ];
 
 export const hindu = [
-  { id: 1, image: grid, text: "Beginning a new fortnightly column that combines storytelling with aeronautical science. In this episode, King Ravana’s son Meghnath undergoes his first flying lesson — with a paper plane!", name:"HINDU YOUNG WORLD:EPISODE 1",title:"Take to the skies",url:"https://www.thehindu.com/children/take-to-the-skies/article33780060.ece"},
+  { id: 1, image: grid, text: "King Ravana's son Meghnath begins his first flying lesson, discovering aeronautical principles through the magic of a simple paper plane.", name:"HINDU YOUNG WORLD:EPISODE 1",title:"Take to the skies",url:"https://www.thehindu.com/children/take-to-the-skies/article33780060.ece"},
 
   { id: 2, image: grid, text: "Meghnath gets more curious about Ravana’s flying machines. He learns more about them while also teaching his father a lesson of his own.. ",name:"HINDU YOUNG WORLD:EPISODE 2 ",title:"Of flying and freedom" ,url:"https://www.thehindu.com/children/of-flying-and-freedom/article33902666.ece"},
 
-  { id: 3, image: grid, text: "While on a quest to grab a “fruit”, Hanuman makes friends with some invisible matter who, he learns, are not as weak as they seem...", name:"HINDU YOUNG WORLD:EPISODE 3",title:"Lessons in the air",url:"https://www.thehindu.com/children/lessons-in-the-air/article34014526.ece"},
+  { id: 3, image: grid, text: "On a quest for a fruit, Hanuman  befriends invisible  matter, discovering  their hidden  strength and forming an  unexpected  alliance.", name:"HINDU YOUNG WORLD:EPISODE 3",title:"Lessons in the air",url:"https://www.thehindu.com/children/lessons-in-the-air/article34014526.ece"},
 
-  {id: 4, image: grid, text: "As he travels at a super speed, way above the Earth’s atmosphere, Hanuman encounters an obstacle in his journey towards the “orange”.",name:"HINDU YOUNG WORLD:EPISODE 4",title:"top of the world",url:"https://www.thehindu.com/todays-paper/tp-features/tp-youngworld/on-top-o-f-the-world/article34166502.ece"},
+  {id: 4, image: grid, text: "Traveling  at super  speed  above   Earth's  atmosphere, Hanuman  faces an unexpected obstacle in his  quest  for the  elusive orange",name:"HINDU YOUNG WORLD:EPISODE 4",title:"top of the world",url:"https://www.thehindu.com/todays-paper/tp-features/tp-youngworld/on-top-o-f-the-world/article34166502.ece"},
 
-  {id : 5,image: grid, text:"Both Hanuman and Meghnath realise the importance of knowledge and determination. And another lesson in flying...",name:"HINDU YOUNG WORLD:EPISODE 5",title:"The power of perseverance",url:"https://www.thehindu.com/children/the-power-of-perseverance/article34241897.ece"},
+  {id : 5,image: grid, text:"Hanuman  and  Meghnath  realize the  power of  knowledge and the determination, gaining another crucial  lesson in the  art of flying.",name:"HINDU YOUNG WORLD:EPISODE 5",title:"The power of perseverance",url:"https://www.thehindu.com/children/the-power-of-perseverance/article34241897.ece"},
 
-  {id: 6,image: grid,text: "Megnath is surprised that the minutest elements have the power to create the most powerful energy.",name:"HINDU YOUNG WORLD:EPISODE 6",title:"The real power",url:"https://www.thehindu.com/children/the-real-power/article34412956.ece"},
+  {id: 6,image: grid,text: "Meghnath is astonished to discover that the tiniest elements can generate the most powerful energy, altering his understanding of power.",name:"HINDU YOUNG WORLD:EPISODE 6",title:"The real power",url:"https://www.thehindu.com/children/the-real-power/article34412956.ece"},
 
-  {id: 7,image: grid, text: "The air molecules take the opportunity to teach Hanuman exactly what went on when he flew towards the sun.",name:"HINDU YOUNG WORLD:EPISODE 7",title:"The science behind his flight",url:"https://www.thehindu.com/children/the-science-behind-his-flight/article34749300.ece"},
+  {id: 7,image: grid, text: "Air molecules explain to Hanuman the true events and forces at play during his legendary flight towards the sun.",name:"HINDU YOUNG WORLD:EPISODE 7",title:"The science behind his flight",url:"https://www.thehindu.com/children/the-science-behind-his-flight/article34749300.ece"},
 
-  {id: 8,image: grid, text: "Hanuman finds out how the Moon orbits the Earth and also makes a new friend.",name:"HINDU YOUNG WORLD:EPISODE 8",title:"Power of the pull",url:"https://www.thehindu.com/children/power-of-the-pull/article34877783.ece"},
+  {id: 8,image: grid, text: "Hanuman learns about the Moon's orbit around the Earth and makes a new celestial friend during his journey.",name:"HINDU YOUNG WORLD:EPISODE 8",title:"Power of the pull",url:"https://www.thehindu.com/children/power-of-the-pull/article34877783.ece"},
 
   {id: 9,image: grid, text: "Meghnath is eager to learn the secrets behind Lord Vishnu’s weapons and, as it turns out, it’s all Science again!",name:"HINDU YOUNG WORLD:EPISODE 9",title:"Ready for take off",url:"https://www.thehindu.com/todays-paper/tp-features/tp-youngworld/ready-for-take-off/article35227503.ece"},
 
-  {id: 10,image: grid,text: "Aerofoil, wing, inverted fish... what does all of this have to do with flying? Hanuman finds out.",name:"HINDU YOUNG WORLD:EPISODE 10",title:"It's all in the shape",url:"https://www.thehindu.com/todays-paper/tp-features/tp-youngworld/its-all-in-the-shape/article35619267.ece"},
+  {id: 10,image: grid,text: "Hanuman discovers the principles of flight, learning how aerofoils and even inverted fish shapes contribute to lift in flying.",name:"HINDU YOUNG WORLD:EPISODE 10",title:"It's all in the shape",url:"https://www.thehindu.com/todays-paper/tp-features/tp-youngworld/its-all-in-the-shape/article35619267.ece"},
 
   {id: 11,image: grid, text: "On his way to meet Guru Sukracharya, Meghnath is amazed to learn and experience new ways of flying. And there’s a surprise in store...",name:"HINDU YOUNG WORLD:EPISODE 11",title:"Sailing across space",url:"https://www.thehindu.com/children/sailing-across-space/article36053965.ece"},
 
@@ -642,13 +642,13 @@ export const hindu = [
 
   {id: 14,image: grid, text: "Hanuman’s day is turning out to be super exciting with tasty snacks and the rockets he is able to make at home, thanks to Nala.",name:"HINDU YOUNG WORLD:EPISODE 14",title:"Ready for take off!",url:"https://www.thehindu.com/children/ready-for-take-off/article37157885.ece"},
 
-  {id: 15,image: grid, text: "Meghnath learns how sages used to communicate and meet with ethereal beings.",name:"HINDU YOUNG WORLD:EPISODE 15",title:"Across space and time",url:"https://www.thehindu.com/children/across-space-and-time/article37942826.ece"},
+  {id: 15,image: grid, text: "Meghnath learns ancient sage techniques for communicating and ethereal beings, unlocking the secrets of spiritual enlightenment.",name:"HINDU YOUNG WORLD:EPISODE 15",title:"Across space and time",url:"https://www.thehindu.com/children/across-space-and-time/article37942826.ece"},
 
-  {id: 16,image: grid, text: "Sukracharya tells Meghnath about wormholes and how they were used to communicate with ethereal beings.",name:"HINDU YOUNG WORLD:EPISODE 16",title:"Travelling through time",url:"https://ywc.thehindu.com/articles/travelling-through-time-2/?is_home_article=1"},
+  {id: 16,image: grid, text: "Sukracharya enlightens Meghnath on wormholes, portals for communicating with ethereal beings, unveiling ancient methods of celestial connection and communication.",name:"HINDU YOUNG WORLD:EPISODE 16",title:"Travelling through time",url:"https://ywc.thehindu.com/articles/travelling-through-time-2/?is_home_article=1"},
 
-  {id: 17,image: grid, text: "Hanuman learns about the Wright Brothers’ determination and perseverance in building the world’s first successful motor-operated aeroplane.",name:"HINDU YOUNG WORLD:EPISODE 17",title:"Inspired by Nature",url:"https://www.thehindu.com/children/inspired-by-nature/article38281179.ece"},
+  {id: 17,image: grid, text: "Hanuman discovers the Wright Brother's perseverance in creating the successful motor-operated airplane, inspiring determination in flight.",name:"HINDU YOUNG WORLD:EPISODE 17",title:"Inspired by Nature",url:"https://www.thehindu.com/children/inspired-by-nature/article38281179.ece"},
 
-  {id :18,image: grid, text: "Hanuman and Nala meet a wingless warrior Sampati who teaches them the science of flying.",name:"HINDU YOUNG WORLD:EPISODE 18",title:"Swimming in the air",url:"https://www.thehindu.com/children/swimming-in-the-air/article65048207.ece"},
+  {id :18,image: grid, text: "Hanuman and Nala encounter wingless warrior Sampati, who imparts the science of flight, revealing the secrets of aerial navigation and locomotion.",name:"HINDU YOUNG WORLD:EPISODE 18",title:"Swimming in the air",url:"https://www.thehindu.com/children/swimming-in-the-air/article65048207.ece"},
 
   {id :19,image: grid, text: "Jatayu’s epic flight - Sampati begins the story of how his wings caught fire.",name:"HINDU YOUNG WORLD:EPISODE 19",title:"Jatayu’s epic flight",url:"https://www.thehindu.com/children/jatayus-epic-flight/article65183077.ece"},
 
@@ -658,7 +658,7 @@ export const hindu = [
 
   {id: 22,image: grid, text: "Having learnt from the Trinity, Meghnath now seeks to learn more...",name:"HINDU YOUNG WORLD:EPISODE 22",title:"Energy and Quantum physics",url:"https://www.thehindu.com/children/meghnath-meets-shakti/article65477162.ece"},
 
-  {id :23,image: grid, text: "Nala and Hanuman build an air-powered vehicle to help them meet someone who is smarter and stronger than Nala himself!",name:"HINDU YOUNG WORLD:EPISODE 23",title:"Unravelling a surprise",url:"https://www.thehindu.com/children/unravelling-a-surprise/article65578864.ece"},
+  {id :23,image: grid, text: "Nala and Hanuman craft an air-powered vehicle to meet someone smarter and stronger.",name:"HINDU YOUNG WORLD:EPISODE 23",title:"Unravelling a surprise",url:"https://www.thehindu.com/children/unravelling-a-surprise/article65578864.ece"},
 
   {id :24,image: grid, text: "Hanuman hears about the curse on Nala and Nila, one that will have an impact in the future...",name:"HINDU YOUNG WORLD:EPISODE 24",title:"Can stones float",url:"https://www.thehindu.com/children/can-stones-float/article65660738.ece"},
 
