@@ -502,6 +502,7 @@ export const Papers: PaperItem[] = [
     backgroundUrl: "./src/assets/benefits/card-8.svg",
     iconUrl: benefitIcon4,
     imageUrl: benefitImage2,
+    light: true,
     url: "#",
 
   },
