@@ -17,7 +17,7 @@ const Course: React.FC = () => {
     
     <>
     <div>
-    <Navbar data={navigation} />
+    <Navbar data={navigation} position={true}/>
     <Section id="features">
       <div className="mt-20"> 
 

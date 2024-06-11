@@ -14,9 +14,10 @@ import Link from "next/link";
 
 interface NavbarProps {
   data: any; 
+  position:boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({data}) => {
+const Navbar: React.FC<NavbarProps> = ({data,position}) => {
   const [openNavigation, setOpenNavigation] = useState(false);
 
   const toggleNavigation = () => {
@@ -38,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({data}) => {
 
   return (
     <div
-      className={`sticky top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm  ${
+      className={`${position ? "fixed":"sticky"} top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm  ${
         openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
       }`}
     >

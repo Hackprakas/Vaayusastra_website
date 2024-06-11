@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <>
       <div>
-        <Navbar data={navigation} />
+        <Navbar data={navigation} position={false} />
         
           <div className="flex flex-col lg:flex-row h-screen justify-center  lg:justify-center xl:justify-between items-center px-6 lg:px-64 overflow-auto ">
             <div className="flex justify-center items-center  w-full lg:w-auto lg:mt-40 xl:mt-0">

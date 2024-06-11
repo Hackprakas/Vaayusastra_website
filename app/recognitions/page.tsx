@@ -11,7 +11,7 @@ import { navigation } from "../constants";
 function Recognitions() {
   return (
     <>
-      <Header data={navigation} />
+      <Header data={navigation} position={false}/>
       <div className="flex justify-center">
 
       <h4 className="h4 pt-32">Recognitions</h4>

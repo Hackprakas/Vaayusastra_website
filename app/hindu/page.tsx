@@ -18,7 +18,7 @@ function Testimonials() {
   return (
     <>
 <div>
- <Navbar data={navigation}/>
+ <Navbar data={navigation} position={true}/>
   
   <Section>
 

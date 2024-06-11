@@ -12,7 +12,7 @@ import Product from "./components/Product";
 export default function Page() {
   return (
     <div className="overflow-x-hidden">
-      <Navbar data={navigation} />
+      <Navbar data={navigation} position={true} />
       <Hero/>
       <Courses/>
       <Offering/>
