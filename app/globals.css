@@ -122,7 +122,10 @@
 }
 
 
+.slick-slide > div {
+  margin: 65px 10px;
 
+}
 
 @layer base {
   
