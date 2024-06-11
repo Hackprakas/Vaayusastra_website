@@ -143,6 +143,7 @@ import grid from "../components/assets/grid.png"
 
 import youtube from "../components/assets/socials/youtube.svg"
 import { text } from "node:stream/consumers";
+import { title } from "node:process";
 
 interface NavigationItem {
   id: string;
@@ -654,6 +655,50 @@ export const socials: SocialItem[] = [
   },
   
 ];
+export const calculator = [
+  {
+    id : 0,
+    title : "Weigth on All Planets",
+    text : "Calculate your weight on all planets",
+    onclick : "Weight",
+    
+  },
+  {
+    id : 1,
+    title : "Age on All Planets",
+    text : "Calculate your age on all planets",
+    onclick : "Age",
+    
+  },
+  {
+    id : 2,
+    title : "Temperature Calculator",
+    text : "Calculate your temperature easily",
+    onclick : "Temperature",
+    
+  },
+  {
+    id : 3,
+    title : "Mach Calculator",
+    text : "Calculate your speed easily",
+    onclick : "Mach",
+    
+  },
+  {
+    id : 4,
+    title : "Temperature At Altitude",
+    text : "Calculate your temperature at altitude",
+    onclick : "AltitudeTemp",
+    
+  },
+  {
+    id : 5,
+    title : "Momentum Calculator",
+    text : "Calculate your momentum",
+    onclick : "Momentum",
+    
+  },
+]
 export const cards = [
   { id: 1, image: grid, text: "ISRO" },
   { id: 2, image: grid, text: "CIAA & AIAASC" },
