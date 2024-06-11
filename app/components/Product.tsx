@@ -5,20 +5,16 @@ import Tagline from "./Tagline";
 import { Gradient } from "./design/Roadmap";
 import Image from "next/image";
 import { product, roadmap } from "../constants";
-import { Quote } from 'lucide-react';
-import { testmon } from "../constants";
+
 import Section from "./Section";
-import Navbar from "./navbar";
-import {navigation} from "../constants"
-import Footer from "./Footer";
-import {hindu} from "../constants"
+
 function Testimonials() {
   
 
   return (
     <>
 <div>
- <Navbar data={navigation}/>
+
   
   <Section>
 
