@@ -7,12 +7,13 @@ import google from "../../public/google3.png";
 import Footer from "../components/Footer";
 import Navbar from "../components/navbar";
 import { navigation } from "../constants";
+import { stars } from "../components/assets";
 
 export default function Page() {
   return (
     <>
       <div>
-        <Navbar data={navigation} position={false} />
+        <Navbar data={navigation} position={false} hide={true} />
         
           <div className="flex flex-col lg:flex-row h-screen justify-center  lg:justify-center xl:justify-between items-center px-6 lg:px-64 overflow-auto ">
             <div className="flex justify-center items-center  w-full lg:w-auto lg:mt-40 xl:mt-0">
@@ -118,7 +119,7 @@ export default function Page() {
                 </div>
               </div>
             </div>
-            <div className="hidden  md:hidden lg:hidden  xl:block justify-end lg:w-auto">
+            <div className="hidden md:hidden lg:hidden  xl:block justify-end lg:w-auto">
               <Image
                 src={image}
                 alt="loginlogo"

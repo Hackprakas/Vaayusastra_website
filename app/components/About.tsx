@@ -8,6 +8,7 @@ import { check2, grid, loading1 } from "./assets";
 import { Gradient } from "./design/Roadmap";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 
 interface RoadmapItem {
@@ -51,15 +52,6 @@ const Roadmap: React.FC = () => (
                     <Tagline>{item.date}</Tagline>
 
                     <div className="flex items-center px-4 py-1 bg-n-1 rounded text-n-8">
-                      {/* <Image
-                        className="mr-2.5"
-                        src={ check2 }
-                        width={16}
-                        height={16}
-                        alt="Check"
-                      /> */}
-
-                      {/* <div className="tagline">{status}</div> */}
                     </div>
                   {item.imageUrl &&(<Image className="w-32 h-32 p-1 rounded-full bg-blend-normal ring-2 ring-gray-300 dark:ring-gray-500" src={item.imageUrl} alt="Bordered avatar"/>)}  
                   </div>
@@ -78,7 +70,10 @@ const Roadmap: React.FC = () => (
       <div className="flex justify-center w-full mt-6 md:mt-8 xl:mt-10">
         <Link href="/calculator">
         <Button white >
-          SpaceGen
+          <div className="flex justify-center items-center gap-2">
+            SpaceTools
+            <ArrowRight size={24} />
+          </div>
         </Button>
         </Link>
       </div>

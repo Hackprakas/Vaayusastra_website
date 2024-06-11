@@ -15,9 +15,10 @@ import Link from "next/link";
 interface NavbarProps {
   data: any; 
   position:boolean;
+  hide:boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({data,position}) => {
+const Navbar: React.FC<NavbarProps> = ({data,position,hide}) => {
   const [openNavigation, setOpenNavigation] = useState(false);
 
   const toggleNavigation = () => {
@@ -62,7 +63,7 @@ const Navbar: React.FC<NavbarProps> = ({data,position}) => {
                   
                     href={item.url}
                     onClick={handleClick}
-                    className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
+                    className={`block ${hide ? "hidden":"block"} relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                       item.onlyMobile ? "lg:hidden" : ""
                     } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:text-n-1/50 lg:leading-5 lg:hover:text-n-1 xl:px-12`}
                   >
