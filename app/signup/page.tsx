@@ -13,7 +13,7 @@ export default function Page() {
     <>
       <div>
         <Navbar data={navigation} />
-        <div className=" pt-10 md:pt-12 lg:pt-15 xl:pt-12">
+        
           <div className="flex flex-col lg:flex-row h-screen justify-center  lg:justify-center xl:justify-between items-center px-6 lg:px-64 ">
             <div className="flex justify-center items-center  w-full lg:w-auto lg:mt-40 xl:mt-0">
               <div className="flex flex-col items-center bg-conic-gradient p-0.25 min-w-[300px] max-w-[400px] lg:min-w-[400px] lg:max-w-[500px] rounded-[2.5rem] my-36">
@@ -133,7 +133,7 @@ export default function Page() {
           </div>
           <Footer />
         </div>
-      </div>
+     
     </>
   );
 }
