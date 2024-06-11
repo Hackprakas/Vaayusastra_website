@@ -7,6 +7,7 @@ import Offering from "./components/Offering";
 import Footer from "./components/Footer";
 import Contactus from "./components/Contactus";
 import Testimonials  from "./components/testimonials";
+import Product from "./components/Product";
 
 export default function Page() {
   return (
@@ -15,6 +16,7 @@ export default function Page() {
       <Hero/>
       <Courses/>
       <Offering/>
+      <Product/>
       <About/>
       <Testimonials/>
       <Footer/>
