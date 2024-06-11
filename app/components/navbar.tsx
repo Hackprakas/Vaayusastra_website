@@ -45,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({data,position,hide}) => {
       }`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4 ">
-        <a className="block  xl:mr-8" href="#hero">
+        <a className="block  xl:mr-8" href="/">
           <Image src={logo} width={70} height={70} alt="Brainwave"  />
         </a>
           <p className=" h5 font-bold">Vaayusastra Aerospace</p>

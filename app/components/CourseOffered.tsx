@@ -37,13 +37,9 @@ const Course: React.FC = () => {
                     height={48}
                     alt={item.title}
                   />
-                  <a href={item.url}>
-                    <div className="flex">
-
-                   
-                  <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
-                    Learn more
-                  </p>
+                  <a href={item.url} className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
+                    <div className="flex justify-center items-center">
+                    learn more
                   <Arrow />
                   </div>
                   </a>
