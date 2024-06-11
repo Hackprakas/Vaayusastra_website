@@ -23,7 +23,7 @@ function Testimonials() {
 
   <Heading tag="Igniting Innovation" title="Products" />
   </div>
-    <div className=" m-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 space-y-2 ">
+    <div className=" m-6 md:m-16 lg:m-16 xl:m-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 space-y-2 ">
       
       {product.map((card) => (
         
