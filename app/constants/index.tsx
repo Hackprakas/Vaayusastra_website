@@ -97,6 +97,14 @@ import round43 from "../components/assets/hindu-images/round43.jpg"
 import round44 from "../components/assets/hindu-images/round44.jpg"
 import round45 from "../components/assets/hindu-images/round45.jpg"
 import round46 from "../components/assets/hindu-images/round46.jpg"
+import round47 from "../components/assets/hindu-images/round47.jpg"
+import round48 from "../components/assets/hindu-images/round48.jpg"
+import round49 from "../components/assets/hindu-images/round49.jpg"
+import round50 from "../components/assets/hindu-images/round50.jpg"
+import round51 from "../components/assets/hindu-images/round51.jpg"
+import round52 from "../components/assets/hindu-images/round52.jpg"
+import round53 from "../components/assets/hindu-images/round53.jpg"
+import round54 from "../components/assets/hindu-images/round54.jpg"
 
 import grid from "../components/assets/grid.png"
 
@@ -1030,8 +1038,78 @@ export const hindu = [
     name:"HINDU YOUNG WORLD:EPISODE 46",
     title:"A musical interlude",
     imageUrl: round46,
-    url:"https://www.thehindu.com/children/a-musical-interlude/article67298183.ece"}
+    url:"https://www.thehindu.com/children/a-musical-interlude/article67298183.ece"},
 
-  
+    {id :47,
+      image: round47,
+      text: "Before King Dasaratha tells the story of how he defeated the asura Shambara, he offers an explanation of the different kinds of aircrafts.",
+      name:"HINDU YOUNG WORLD:EPISODE 47",
+      title:"Powered by air",
+      imageUrl: round47 ,
+      url:"https://www.thehindu.com/children/powered-by-air/article67426300.ece"
+    },
+
+    {id :48,
+      image: round48,
+      text: "Dasaratha continues the story of how he defeated Shambara and how Kaikeyi helped him in the battle",
+      name:"HINDU YOUNG WORLD:EPISODE 48",
+      title:"A battle and two boons",
+      imageUrl: round48,
+      url:"https://www.thehindu.com/children/a-battle-and-two-boons/article67500452.ece"
+    },
+     
+     {id :49,
+      image: round49,
+      text: "Lakshmana and Shatrughna fall foul of Kaikeyi and Manthara but regain ground with a lesson in the science behind archery.",
+      name:"HINDU YOUNG WORLD:EPISODE 49",
+      title:"Enter the twins",
+      imageUrl: round49,
+      url:"https://www.thehindu.com/children/enter-the-twins/article67582682.ece"
+    },
+     
+    {id :50,
+      image: round50,
+      text: "Rama explains thrust vectoring and guided missile technology to Kaikeyi but also makes an enemy of Manthara.",
+      name:"HINDU YOUNG WORLD:EPISODE 50",
+      title:"The Prince of Ayodhya",
+      imageUrl: round50,
+      url:"https://www.thehindu.com/children/the-prince-of-ayodhya/article67644499.ece"
+    },
+     
+    {id :51,
+      image: round51,
+      text: "Kakabhushundi learns about the magnitude of the universe from Sage Lomasa",
+      name:"HINDU YOUNG WORLD:EPISODE 51",
+      title:"Of universes and multiverses",
+      imageUrl: round51,
+      url:"https://www.thehindu.com/children/of-universes-and-multiverses/article67743525.ece"
+    },
+
+    {id :52,
+      image: round52,
+      text: "Kakabhushundi time travels into the future to see Sir C.V. Raman in action and learns of his connection to India’s National Science Day",
+      name:"HINDU YOUNG WORLD:EPISODE 52",
+      title:"Learning of the Raman Effect",
+      imageUrl: round52,
+      url:"https://www.thehindu.com/children/learning-of-the-raman-effect/article67832103.ece"
+    },
+    
+    {id :53,
+      image: round53,
+      text: "When he changes his game with Lord Rama, Kakabhushundi gets a glimpse of the planet’s wonders.",
+      name:"HINDU YOUNG WORLD:EPISODE 53",
+      title:"Earthy matters",
+      imageUrl: round53,
+      url:"https://www.thehindu.com/children/earthy-matters/article67963378.ece"
+    },
+
+    {id :54,
+      image: round54,
+      text: "Sage Lomasa takes Kakabhushundi further into the mysteries of the Solar System.",
+      name:"HINDU YOUNG WORLD:EPISODE 54",
+      title:"Spheres that spin",
+      imageUrl: round54,
+      url:"https://www.thehindu.com/children/spheres-that-spin/article68064181.ece"
+    },
 
 ];
