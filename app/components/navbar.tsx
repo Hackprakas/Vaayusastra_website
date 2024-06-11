@@ -38,11 +38,11 @@ const Navbar: React.FC<NavbarProps> = ({data}) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${
+      className={`sticky top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm  ${
         openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
       }`}
     >
-      <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
+      <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4 ">
         <a className="block  xl:mr-8" href="#hero">
           <Image src={logo} width={70} height={70} alt="Brainwave"  />
         </a>
