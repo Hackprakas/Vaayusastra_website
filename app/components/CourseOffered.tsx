@@ -14,7 +14,7 @@ const Course: React.FC = () => {
     <Section id="features">
       <div className="container relative z-2">
         <Heading
-          className="md:max-w-md lg:max-w-2xl font-bold"
+          className="md:max-w-md lg:max-w-2xl "
           title="Courses Offered "
         />
 

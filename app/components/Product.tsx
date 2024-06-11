@@ -7,6 +7,7 @@ import Image from "next/image";
 import { product, roadmap } from "../constants";
 
 import Section from "./Section";
+import Heading from "./Heading";
 
 function Testimonials() {
   
@@ -20,7 +21,7 @@ function Testimonials() {
 
   <div className="flex justify-center mb-7 mt-12">
 
-      <h4 className="h4">Products</h4>
+  <Heading tag="Ready to get started" title="Products" />
   </div>
     <div className=" m-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 space-y-2 ">
       
