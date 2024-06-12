@@ -40,7 +40,7 @@ async function handleSignin(){
   return (
     <>
       <div className="overflow-auto">
-        <Navbar data={navigation} position={false} hide={true} />
+        <Navbar data={navigation} position={true} hide={true} />
         <Section> 
 
           {/* <div className="flex flex-col lg:flex-row h-screen justify-center  lg:justify-center xl:justify-between items-center px-6 lg:px-64 ">
