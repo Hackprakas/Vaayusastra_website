@@ -160,7 +160,7 @@ async function handleSignin(){
               </h4>
             </div>
           </div> */}
-          <div className="flex justify-center space-x-28 md:justify-center lg:justify-between px-9 md:px-2 lg:px-36 ">
+          <div className="flex justify-center space-x-28 md:justify-center lg:justify-between px-9 md:px-2 lg:px-36 py-12">
 
             <div className=" bg-conic-gradient p-0.25 rounded-2xl">
             <div className="flex flex-col p-12 max-w-[500px] flex-1 border border-n-6  bg-n-8 rounded-2xl">
