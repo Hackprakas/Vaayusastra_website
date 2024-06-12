@@ -61,12 +61,7 @@ export default function Sidebar() {
                   <span className="flex-1 ms-3 whitespace-nowrap">Stats</span>
                 </a>
               </li>
-              <li>
-                <a href="#" className="flex items-center p-2 text-white rounded-lg">
-                  <LogIn />
-                  <span className="flex-1 ms-3 whitespace-nowrap">Sign In</span>
-                </a>
-              </li>
+             
             </ul>
           </div>
           <div className="mt-auto">
