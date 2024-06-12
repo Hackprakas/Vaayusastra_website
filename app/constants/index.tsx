@@ -137,12 +137,19 @@ import test30 from "../components/assets/testimonials/test30.jpg"
 import test31 from "../components/assets/testimonials/test31.jpg"
 import test32 from "../components/assets/testimonials/test32.jpg"
 
+import rec1  from "../components/assets/recognizations-images/rec1.jpeg"
+import rec2  from "../components/assets/recognizations-images/rec2.jpeg"
+import rec3  from "../components/assets/recognizations-images/rec3.jpeg"
+import rec4  from "../components/assets/recognizations-images/rec4.jpeg"
+import rec5  from "../components/assets/recognizations-images/rec5.jpeg"
+import rec6  from "../components/assets/recognizations-images/rec6.jpeg"
 import rec7  from "../components/assets/recognizations-images/rec7.jpg"
 import rec8  from "../components/assets/recognizations-images/rec8.jpg"
 import rec9  from "../components/assets/recognizations-images/rec9.jpg"
 import rec10 from "../components/assets/recognizations-images/rec10.jpg"
 import rec11 from "../components/assets/recognizations-images/rec11.jpg"
 import rec12 from "../components/assets/recognizations-images/rec12.jpg"
+
 
 import grid from "../components/assets/grid.png"
 
@@ -705,12 +712,12 @@ export const calculator = [
 ]
 
 export const cards = [
-  { id: 1, image: grid, text: "ISRO" },
-  { id: 2, image: grid, text: "CIAA & AIAASC" },
-  { id: 3, image: grid, text: "LEAP-IIT IC" },
-  { id: 4, image: grid, text: "NAAN MUDHALVAN-TNSDC" },
-  { id: 5, image: grid, text: "KNOWLEDGE PARTNER-NITTTR" },
-  { id: 6, image: grid, text: "KNOWLEDGE PARTNER-ICT ACADEMY" },
+  { id: 1, image: rec1, text: "ISRO" },
+  { id: 2, image: rec2, text: "CIAA & AIAASC" },
+  { id: 3, image: rec3, text: "LEAP-IIT IC" },
+  { id: 4, image: rec4, text: "NAAN MUDHALVAN-TNSDC" },
+  { id: 5, image: rec5, text: "KNOWLEDGE PARTNER-NITTTR" },
+  { id: 6, image: rec6, text: "KNOWLEDGE PARTNER-ICT ACADEMY" },
   { id: 7, image: rec7, text: "DPIIT RECOGNISED STARTUP" },
   { id: 8, image: rec8, text: "FIRST FRANCHISE IN BANGALORE" },
   { id: 9, image: rec9, text: "HUMAN CENTRIC EMERGING" },
