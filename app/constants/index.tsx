@@ -137,7 +137,12 @@ import test30 from "../components/assets/testimonials/test30.jpg"
 import test31 from "../components/assets/testimonials/test31.jpg"
 import test32 from "../components/assets/testimonials/test32.jpg"
 
-
+import rec7  from "../components/assets/recognizations-images/rec7.jpg"
+import rec8  from "../components/assets/recognizations-images/rec8.jpg"
+import rec9  from "../components/assets/recognizations-images/rec9.jpg"
+import rec10 from "../components/assets/recognizations-images/rec10.jpg"
+import rec11 from "../components/assets/recognizations-images/rec11.jpg"
+import rec12 from "../components/assets/recognizations-images/rec12.jpg"
 
 import grid from "../components/assets/grid.png"
 
@@ -696,9 +701,9 @@ export const calculator = [
     title : "Momentum Calculator",
     text : "Calculate your momentum",
     onclick : "Momentum",
-    
   },
 ]
+
 export const cards = [
   { id: 1, image: grid, text: "ISRO" },
   { id: 2, image: grid, text: "CIAA & AIAASC" },
@@ -706,13 +711,14 @@ export const cards = [
   { id: 4, image: grid, text: "NAAN MUDHALVAN-TNSDC" },
   { id: 5, image: grid, text: "KNOWLEDGE PARTNER-NITTTR" },
   { id: 6, image: grid, text: "KNOWLEDGE PARTNER-ICT ACADEMY" },
-  { id: 7, image: grid, text: "DPIIT RECOGNISED STARTUP" },
-  { id: 8, image: grid, text: "FIRST FRANCHISE IN BANGALORE" },
-  { id: 9, image: grid, text: "HUMAN CENTRIC EMERGING" },
-  { id: 10, image: grid, text: "IIT MADRAS IC & IIT MADRAS RTBI" },
-  { id: 11, image: grid, text: "FORTNIGHT SERIES IN HINDU YOUNG WORLD" },
-  { id: 12, image: grid, text: "VAAYUSASTRA-CENTER FOR EXCELLENCE" },
+  { id: 7, image: rec7, text: "DPIIT RECOGNISED STARTUP" },
+  { id: 8, image: rec8, text: "FIRST FRANCHISE IN BANGALORE" },
+  { id: 9, image: rec9, text: "HUMAN CENTRIC EMERGING" },
+  { id: 10, image: rec10, text: "IIT MADRAS IC & IIT MADRAS RTBI" },
+  { id: 11, image: rec11, text: "FORTNIGHT SERIES IN HINDU YOUNG WORLD" },
+  { id: 12, image: rec12, text: "VAAYUSASTRA-CENTER FOR EXCELLENCE" },
 ];
+
 export const testmon = [
   { id: 1, 
     image: test1,
@@ -1114,7 +1120,7 @@ export const hindu = [
 
   {id :29,
     image: round29, 
-    text: "Discussions about weapons prompts Meghnath to build his own little rocket launcher. You can too!",
+    text: "Discussions about weapons prompts Meghnath to build his own little rocket launcher.",
     name:"HINDU YOUNG WORLD:EPISODE 29",
     title:"The potential of power",
     imageUrl: round29,
@@ -1130,7 +1136,7 @@ export const hindu = [
 
   {id: 31,
     image: round31, 
-    text: "Vali reveals the secret to wireless electricity transfer that could work against him in the future...",
+    text: "Vali reveals the secret to the wireless electricity transfer that could be work against him in the future...",
     name:"HINDU YOUNG WORLD:EPISODE 31",
     title:"electrifying invention",
     imageUrl: round31,
@@ -1170,7 +1176,7 @@ export const hindu = [
 
   {id :36,
     image: round36, 
-    text: "Sukracharya draws a parallel between the churning of the ocean and the black hole phenomenon",
+    text: "Sukracharya draws a parallel between the churning of the ocean and black hole",
     name:"HINDU YOUNG WORLD:EPISODE 36",
     title:"Churning the 'matter'",
     imageUrl: round36,
@@ -1194,7 +1200,7 @@ export const hindu = [
 
     {id :39,
       image: round39, 
-      text: "Vaayu helps Hanuman tick things off his bucket list starting with a supersonic flight and view through the vortex.", 
+      text: "Vaayu helps Hanuman tick things off his bucket list starting with a supersonic flight ", 
       name:"HINDU YOUNG WORLD:EPISODE 39",
       title:"A view like no other",
       imageUrl: round39,
@@ -1294,7 +1300,7 @@ export const hindu = [
      
     {id :51,
       image: round51,
-      text: "Kakabhushundi learns about the magnitude of the universe from Sage Lomasa",
+      text: "Kakabhushundi learns the universe's vastness from Sage Lomasa, understanding its infinite and profound magnitude.",
       name:"HINDU YOUNG WORLD:EPISODE 51",
       title:"Of universes and multiverses",
       imageUrl: round51,
@@ -1321,7 +1327,7 @@ export const hindu = [
 
     {id :54,
       image: round54,
-      text: "Sage Lomasa takes Kakabhushundi further into the mysteries of the Solar System.",
+      text: "Kakabhushundi learns about the universe's vastness and infinite magnitude from Sage Lomasa.",
       name:"HINDU YOUNG WORLD:EPISODE 54",
       title:"Spheres that spin",
       imageUrl: round54,
