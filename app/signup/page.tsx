@@ -19,7 +19,7 @@ async function handleSignin(){
 
     const sign = await signIn("google", {
      redirect: false,
-     callbackUrl: "/papers",
+     
      
      
        
@@ -34,7 +34,7 @@ async function handleSignin(){
   }
 
   const { data: session } = useSession();
-  console.log(session)
+  console.log();
   return (
     <>
       <div>

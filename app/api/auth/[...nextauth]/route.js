@@ -13,21 +13,19 @@ export const authOptions = {
       }),
     ],
     pages: {
-   // Custom sign-in page
-      error: '/auth/error', // Custom error page
+      error: '/auth/error', 
     },
     callbacks: {
-      async signIn({ user, account, profile }) {
-        // Custom logic to handle access denied
-        if (account.provider === 'google' && profile.email === "krishnalakshman67@gmail.com") {
-          return '/papers';
-        }
-        else{
-          return '/auth/error';
-        }
-        
+      session: ({ session, token }) => {
+          // Log the session and token objects
+          
+          console.log('Token:', token.email);
+          
+          // Modify the session object
+          return session;
       },
-    },
+  },
+  
       
      
       
