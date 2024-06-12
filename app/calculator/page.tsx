@@ -44,11 +44,12 @@ const Calculator: React.FC = () => {
     const [celsius, setCelsius] = useState<string>('');
     const [fahrenheit, setFahrenheit] = useState<string>('');
     const [objectSpeed, setObjectSpeed] = useState<string>('');
-    const [soundSpeed, setSoundSpeed] = useState<string>('');
+    const [soundSpeed, setSoundSpeed] = useState<string>('343.2');
     const [altitude, setAltitude] = useState<string>('');
     const [buttons, setbuttons] = useState<boolean>(true);
     const [velocity, setVelocity] = useState<string>('');
     const [mass, setMass] = useState<string>('');
+    const [sealevel , setSealevel] = useState<string>('15');
 
     const handleWeightInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setEarthWeight(e.target.value);
@@ -88,6 +89,10 @@ const Calculator: React.FC = () => {
 
     const handleAltitudeChange = (e: ChangeEvent<HTMLInputElement>) => {
         setAltitude(e.target.value);
+    };
+
+    const handleSealevelTemperatureChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setSealevel(e.target.value);
     };
 
     const handleVelocityChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -412,7 +417,8 @@ const Calculator: React.FC = () => {
                                                 type="number"
                                                 id="seaLevelTemp"
                                                 name="seaLevelTemp"
-                                                value={seaLevelTemperature}
+                                                value={sealevel}
+                                                onChange={handleSealevelTemperatureChange}
                                                 className="bg-gray-800 text-n-2 sm:text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 block w-full p-2.5"
                                                 placeholder="Sea Level Temperature"
                                             />
