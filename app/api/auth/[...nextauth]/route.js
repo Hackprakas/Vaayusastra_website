@@ -3,8 +3,7 @@ import { error } from "console"
 import NextAuth from "next-auth"
 import { Auth0Profile } from "next-auth/providers/auth0"
 import Google from "next-auth/providers/google"
-
-export const AuthOptions = {
+ const AuthOptions = {
     // Configure one or more authentication providers
     providers: [
       Google({
