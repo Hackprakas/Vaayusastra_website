@@ -33,7 +33,7 @@ export const BackgroundCircles: React.FC = () => {
 export const HamburgerMenu: React.FC = () => {
   return (
     <div className="absolute inset-0 pointer-events-none lg:hidden">
-      <div className="absolute inset-0 opacity-[.03]">
+      {/* <div className="absolute inset-0 opacity-[.03]">
         <Image
           className="w-full h-full object-cover"
           src={background}
@@ -41,7 +41,7 @@ export const HamburgerMenu: React.FC = () => {
           height={953}
           alt="Background"
         />
-      </div>
+      </div> */}
 
       <Rings />
 

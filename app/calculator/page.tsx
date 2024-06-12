@@ -128,7 +128,7 @@ const Calculator: React.FC = () => {
 
     return (
         <>
-            <Navbar data={navigation} position={false} />
+            <Navbar data={navigation} position={false} hide={true} />
             <Section>
 
                 <div className='bg-n-8 flex flex-col items-center'>
