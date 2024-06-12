@@ -444,7 +444,7 @@ export const pricing: PricingItem[] = [
   },
 ];
 export const product = [
-  { id: 1, image: grid, text: "A glider is a fixed-wing aircraft that is supported in flight by the dynamic reaction of the air against its lifting surfaces, and whose free flight does not depend on an engine.", name:"GLIDER",url:"https://www.thehindu.com/children/take-to-the-skies/article33780060.ece"},
+  { id: 1, image: grid, text: "A glider is a fixed-wing aircraft that is supported in flight by the dynamic reaction of the air against its lifting surfaces, and whose free flight does not depend on an engine.", name:"GLIDER",url:"/Product"},
 ]
 
 interface BenefitItem {
