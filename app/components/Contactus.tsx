@@ -14,7 +14,7 @@ function Contactus() {
   };
   return (
     <>
-    <div className='fixed bottom-0 right-4 transform -translate-y-1/2 z-100'> 
+    <div className='fixed bottom-0 right-4 transform -translate-y-1/2 z-50'> 
     <button className = "bg-purple-700 rounded-md p-4" onClick={toggleModal} >
 
       

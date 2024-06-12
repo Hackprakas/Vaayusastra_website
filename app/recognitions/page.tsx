@@ -8,6 +8,7 @@ import { cards } from "../constants/index";
 import Navbar from "../components/navbar";
 import { navigation } from "../constants";
 import Section from "../components/Section";
+import Footer from "../components/Footer";
 
 function Recognitions() {
   return (
@@ -68,6 +69,7 @@ function Recognitions() {
   </div>
 </div>
 </Section>
+<Footer />
 
     </>
   );

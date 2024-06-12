@@ -22,14 +22,13 @@ function Testimonials() {
   
   <Section>
 
-  <div className="flex justify-center mb-7 mt-12">
+  <div className="flex justify-center mb-7 mt-20  lg:mt-12">
 
       <h4 className="h4">Hindu Young World</h4>
   </div>
     <div className=" m-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 space-y-2 ">
       
       {hindu.map((card) => (
-        
         <div key={card.id} className="rounded-lg ">
          
           <div className="relative border border-n-6 rounded-lg mb-14 px-2">
@@ -53,11 +52,6 @@ function Testimonials() {
         </div>
       ))}
       <Gradient />
-      <div className="flex justify-center w-full mt-6 md:mt-8 xl:mt-10">
-        <Button white href="#">
-          Go Back
-        </Button>
-      </div>
     </div>
   </Section>
   <Footer />

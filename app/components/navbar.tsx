@@ -48,8 +48,9 @@ const Navbar: React.FC<NavbarProps> = ({data,position,hide}) => {
         <a className="block  xl:mr-8" href="/">
           <Image src={logo} width={70} height={70} alt="Vaayusastra"  />
         </a>
+        <Link href="/">
           <p className=" h5 font-bold">Vaayusastra Aerospace</p>
-
+        </Link>
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
