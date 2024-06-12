@@ -1,14 +1,7 @@
 import React from 'react';
-import logo from "../components/assets/logo.webp"
-import vslogo from "../../public/VS Logo New 1_edited_edited.webp"
 import Image from 'next/image';
-import { LogOut } from 'lucide-react';
-import { Gauge } from 'lucide-react';
-import { LogIn } from 'lucide-react';
-import { Users } from 'lucide-react';
-import { UserPlus } from 'lucide-react';
-
-
+import vslogo from "../../public/VS Logo New 1_edited_edited.webp";
+import { LogOut, Gauge, LogIn, Users, UserPlus } from 'lucide-react';
 
 export default function Sidebar() {
   return (
@@ -44,55 +37,63 @@ export default function Sidebar() {
         <div className="h-full flex flex-col px-3 py-4 overflow-y-auto bg-n-6">
           <div>
             <a href="https://flowbite.com/" className="flex items-center ps-2.5 mb-5">
-              <Image
-              src ={vslogo} width={60} height={60} alt="logo" />
-              <span className="self-center text-xl font-semibold whitespace-nowrap ">Vaayusastra<br/>Aerospace</span>
+              <Image src={vslogo} width={60} height={60} alt="logo" />
+              <span className="self-center text-xl font-semibold whitespace-nowrap">
+                Vaayusastra<br />Aerospace
+              </span>
             </a>
             <ul className="space-y-2 font-medium">
               <li>
-                <a href="#" className="flex items-center p-2 text-white rounded-lg:font-semibold lg:text-n-1/50 lg:leading-5 lg:hover:text-n-1">
-                <Gauge />
+                <a href="#" className="flex items-center p-2 text-white rounded-lg">
+                  <Gauge />
                   <span className="ms-3">Dashboard</span>
                 </a>
               </li>
               <li>
-                <a href="#" className="flex items-center p-2 text-white rounded-lg:font-semibold lg:text-n-1/50 lg:leading-5 lg:hover:text-n-1 ">
-                <UserPlus />
+                <a href="#" className="flex items-center p-2 text-white rounded-lg">
+                  <UserPlus />
                   <span className="flex-1 ms-3 whitespace-nowrap">Add Admin</span>
-                 
                 </a>
               </li>
-
               <li>
-                <a href="#" className="flex items-center p-2 text-white rounded-lg:font-semibold lg:text-n-1/50 lg:leading-5 lg:hover:text-n-1 ">
-                <Users />
+                <a href="#" className="flex items-center p-2 text-white rounded-lg">
+                  <Users />
                   <span className="flex-1 ms-3 whitespace-nowrap">Stats</span>
                 </a>
               </li>
-
               <li>
-                <a href="#" className="flex items-center p-2 text-white rounded-lg:font-semibold lg:text-n-1/50 lg:leading-5 lg:hover:text-n-1   ">
-                <LogIn />
+                <a href="#" className="flex items-center p-2 text-white rounded-lg">
+                  <LogIn />
                   <span className="flex-1 ms-3 whitespace-nowrap">Sign In</span>
                 </a>
               </li>
             </ul>
           </div>
-
-          {/* Sign Out button moved to the bottom */}
           <div className="mt-auto">
             <ul className="space-y-2 font-medium">
               <li>
-                <a href="#" className="flex items-center p-2 text-white rounded-lg:font-semibold lg:text-n-1/50 lg:leading-5 lg:hover:text-n-1  ">
-                <LogOut />
+                <a href="#" className="flex items-center p-2 text-white rounded-lg">
+                  <LogOut />
                   <span className="flex-1 ms-3 whitespace-nowrap">Sign Out</span>
                 </a>
               </li>
             </ul>
           </div>
-          {/* End of Sign Out button */}
         </div>
       </aside>
+
+      <div className="p-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4 w-full">
+        {Array(4).fill(0).map((_, index) => (
+          <div key={index} className="rounded-lg">
+            <div className="relative border border-n-6 rounded-lg mb-14 px-2">
+              <div className="flex flex-col items-center">
+                <div className="p-6 font-extrabold text-center">Card Title</div>
+                <div className="mb-10 text-center p-4 text-n-4">Card Content</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
