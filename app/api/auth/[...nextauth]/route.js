@@ -4,7 +4,7 @@ import NextAuth from "next-auth"
 import { Auth0Profile } from "next-auth/providers/auth0"
 import Google from "next-auth/providers/google"
 
-export const authOptions = {
+export const AuthOptions = {
     // Configure one or more authentication providers
     providers: [
       Google({
@@ -33,6 +33,6 @@ export const authOptions = {
   
   
 
-const handler = NextAuth(authOptions)
+const handler = NextAuth(AuthOptions)
 
 export { handler as GET, handler as POST }
