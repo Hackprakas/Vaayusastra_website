@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Sora} from "next/font/google";
 import "./globals.css";
 import CustomCursor from "./custom/page";
+import Authprovider from "../app/components/Authprovider"
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,9 +23,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={sora.className}>
         
-         
+         <Authprovider >
+          
             <CustomCursor />
             {children}
+         </Authprovider>
          
       </body>
     </html>

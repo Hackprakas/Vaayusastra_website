@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import image from "../components/assets/4-small.png";
@@ -8,8 +9,30 @@ import Footer from "../components/Footer";
 import Navbar from "../components/navbar";
 import { navigation } from "../constants";
 import { stars } from "../components/assets";
+import { useSession, signIn, signOut } from 'next-auth/react';
+import { useRouter } from "next/navigation";
 
 export default function Page() {
+  const Router = useRouter()
+async function handleSignin(){
+  
+
+    const sign = await signIn("google", {
+     redirect: false,
+     callbackUrl: "/auth/error",
+    });
+    if(sign?.error){
+      Router.push("/auth/error")
+    }
+  
+}
+  function handlesingout(){
+    signOut()
+    alert("sign out success")
+  }
+
+  const { data: session } = useSession();
+  console.log(session)
   return (
     <>
       <div>
@@ -28,7 +51,7 @@ export default function Page() {
                       Login
                     </h4>
                     <div className="flex flex-col space-y-2">
-                      <button className="bg-gray-800 rounded-lg flex items-center w-full text-left p-2">
+                      <button className="bg-gray-800 rounded-lg flex items-center w-full text-left p-2" onClick={handleSignin} >
                         <Image
                           src={google}
                           width={30}
@@ -103,6 +126,13 @@ export default function Page() {
                           className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                         >
                           Sign in
+                        </button>
+                        <button
+                          type="submit"
+                          className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                          onClick={handlesingout}
+                        >
+                          Sign out
                         </button>
                         <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                           Don’t have an account yet?{" "}
