@@ -19,11 +19,13 @@ async function handleSignin(){
 
     const sign = await signIn("google", {
      redirect: false,
-     callbackUrl: "/auth/error",
+     callbackUrl: "/papers",
+     
+     
+       
+
     });
-    if(sign?.error){
-      Router.push("/auth/error")
-    }
+    
   
 }
   function handlesingout(){
