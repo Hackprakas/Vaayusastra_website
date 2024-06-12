@@ -11,6 +11,7 @@ import { navigation } from "../constants";
 import { stars } from "../components/assets";
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useRouter } from "next/navigation";
+import Section from "../components/Section";
 
 export default function Page() {
   const Router = useRouter()
@@ -37,11 +38,12 @@ async function handleSignin(){
   console.log();
   return (
     <>
-      <div>
+      <div className="overflow-auto">
         <Navbar data={navigation} position={false} hide={true} />
-        
-          <div className="flex flex-col lg:flex-row h-screen justify-center  lg:justify-center xl:justify-between items-center px-6 lg:px-64 overflow-auto ">
-            <div className="flex justify-center items-center  w-full lg:w-auto lg:mt-40 xl:mt-0">
+        <Section> 
+
+          <div className="flex flex-col lg:flex-row h-screen justify-center  lg:justify-center xl:justify-between items-center px-6 lg:px-64 ">
+            <div className="flex justify-center items-center  w-full lg:w-auto xl:mt-0">
               <div className="flex flex-col items-center bg-conic-gradient p-0.25 min-w-[300px] max-w-[400px] lg:min-w-[400px] lg:max-w-[500px] rounded-[2.5rem] my-36">
                 <div className="p-8 bg-n-8 rounded-[2.4375rem] overflow-hidden w-full ">
                   <div className="absolute top-0 left-0 max-w-full"></div>
@@ -129,19 +131,19 @@ async function handleSignin(){
                         >
                           Sign in
                         </button>
-                        <button
+                        {/* <button
                           type="submit"
                           className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                           onClick={handlesingout}
                         >
                           Sign out
-                        </button>
+                        </button> */}
                         <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                           Don’t have an account yet?{" "}
                           <a
                             href="#"
                             className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                          >
+                            >
                             Sign up
                           </a>
                         </p>
@@ -164,6 +166,7 @@ async function handleSignin(){
               </h4>
             </div>
           </div>
+          </Section>
           <Footer />
         </div>
      
