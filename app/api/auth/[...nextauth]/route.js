@@ -1,5 +1,6 @@
 
 import { error } from "console"
+import { Sign } from "crypto"
 import NextAuth from "next-auth"
 import { Auth0Profile } from "next-auth/providers/auth0"
 import Google from "next-auth/providers/google"
@@ -15,14 +16,22 @@ import Google from "next-auth/providers/google"
       error: '/auth/error', 
     },
     callbacks: {
-      session: ({ session, token }) => {
-          // Log the session and token objects
-          
-          console.log('Token:', token.email);
-          
-          // Modify the session object
-          return session;
-      },
+      // session: ({ session, token }) => {
+      //     if(session.user.email==="krishnalakshman67@gmail.com"){
+      //       return "/admin"
+      //     }
+      //     else{
+      //       return "/dashboard"
+      //     }   
+      // },
+      async signIn({profile, account, email, credentials}){
+        if (profile.email === "krishnalakshman67@gmail.com") {
+          return "/admin"
+        }
+        else{
+         throw new Error("You are not authorized to login")
+        }
+      }
   },
   
       
