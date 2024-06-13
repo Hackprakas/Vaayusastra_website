@@ -6,6 +6,8 @@ const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
 
 export default function CustomCursor () {
     return (
+        <div className='hidden lg:block md:block'>
+
         <AnimatedCursor
             innerSize={10}
             outerSize={50}
@@ -27,9 +29,10 @@ export default function CustomCursor () {
                     outerScale: 7,
                     outerStyle: {
                         mixBlendMode: 'difference'
-                    }
-                }
-            ]}
-        />
+                        }
+                        }
+                        ]}
+                        />
+            </div>
     )
 }
