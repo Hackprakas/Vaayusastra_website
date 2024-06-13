@@ -25,3 +25,4 @@ function Error() {
     </Suspense>
   )
 }
+export default Error
