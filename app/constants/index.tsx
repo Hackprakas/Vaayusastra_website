@@ -197,6 +197,14 @@ export const navigation: NavigationItem[] = [
     onlyMobile: true,
     link:"/hindu",
   },
+  {
+    id: "5",
+    title: "sign in",
+    url: "",
+    onlyMobile: true,
+    link:"/signup",
+
+  }
   
 ];
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
