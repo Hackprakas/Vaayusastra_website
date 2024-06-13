@@ -105,7 +105,7 @@ import round51 from "../components/assets/hindu-images/round51.jpg"
 import round52 from "../components/assets/hindu-images/round52.jpg"
 import round53 from "../components/assets/hindu-images/round53.jpg"
 import round54 from "../components/assets/hindu-images/round54.jpg"
-
+import glider1 from "../components/assets/products/glider1.jpeg"
 import test1  from "../components/assets/testimonials/test1.jpg"
 import test2  from "../components/assets/testimonials/test2.jpg"
 import test3  from "../components/assets/testimonials/test3.jpg"
@@ -452,7 +452,7 @@ export const pricing: PricingItem[] = [
   },
 ];
 export const product = [
-  { id: 1, image: grid, text: "A glider is a fixed-wing aircraft that is supported in flight by the dynamic reaction of the air against its lifting surfaces, and whose free flight does not depend on an engine.", name:"GLIDER",url:"/Product"},
+  { id: 1, image: glider1, text: "A glider is a fixed-wing aircraft that is supported in flight by the dynamic reaction of the air against its lifting surfaces, and whose free flight does not depend on an engine.", name:"GLIDER",url:"/Product"},
 ]
 
 interface BenefitItem {
