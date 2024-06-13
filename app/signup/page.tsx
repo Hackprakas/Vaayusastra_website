@@ -2,25 +2,21 @@
 import React from "react";
 import Image from "next/image";
 import image from "../components/assets/4-small.png";
-import TagLine from "../components/Tagline";
 import vslogo from "../../public/VS Logo New 1_edited_edited.webp";
 import google from "../../public/google3.png";
 import Footer from "../components/Footer";
 import Navbar from "../components/navbar";
 import { navigation } from "../constants";
-import { stars } from "../components/assets";
-import { useSession, signIn, signOut } from 'next-auth/react';
-import { useRouter } from "next/navigation";
+import { signIn} from 'next-auth/react';
 import Section from "../components/Section";
 import Button from "../components/Button";
 
 export default function Page() {
   async function handleSignin() {
-    const sign = await signIn("google", {
+    await signIn("google", {
       redirect: false,
       callbackUrl:"/admin"
-    });
-    
+    }); 
   }
  
 
@@ -41,7 +37,9 @@ export default function Page() {
                     Login
                   </h4>
                   <div className="flex flex-col space-y-2">
-                    <button className="bg-gray-800 rounded-lg flex items-center w-full text-left p-2" onClick={handleSignin} >
+                    <form action={handleSignin} >
+
+                    <button className="bg-gray-800 rounded-lg flex items-center w-full text-left p-2"  >
                       <Image
                         src={google}
                         width={30}
@@ -50,6 +48,7 @@ export default function Page() {
                       />
                       <p className="m-1">Google</p>
                     </button>
+                    </form>
                     <p className="font-extrabold text-center">or</p>
                     <form className="space-y-4 md:space-y-6" action="#">
                       <div>
@@ -138,7 +137,6 @@ export default function Page() {
         </Section>
         <Footer />
       </div>
-
     </>
   );
 }

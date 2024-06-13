@@ -49,7 +49,7 @@ function Recognitions() {
     <>
     <Navbar data={navigation} position={true} hide={true}/>
     <Section> 
-    <div className="bg-n-8 flex flex-col items-center px-2 mt-20 lg:mt-10">
+    <div className="bg-n-8 flex flex-col items-center px-2 mt-20 lg:mt-10 ">
   <h1 className="text-3xl font-bold text-white mb-8">Recognitions</h1>
   <div className="p-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 w-full">
     {cards.map((card) => (

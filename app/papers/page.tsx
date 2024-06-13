@@ -18,7 +18,7 @@ const Course: React.FC = () => {
     <>
     <div>
     <Navbar data={navigation} position={true} hide={true}/>
-    <Section id="features">
+    {/* <Section id="features"> */}
       <div className="mt-20"> 
 
       <div className="container relative z-2">
@@ -87,7 +87,7 @@ const Course: React.FC = () => {
         </div>
         </div>
       </div>
-    </Section>
+    {/* </Section> */}
     <Footer/>
                       </div> 
     </>
