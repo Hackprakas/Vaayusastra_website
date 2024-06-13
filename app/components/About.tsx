@@ -38,7 +38,7 @@ const Roadmap: React.FC = () => (
               key={item.id}
             >
               <div className="relative p-8 bg-n-8 rounded-[2.4375rem] overflow-hidden w-full xl:p-15">
-                <div className="absolute top-0 left-0 max-w-full">
+                {/* <div className="absolute top-0 left-0 max-w-full">
                   <Image
                     className="w-full"
                     src={grid}
@@ -46,7 +46,7 @@ const Roadmap: React.FC = () => (
                     height={550}
                     alt="Grid"
                   />
-                </div>
+                </div> */}
                 <div className="relative z-1">
                   <div className="flex items-center justify-between w-full mb-8 md:mb-20">
                     <Tagline>{item.date}</Tagline>
