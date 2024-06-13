@@ -116,7 +116,7 @@ export default function Page() {
                       >
                         Sign in
                       </Button>
-                      <Button white onClick={signOut}>signout</Button>
+                      
                     </form>
                   </div>
                 </div>
