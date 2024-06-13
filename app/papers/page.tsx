@@ -26,7 +26,8 @@ const Course: React.FC = () => {
           className="text-center mx-auto md:max-w-md lg:max-w-2xl font-bold "
           title="Papers & Articles"
           />
-
+<div className="px-4 lg:px-1 md:px-2">
+  
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10 mb-10">
           {Papers.map((item) => (
               <div
@@ -82,6 +83,7 @@ const Course: React.FC = () => {
               <ClipPath />
             </div>
           ))}
+        </div>
         </div>
         </div>
       </div>
