@@ -18,6 +18,7 @@ export default function Page() {
   async function handleSignin() {
     const sign = await signIn("google", {
       redirect: false,
+      callbackUrl:"/admin"
     });
     
   }
