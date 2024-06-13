@@ -3,37 +3,38 @@ import Image from 'next/image';
 import { LogOut, Gauge, LogIn, Users, UserPlus } from 'lucide-react';
 import vslogo from "../../public/VS Logo New 1_edited_edited.webp";
 
-function Sidebar () {
+function Sidebar() {
   return (
-    <div className="bg-purple text-white w-64 min-h-screen">
-      <div className='flex p-4'>
-
-      <Image src={vslogo} width={60} height={60} alt="logo"/>
-      <div className="p-4 font-bold text-lg rounded">Vaayusastra Aerospace</div>
+    <div className="bg-purple text-white p-6 px-2 w-52 min-h-screen border border-r-[0.5px] border-n-6">
+      <div className='flex  items-center'>
+        <Image src={vslogo} className='w-16 h-16 ' alt="logo" />
+        <div className=" font-bold text-lg rounded ml-2">Vaayusastra Aerospace</div>
       </div>
-      <nav className="p-4">
-        <ul>
-          <li className="py-2 px-4 flex items-center"> 
-            <Gauge className="mr-2" /> 
-            Dashboard
-          </li>
-          <li className="py-2 px-4 flex items-center"> 
-            <UserPlus className="mr-2" /> 
-            Add Admin
-          </li>
-          <li className="py-2 px-4 flex items-center"> 
-            <Users className="mr-2" /> 
-            Stats
-          </li>
-        </ul>
-      </nav>
-      <div className="p-4 absolute bottom-0 left-0 right-0">
-        <ul>
-          <li className="py-2 px-4 flex items-center">
-            <LogOut className="mr-2" /> 
-            Signout
-          </li>
-        </ul>
+      <div className='h-[0.3px] bg-n-6 mt-6 w-full' />
+      <div>
+
+      <div className='flex flex-col justify-between '>
+        <nav className=" flex flex-col items-start ml-3 py-8 ">
+          <ul>
+            <li className="py-2  flex items-center">
+              <UserPlus className="mr-2" />
+              Add Admin
+            </li>
+            <li className="py-2  flex items-center">
+              <Users className="mr-2" />
+              Stats
+            </li>
+          </ul>
+        </nav>
+        <div className="mt-auto mb-4"> {/* Added margin bottom here */}
+          <ul>
+            <li className="py-4 ml-3 flex items-center">
+              <LogOut className="mr-2" />
+              Signout
+            </li>
+          </ul>
+        </div>
+      </div>
       </div>
     </div>
   );

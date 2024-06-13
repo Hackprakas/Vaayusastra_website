@@ -16,15 +16,15 @@ export default function MainComponent() {
             <div className="text-3xl font-bold">84,198</div>
             <div>REVENUE</div>
           </div>
-          <div className="bg-orange-500 text-white rounded-lg p-4 flex flex-col items-center">
+          <div className="border border-n-6 text-white rounded-lg p-4 flex flex-col items-center">
             <div className="text-3xl font-bold">36,540</div>
             <div>SALES</div>
           </div>
-          <div className="bg-blue-500 text-white rounded-lg p-4 flex flex-col items-center">
+          <div className="border border-n-6 text-white rounded-lg p-4 flex flex-col items-center">
             <div className="text-3xl font-bold">24,225</div>
             <div>PRODUCTS</div>
           </div>
-          <div className="bg-green-500 text-white rounded-lg p-4 flex flex-col items-center">
+          <div className="border border-n-6 text-white rounded-lg p-4 flex flex-col items-center">
             <div className="text-3xl font-bold">88,658</div>
             <div>VISITS</div>
           </div>
@@ -32,23 +32,23 @@ export default function MainComponent() {
 
         {/* Main content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div className="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+          <div className="border border-n-6 rounded-lg shadow p-4 flex flex-col items-center">
             <div className="text-2xl font-bold">PROFIT</div>
             <div className="text-4xl">82%</div>
           </div>
-          <div className="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+          <div className="border border-n-6 rounded-lg shadow p-4 flex flex-col items-center">
             <div className="text-2xl font-bold">NO. OF VISITS</div>
             <div className="text-4xl">46%</div>
           </div>
-          <div className="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+          <div className=" border border-n-6 rounded-lg shadow p-4 flex flex-col items-center">
             <div className="text-2xl font-bold">CUSTOMERS</div>
             <div className="text-4xl">84%</div>
           </div>
-          <div className="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+          <div className="border border-n-6 rounded-lg shadow p-4 flex flex-col items-center">
             <div className="text-2xl font-bold">SALES</div>
             <div className="text-4xl">55%</div>
           </div>
-          <div className="col-span-2 bg-white rounded-lg shadow p-4 flex flex-col items-center">
+          <div className="col-span-2 border border-n-6 rounded-lg shadow p-4 flex flex-col items-center">
             <div className="text-2xl font-bold">Users</div>
             <div className="text-4xl">30</div>
           </div>
