@@ -76,7 +76,7 @@ const About = () => {
     <>
       <Section className="overflow-hidden" id="roadmap">
         <div className="flex flex-col justify-center items-center">
-          <Heading tag="Ready to get started" title="Who We Are" />
+          <Heading className="text-center mx-auto"tag="Ready to get started" title="Who We Are" />
           <div className="px-6 md:px-14 lg:px-16" > 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:space-x-6 md:space-x-4 space-y-6 lg:space-y-4 md:space-y-4 ">
             {roadmap.map((item) => (
