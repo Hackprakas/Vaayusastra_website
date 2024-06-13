@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/navbar";
 import { navigation } from "../constants";
 import Section from "../components/Section";
+import vslogo from "../../public/VS Logo New 1_edited_edited.webp";
 
 export default function PaymentGateway() {
     const [paymentMethod, setPaymentMethod] = useState('upi');
@@ -14,17 +15,24 @@ export default function PaymentGateway() {
     return (
         <>
             <div>
-                <Navbar position={false} data={navigation} hide={true} />
+                <Navbar position={true} data={navigation} hide={true} />
                 <Section>
-                    <div className="flex flex-col justify-center items-center overflow-hidden lg:px-64">
+                    <div className="flex flex-col justify-center items-center pt-12 overflow-hidden lg:px-64">
                         <div className="flex flex-col items-center bg-conic-gradient p-0.25 min-w-[300px] max-w-[400px] lg:min-w-[400px] lg:max-w-[500px] rounded-[2.5rem]">
                             <div className="p-8 bg-n-8 rounded-[2.4375rem] overflow-hidden w-full">
                                 <h4 className="h4 mb-4 font-extrabold text-center text-white">Payment Gateway</h4>
                                 <div className="flex items-center justify-center w-full mb-6">
-                                    <Image src={qrcode} width={100} height={100} alt="logo" />
+                                    <Image src={vslogo} width={100} height={100} alt="QR code" />
                                 </div>
                                 <form className="space-y-4 md:space-y-6" action="#">
                                     <div className="flex justify-center space-x-4 mb-4">
+                                        <button
+                                            type="button"
+                                            className={`px-4 py-2 rounded-lg ${paymentMethod === 'qr' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-white'}`}
+                                            onClick={() => setPaymentMethod('qr')}
+                                        >
+                                            Scanner
+                                        </button>
                                         <button
                                             type="button"
                                             className={`px-4 py-2 rounded-lg ${paymentMethod === 'upi' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-white'}`}
@@ -40,6 +48,11 @@ export default function PaymentGateway() {
                                             Card
                                         </button>
                                     </div>
+                                    {paymentMethod === 'qr' && (
+                                        <div className="flex items-center justify-center w-full mb-6">
+                                            <Image src={qrcode} width={200} height={200} alt="QR code" />
+                                        </div>
+                                    )}
                                     {paymentMethod === 'upi' && (
                                         <div>
                                             <label htmlFor="upi" className="block mb-2 text-sm font-medium text-white">UPI ID</label>
