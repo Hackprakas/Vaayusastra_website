@@ -1,11 +1,20 @@
+"use client"
 import React from 'react';
 import  Sidebar  from '../components/sidebar';
+import { useSession } from 'next-auth/react';
+
+
 
 
 // Sidebar Component
 
 // Main Component
 export default function MainComponent() {
+  const  { data: session, status } = useSession();
+  console.log(session)
+if(!session){
+  return <div>not found</div>
+}
   return (
     <div className="flex">
       <Sidebar />

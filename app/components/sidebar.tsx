@@ -1,9 +1,21 @@
+
 import React from 'react';
 import Image from 'next/image';
 import { LogOut, Gauge, LogIn, Users, UserPlus } from 'lucide-react';
 import vslogo from "../../public/VS Logo New 1_edited_edited.webp";
+import { signOut } from 'next-auth/react';
+
+
+
 
 function Sidebar() {
+  
+  function signouts(){
+    signOut({
+      callbackUrl:"/signup"
+    })
+    
+    }
   return (
     <div className="bg-purple text-white p-6 px-2 w-52 min-h-screen border border-r-[0.5px] border-n-6">
       <div className='flex  items-center'>
@@ -26,14 +38,14 @@ function Sidebar() {
             </li>
           </ul>
         </nav>
-        <div className="mt-auto mb-4"> {/* Added margin bottom here */}
+        <button className="mt-auto mb-4" onClick={()=>signouts()}> {/* Added margin bottom here */}
           <ul>
             <li className="py-4 ml-3 flex items-center">
               <LogOut className="mr-2" />
               Signout
             </li>
           </ul>
-        </div>
+        </button>
       </div>
       </div>
     </div>
