@@ -23,7 +23,7 @@ const Course: React.FC = () => {
 
       <div className="container relative z-2">
         <Heading
-          className="md:max-w-md lg:max-w-2xl font-bold"
+          className="text-center mx-auto md:max-w-md lg:max-w-2xl font-bold "
           title="Papers & Articles"
           />
 
