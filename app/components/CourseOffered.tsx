@@ -8,14 +8,13 @@ import ClipPath from "./assets/svg/ClipPath";
 import Image from "next/image";
 import Link from "next/link";
 
-
 const Course: React.FC = () => {
   return (
     <Section id="features">
       <div className="container relative z-2">
         <Heading
-          className="md:max-w-md lg:max-w-2xl "
-          title="Courses Offered "
+          className="text-center mx-auto md:max-w-md lg:max-w-2xl"
+          title="Courses Offered"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10 mb-10">
@@ -27,7 +26,7 @@ const Course: React.FC = () => {
               }}
               key={item.id}
             >
-              <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] ">
+              <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem]">
                 <h5 className="h5 mb-5">{item.title}</h5>
                 <p className="body-2 mb-6 text-n-3">{item.text}</p>
                 <div className="flex items-center justify-between mt-auto">
@@ -37,11 +36,14 @@ const Course: React.FC = () => {
                     height={48}
                     alt={item.title}
                   />
-                  <a href={item.url} className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
+                  <a
+                    href={item.url}
+                    className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider"
+                  >
                     <div className="flex justify-center items-center">
-                    learn more
-                  <Arrow />
-                  </div>
+                      learn more
+                      <Arrow />
+                    </div>
                   </a>
                 </div>
               </div>
