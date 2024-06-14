@@ -1,31 +1,59 @@
-// pages/admin.js
 "use client"
-import React, { useEffect, useState } from 'react';
-import { Pie, Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import Sidebar from '../components/sidebar';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 // AdminPage Component
 const AdminPage = () => {
-  const [contentUsageData, setContentUsageData] = useState([10,20,11]);
-  const [passPercentageData, setPassPercentageData] = useState(10);
-  const [topSchoolPerformanceData, setTopSchoolPerformanceData] = useState(10);
 
-  
-
-  const pieOptions = {
-    maintainAspectRatio: false,
-    responsive: true,
-  };
-
-  const barOptions = {
-    maintainAspectRatio: false,
-    responsive: true,
-    scales: {
-      y: {
-        beginAtZero: true,
+  const data = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [
+      {
+        label: 'My First dataset',
+        backgroundColor: 'rgba(75,192,192,0.2)',
+        borderColor: 'rgba(75,192,192,1)',
+        borderWidth: 1,
+        hoverBackgroundColor: 'rgba(75,192,192,0.4)',
+        hoverBorderColor: 'rgba(75,192,192,1)',
+        data: [65, 59, 80, 81, 56, 55, 40],
       },
-    },
+    ],
   };
+
+  // const pieOptions = {
+  //   maintainAspectRatio: false,
+  //   responsive: true,
+  // };
+
+  // const barOptions = {
+  //   maintainAspectRatio: false,
+  //   responsive: true,
+  //   scales: {
+  //     y: {
+  //       beginAtZero: true,
+  //     },
+  //   },
+  // };
 
   return (
     <div className="flex min-h-screen overflow-hidden">
@@ -35,11 +63,9 @@ const AdminPage = () => {
           <div className="bg-gray-800 p-6 rounded shadow-lg">
             <h2 className="text-xl font-bold mb-4">Performance</h2>
             <div className="w-full h-64 bg-purple text-white flex items-center justify-center rounded">
-              {contentUsageData ? (
-                <Pie data={contentUsageData} options={pieOptions} />
-              ) : (
-                <span className="text-sm">Loading...</span>
-              )}
+             
+                <Line data={data} />
+              
             </div>
           </div>
 
@@ -60,11 +86,9 @@ const AdminPage = () => {
               </div>
             </div>
             <div className="w-full h-64 bg-purple text-white flex items-center justify-center rounded">
-              {passPercentageData ? (
-                <Bar data={passPercentageData} options={barOptions} />
-              ) : (
+              
                 <span className="text-sm">Loading...</span>
-              )}
+              
             </div>
           </div>
         </div>
@@ -73,38 +97,33 @@ const AdminPage = () => {
           <div className="bg-gray-800 p-6 rounded shadow-lg">
             <h2 className="text-xl font-bold mb-4">Content Usage</h2>
             <div className="w-full text-white flex items-center justify-center rounded">
-              {contentUsageData ? (
-                <img src={`data:image/jpeg;base64,${contentUsageData}`} alt="Content Usage" className="w-full h-full object-cover" />
-              ) : (
+             
                 <span className="text-sm">Loading...</span>
-              )}
+             
             </div>
           </div>
 
           <div className="bg-gray-800 p-6 rounded shadow-lg">
             <h2 className="text-xl font-bold mb-4">Overall Pass Percentage</h2>
             <div className="w-full text-white flex items-center justify-center rounded">
-              {passPercentageData ? (
-                <img src={`data:image/jpeg;base64,${passPercentageData}`} alt="Overall Pass Percentage" className="w-full h-full object-cover" />
-              ) : (
+              
                 <span className="text-sm">Loading...</span>
-              )}
+              
             </div>
           </div>
 
           <div className="bg-gray-800 p-6 rounded shadow-lg">
             <h2 className="text-xl font-bold mb-4">Top 5 School Performance</h2>
             <div className="w-full text-white flex items-center justify-center rounded">
-              {topSchoolPerformanceData ? (
-                <img src={`data:image/jpeg;base64,${topSchoolPerformanceData}`} alt="Top 5 School Performance" className="w-full h-full object-cover" />
-              ) : (
+              
                 <span className="text-sm">Loading...</span>
-              )}
+              
             </div>
           </div>
         </div>
       </div>
     </div>
+    
   );
 };
 
