@@ -127,6 +127,10 @@
 
 }
 
+.default-cursor * {
+  cursor: default !important;
+}
+
 @layer base {
   
 
