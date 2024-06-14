@@ -17,7 +17,7 @@ function Sidebar() {
 
   }
   return (
-    <div className="bg-purple text-white p-6 px-2 w-56 h-screen border flex justify-between flex-col border-r-[0.5px] border-n-6">
+    <div className=" bg-purple text-white p-6 px-2 w-56 h-screen border flex justify-between flex-col border-r-[0.5px] border-n-6">
       <div>
         <div className='flex  items-center'>
           <Image src={vslogo} className='w-16 h-16 ' alt="logo" />

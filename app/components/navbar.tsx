@@ -11,6 +11,7 @@ import { HamburgerMenu } from "./design/Header";
 import Image from "next/image";
 import logo from "../components/assets/logo.webp"
 import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
 
 interface NavbarProps {
   data: any; 
@@ -19,6 +20,8 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({data,position,hide}) => {
+  const { data: session } = useSession();
+  
   const [openNavigation, setOpenNavigation] = useState(false);
 
   const toggleNavigation = () => {
@@ -89,13 +92,19 @@ const Navbar: React.FC<NavbarProps> = ({data,position,hide}) => {
         >
           Hindu-Young-world
         </Link>
-        <Link href="/signup">
-
-
-        <Button white={false}className="sim-card-button hidden lg:flex " >
-          Sign in
+        {session ?(
+          
+        <Button white={false}className="sim-card-button hidden lg:flex " onClick={()=>signOut()}>
+          Sign out
         </Button>
-        </Link>
+        
+
+        ):(<Link href="/signup">
+          <Button white={false}className="sim-card-button hidden lg:flex " >
+            Sign in
+          </Button>
+          </Link>)}
+        
 
         <Button white={false}
           className="ml-auto lg:hidden"

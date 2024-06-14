@@ -96,7 +96,7 @@
 }
 
 .sim-card-button:active:after {
-  background: transparent;
+  background: #000;
 }
 
 .sim-card-button:before {
