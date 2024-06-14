@@ -18,7 +18,7 @@ const AuthOptions = {
     },
 
     async signIn({ profile, account, email, credentials }) {
-      if (profile.email === "krishnalakshman67@gmail.com") {
+      if (profile.email === "krishnalakshman67@gmail.com" || profile.email === "ramkishore29861@gmail.com") {
         return true;
       } else {
         signOut();

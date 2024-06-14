@@ -11,6 +11,7 @@ import { Papers } from "../constants";
 import {grid}from "../components/assets"
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
+import { Gradient } from "../components/design/Roadmap";
 
 const Course: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ const Course: React.FC = () => {
     <Section id="features">
       <div className="mt-20"> 
 
-      <div className="container relative z-2">
+      <div className="container relative ">
         <Heading
           className="text-center mx-auto md:max-w-md lg:max-w-2xl font-bold "
           title="Papers & Articles"
@@ -29,14 +30,9 @@ const Course: React.FC = () => {
 <div className="px-4 lg:px-1 md:px-2">
   
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10 mb-10">
-          {Papers.map((item) => (
-              <div
-              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
-              style={{
-                  backgroundImage: `url(${item.backgroundUrl})`,
-                  }}
-                  key={item.id}
-                  >
+          {Papers.map((item,index) => (
+              <div key={index}className="border border-n-6 rounded-2xl">
+
               <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] ">
                 
                 <h5 className="h5 mb-5">{item.title}</h5>
@@ -51,19 +47,19 @@ const Course: React.FC = () => {
                   <a href={item.url}>
                     <div className="flex">
 
-                   
+                   <div className="flex justify-center items-center">
                   <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
                     Learn more
                   </p>
                   <Arrow />
                   </div>
+                  </div>
                   </a>
                 </div>
-              </div>
+              </div> 
+              {/* {item.light && <GradientLight />} */}
 
-              {item.light && <GradientLight />}
-
-              <div
+              {/* <div
                 className="absolute inset-0.5 bg-n-8"
                 style={{ clipPath: "url(#benefits)" }}
                 >
@@ -78,9 +74,9 @@ const Course: React.FC = () => {
                       />
                       )}
                 </div>
-              </div>
+              </div> */}
 
-              <ClipPath />
+              {/* <ClipPath /> */}
             </div>
           ))}
         </div>
