@@ -2,7 +2,7 @@
 "use client"
 import React, { useState } from "react";
 // import { useLocation } from "react-router-dom";
-import { disablePageScroll, enablePageScroll } from "scroll-lock";
+
 import { brainwave } from "./assets";
 
 import Button from "./Button";
@@ -24,17 +24,17 @@ const Navbar: React.FC<NavbarProps> = ({data,position,hide}) => {
   const toggleNavigation = () => {
     if (openNavigation) {
       setOpenNavigation(false);
-      enablePageScroll();
+      
     } else {
       setOpenNavigation(true);
-      disablePageScroll();
+      
     }
   };
 
   const handleClick = () => {
     if (!openNavigation) return;
 
-    enablePageScroll();
+    
     setOpenNavigation(false);
   };
 

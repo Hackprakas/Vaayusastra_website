@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Sora} from "next/font/google";
 import "./globals.css";
-import CustomCursor from "./custom/page";
+import CustomCursor from "./components/custom";
 import Authprovider from "../app/components/Authprovider"
 
 
@@ -25,7 +25,7 @@ export default function RootLayout({
         
          <Authprovider >
           
-            <CustomCursor />
+            {/* <CustomCursor /> */}
             {children}
          </Authprovider>
          
