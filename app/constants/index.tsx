@@ -150,6 +150,8 @@ import rec10 from "../components/assets/recognizations-images/rec10.jpg"
 import rec11 from "../components/assets/recognizations-images/rec11.jpg"
 import rec12 from "../components/assets/recognizations-images/rec12.jpg"
 
+import product1 from"../components/assets/products/product1.jpg"
+
 
 import grid from "../components/assets/grid.png"
 
@@ -1350,3 +1352,5 @@ export const hindu = [
     },
 
 ];
+
+
