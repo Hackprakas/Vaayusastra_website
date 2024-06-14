@@ -22,7 +22,7 @@ function Testimonials() {
   
   <Section>
 
-  <div className="flex justify-center mb-7 mt-20  lg:mt-12">
+  <div className="flex justify-center mb-7 mt-24  lg:mt-12">
 
       <h4 className="h4">Hindu Young World</h4>
   </div>
@@ -51,7 +51,7 @@ function Testimonials() {
           </div>
         </div>
       ))}
-      <Gradient />
+      {/* <Gradient /> */}
     </div>
   </Section>
   <Footer />
