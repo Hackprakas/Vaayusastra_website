@@ -25,7 +25,7 @@ export default function RootLayout({
         
          <Authprovider >
           
-            {/* <CustomCursor /> */}
+            <CustomCursor />
             {children}
          </Authprovider>
          
