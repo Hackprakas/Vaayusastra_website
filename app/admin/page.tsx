@@ -113,7 +113,7 @@ const AdminPage = () => {
           </div>
 
           <div className="bg-gray-800 p-6 rounded shadow-lg">
-            <h2 className="text-xl font-bold mb-4">Top 5 School Performance</h2>
+            <h2 className="text-xl font-bold mb-4">Top 5 School Students</h2>
             <div className="w-full text-white flex items-center justify-center rounded">
               
                 <span className="text-sm">Loading...</span>
