@@ -55,9 +55,9 @@ const AdminPage = () => {
   //   },
   // };
 
-  return (
-    <div className="flex min-h-screen overflow-hidden">
+  return (<div className='flex'>
       <Sidebar />
+    <div className="flex min-h-screen overflow-hidden">
       <div className="flex-1 p-6 bg-n-8 text-white overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-gray-800 p-6 rounded shadow-lg">
@@ -123,6 +123,7 @@ const AdminPage = () => {
         </div>
       </div>
     </div>
+  </div>
     
   );
 };
