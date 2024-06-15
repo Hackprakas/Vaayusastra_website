@@ -1,4 +1,5 @@
 "use server"
+import { getCsrfToken } from "next-auth/react";
 import { getServerSession } from "next-auth"
 
 export async function getsession() {
@@ -6,4 +7,8 @@ export async function getsession() {
     console.log("sees"+session?.user?.email);
     return session;
    
+}
+export async function gettoken(){
+    const csrfToken = await getCsrfToken();
+    return csrfToken;
 }

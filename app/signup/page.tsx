@@ -10,6 +10,7 @@ import { navigation } from "../constants";
 import { signIn} from 'next-auth/react';
 import Section from "../components/Section";
 import Button from "../components/Button";
+import { gettoken } from "@/actions/route2";
 
 export default function Page() {
   async function handleSignin() {
@@ -18,7 +19,10 @@ export default function Page() {
       callbackUrl:"/admin"
     }); 
   }
- 
+  // async function handleemail() {
+  // const token = await gettoken();
+  // return token;
+  // }
 
   return (
     <>
@@ -50,7 +54,7 @@ export default function Page() {
                     </button>
                     </form>
                     <p className="font-extrabold text-center">or</p>
-                    <form className="space-y-4 md:space-y-6" action="#">
+                    <form className="space-y-4 md:space-y-6" action="#" >
                       <div>
                         <label
                           htmlFor="email"
@@ -67,7 +71,7 @@ export default function Page() {
                           required
                         />
                       </div>
-                      <div>
+                      {/* <div>
                         <label
                           htmlFor="password"
                           className="block mb-2 text-sm font-medium text-white"
@@ -82,7 +86,7 @@ export default function Page() {
                           className="text-gray-900 bg-gray-800 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                           required
                         />
-                      </div>
+                      </div> */}
                       <div className="flex items-center justify-between gap-2">
                         <div className="flex items-start">
                           <div className="flex items-center h-5">
