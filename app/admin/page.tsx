@@ -57,10 +57,10 @@ const AdminPage = () => {
 
   return (<div className='flex'>
       <Sidebar />
-    <div className="flex min-h-screen overflow-hidden">
-      <div className="flex-1 p-6 bg-n-8 text-white overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-gray-800 p-6 rounded shadow-lg">
+    <div className="flex  h-[calc(100vh-2rem)]  overflow-auto w-full px-5">
+      <div className="flex-1 p-6 bg-n-8 text-white ">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-6">
+          <div className="bg-orange-200 sm:bg-white md:bg-gray-800 lg:bg-gray-800 p-6 rounded shadow-lg">
             <h2 className="text-xl font-bold mb-4">Performance</h2>
             <div className="w-full h-64 bg-purple text-white flex items-center justify-center rounded">
              
