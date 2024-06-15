@@ -14,7 +14,7 @@ function Recognitions() {
   return (
     
     <>
-    <Navbar data={navigation} position={true} hide={true}/>
+    <Navbar data={navigation} position={true} hide={true} admin={false}/>
     <Section> 
     <div className="bg-n-8 flex flex-col items-center px-2 mt-20 lg:mt-10 ">
   <h1 className="text-3xl font-bold text-white mb-8">Recognitions</h1>

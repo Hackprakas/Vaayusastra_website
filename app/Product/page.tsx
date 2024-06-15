@@ -15,7 +15,7 @@ export default function PaymentGateway() {
     return (
         <>
             <div>
-                <Navbar position={true} data={navigation} hide={true} />
+                <Navbar position={true} data={navigation} hide={true} admin={false}/>
                 <Section>
                     <div className="flex flex-col justify-center items-center pt-12 overflow-hidden lg:px-64">
                         <div className="flex flex-col items-center bg-conic-gradient p-0.25 min-w-[300px] max-w-[400px] lg:min-w-[400px] lg:max-w-[500px] rounded-[2.5rem]">

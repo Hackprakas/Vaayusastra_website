@@ -27,7 +27,7 @@ export default function Page() {
   return (
     <>
       <div className="overflow-auto">
-        <Navbar data={navigation} position={true} hide={true} />
+        <Navbar data={navigation} position={true} hide={true} admin={false} />
         <Section>
           <div className="flex justify-center lg:space-x-28 md:justify-center lg:justify-between px-9 md:px-2 xl:px-48 lg:px-36 py-24 md:py-12 lg:py-12">
 

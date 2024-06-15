@@ -8,7 +8,7 @@ import Section from "../../components/Section"
 export default function Page() {
   return (
     <div>
-        <Navbar position={true} data={navigation} hide={true} />
+        <Navbar position={true} data={navigation} hide={true} admin={false}/>
         <Section>
       <section className=" py-8 antialiased md:py-16">
         <form action="#" className="mx-auto max-w-screen-xl px-4 2xl:px-0">

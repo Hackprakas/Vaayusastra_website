@@ -2,6 +2,8 @@
 import React from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'
+import Link from 'next/link'
+import Button from '@/app/components/Button'
 
  function Page() {
   const searchParams = useSearchParams()
@@ -12,7 +14,9 @@ import { Suspense } from 'react'
     <div className="flex items-center justify-center h-screen">
       <div className="text-center">
         <h1 className="text-4xl font-bold text-red-500">{message}</h1>
-        <p className="text-lg mt-4">Please try again</p>
+        <Link href="/signup">
+          <Button white>Go Back</Button>
+        </Link>
       </div>
     </div>
    

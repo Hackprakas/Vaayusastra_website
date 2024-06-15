@@ -1,6 +1,10 @@
 "use client"
 import { Line } from 'react-chartjs-2';
 import Sidebar from '../components/sidebar';
+import Navbar from '../components/navbar';
+import { useSession } from "next-auth/react"
+import { signOut } from "next-auth/react"
+import { adminNavigation } from '../constants';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,6 +15,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+
 
 ChartJS.register(
   CategoryScale,
@@ -24,6 +29,7 @@ ChartJS.register(
 
 // AdminPage Component
 const AdminPage = () => {
+  
 
   const data = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -40,6 +46,8 @@ const AdminPage = () => {
     ],
   };
   const options = {
+    maintainAspectRatio: true,
+    responsive: true,
     scales: {
       x: {
         ticks: {
@@ -77,12 +85,15 @@ const AdminPage = () => {
 
   return (<div className='flex'>
       <Sidebar />
+      <div className='block md:hidden lg:hidden'>
+        <Navbar admin={true} data={adminNavigation} hide position />
+      </div>
     <div className="flex  h-[calc(100vh-2rem)]  overflow-auto w-full px-5">
       <div className="flex-1 p-6 bg-n-8 text-white ">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-6">
-          <div className="bg-gray-800 p-6 rounded shadow-lg">
-            <h2 className="text-xl font-bold mb-4">Performance</h2>
-            <div className="w-full h-64 bg-purple text-white flex items-center justify-center rounded">
+          <div className="bg-gray-800  rounded shadow-lg">
+            <h2 className="text-xl font-bold mb-4 mx-4 mt-4">Performance</h2>
+            <div className="w-full px-1 h-64 bg-purple text-white flex items-center justify-center rounded">
              
                 <Line data={data} options={options}/>
               
