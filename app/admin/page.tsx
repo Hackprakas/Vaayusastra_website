@@ -32,12 +32,32 @@ const AdminPage = () => {
         label: 'My First dataset',
         backgroundColor: 'rgba(75,192,192,0.2)',
         borderColor: 'rgba(75,192,192,1)',
-        borderWidth: 1,
+        borderWidth: 2,
         hoverBackgroundColor: 'rgba(75,192,192,0.4)',
         hoverBorderColor: 'rgba(75,192,192,1)',
         data: [65, 59, 80, 81, 56, 55, 40],
       },
     ],
+  };
+  const options = {
+    scales: {
+      x: {
+        ticks: {
+          color: 'white', 
+        },
+        grid: {
+          color: 'rgba(255, 255, 255, 0.2)',
+        },
+      },
+      y: {
+        ticks: {
+          color: 'white', 
+        },
+        grid: {
+          color: 'rgba(255, 255, 255, 0.2)', 
+        },
+      },
+    },
   };
 
   // const pieOptions = {
@@ -60,11 +80,11 @@ const AdminPage = () => {
     <div className="flex  h-[calc(100vh-2rem)]  overflow-auto w-full px-5">
       <div className="flex-1 p-6 bg-n-8 text-white ">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-6">
-          <div className="bg-orange-200 sm:bg-white md:bg-gray-800 lg:bg-gray-800 p-6 rounded shadow-lg">
+          <div className="bg-gray-800 p-6 rounded shadow-lg">
             <h2 className="text-xl font-bold mb-4">Performance</h2>
             <div className="w-full h-64 bg-purple text-white flex items-center justify-center rounded">
              
-                <Line data={data} />
+                <Line data={data} options={options}/>
               
             </div>
           </div>
