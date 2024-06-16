@@ -11,6 +11,7 @@ import { signIn} from 'next-auth/react';
 import Section from "../components/Section";
 import Button from "../components/Button";
 import { gettoken } from "@/actions/route2";
+import { gethash } from "@/actions/route2";
 
 export default function Page() {
   async function handleSignin() {
@@ -18,6 +19,13 @@ export default function Page() {
       redirect: false,
       callbackUrl:"/admin"
     }); 
+  }
+  async function handlelogin(
+    formdata:FormData
+  ){
+    const email = formdata.get("email");
+    const password = formdata.get("password");
+    await signIn("credentials",{email:email,password:password,callbackUrl:"/admin"})
   }
   // async function handleemail() {
   // const token = await gettoken();
@@ -29,10 +37,10 @@ export default function Page() {
       <div className="overflow-auto">
         <Navbar data={navigation} position={true} hide={true} admin={false} />
         <Section>
-          <div className="flex justify-center lg:space-x-28 md:justify-center lg:justify-between px-9 md:px-2 xl:px-48 lg:px-36 py-24 md:py-12 lg:py-12">
+          <div className="flex justify-center lg:space-x-28 md:justify-center lg:justify-between px-9 md:px-2 xl:px-48 lg:px-36 py-24 md:py-18 lg:py-12">
 
-            <div className=" bg-conic-gradient p-0.25 rounded-2xl">
-              <div className="flex flex-col p-12 max-w-[600px] flex-1 border border-n-6  bg-n-8 rounded-2xl">
+            <div className=" bg-conic-gradient p-0.25 rounded-2xl ">
+              <div className="flex flex-col p-12 max-w-[500px] flex-1 border border-n-6  bg-n-8 rounded-2xl">
                 <div>
                   <div className="flex items-center justify-center w-full mb-6">
                     <Image src={vslogo} width={100} height={100} alt="logo" />
@@ -54,7 +62,7 @@ export default function Page() {
                     </button>
                     </form>
                     <p className="font-extrabold text-center">or</p>
-                    <form className="space-y-4 md:space-y-6" action="#" >
+                    <form className="space-y-4 md:space-y-6" action={handlelogin} >
                       <div>
                         <label
                           htmlFor="email"
@@ -66,12 +74,12 @@ export default function Page() {
                           type="email"
                           name="email"
                           id="email"
-                          className="bg-gray-800 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                          className="bg-gray-800 text-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                           placeholder="name@company.com"
                           required
                         />
                       </div>
-                      {/* <div>
+                      <div>
                         <label
                           htmlFor="password"
                           className="block mb-2 text-sm font-medium text-white"
@@ -83,29 +91,14 @@ export default function Page() {
                           name="password"
                           id="password"
                           placeholder="••••••••"
-                          className="text-gray-900 bg-gray-800 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                          className="text-white bg-gray-800 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                           required
                         />
-                      </div> */}
+                      </div>
                       <div className="flex items-center justify-between gap-2">
                         <div className="flex items-start">
-                          <div className="flex items-center h-5">
-                            <input
-                              id="remember"
-                              aria-describedby="remember"
-                              type="checkbox"
-                              className="w-4 h-4 border bg-gray-800 border-gray-300 rounded focus:ring-3 focus:ring-primary-300"
-                              required
-                            />
-                          </div>
-                          <div className="ml-3 text-sm">
-                            <label
-                              htmlFor="remember"
-                              className="text-gray-500 dark:text-gray-300"
-                            >
-                              Remember me
-                            </label>
-                          </div>
+                          
+                          
                         </div>
                         <a
                           href="#"
@@ -116,6 +109,7 @@ export default function Page() {
                       </div>
                       <Button white
                         className="w-full text-black"
+                        
                       >
                         Sign in
                       </Button>

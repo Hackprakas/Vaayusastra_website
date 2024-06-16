@@ -23,7 +23,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   const spanClasses = "relative z-10";
 
   const renderButton = (): JSX.Element => (
-    <button className={classes} onClick={onClick}>
+    <button className={classes} onClick={onClick} type="submit">
       <span className={spanClasses}>{children}</span>
       {/* {ButtonSvg(white)} */}
       <ButtonSvg white={white} />

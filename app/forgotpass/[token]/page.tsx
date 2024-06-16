@@ -7,6 +7,7 @@ import Button from '../../components/Button'
 import Footer from '../../components/Footer'
 import { ArrowRight } from 'lucide-react'
 import { NextPage } from 'next';
+import { checktoken, resetpassword } from '@/actions/route3'
 
 interface PageProps {
     params: {
@@ -14,8 +15,14 @@ interface PageProps {
     };
   }
 
-  const Page: NextPage<PageProps> = ({ params }) => {
-    console.log(params);
+  const Page: NextPage<PageProps> = async({ params }) => {
+    // const data=new FormData();
+    // data.append('token',params.number);
+    // const check=await checktoken(data);
+    // if(!check){
+    //   return <div>Invalid Token</div>
+    // }
+
   return (
   <>
   <div className="overflow-auto">
@@ -35,7 +42,7 @@ interface PageProps {
                   <div className="flex flex-col space-y-2">
                     
                    
-                    <form className="space-y-10 " action="#" >
+                    <form className="space-y-10 " action={resetpassword} >
                       <div>
                         <label
                           htmlFor="password"

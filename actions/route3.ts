@@ -2,18 +2,39 @@
 import { v4 as uuidv4 } from 'uuid';
 import nodemailer from 'nodemailer';
 import bcrypt from "bcrypt";
+import prisma from '@/app/lib/db';
 
-export async function sendmail(){
-    //implement logic for checking mail
+export async function sendmail(formdata:FormData){
+    const email = formdata.get("email") as string;
+    const user = await prisma.user.findUnique({
+        where: {
+            email: email,
+        },
+    });
+    if (!user) {
+        return {
+            error: 'No user found with that email.',
+        };
+    }
+    else{
+
+    
 
     const resetToken = uuidv4();
     const resetTokenExpiry = new Date();
     resetTokenExpiry.setHours(resetTokenExpiry.getHours() + 1);
-
-// update that resetoken and resettokenexpiry in the user password collection
+    await prisma.user.update({
+        where: {
+            email: email,
+        },
+        data: {
+            resetToken: resetToken,
+            resetTokenExpiry: resetTokenExpiry,
+        },
+    });
 
 const transporter = nodemailer.createTransport({
-    service: 'your-email-service',  // e.g., 'Gmail'
+    service: 'your-email-service',  
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -22,14 +43,15 @@ const transporter = nodemailer.createTransport({
 
   const resetUrl = `${process.env.NEXTAUTH_URL}/forgotpass/${resetToken}`;
   const mailOptions = {
-    to: "actual client email",
+    to: email,
     from: process.env.EMAIL_USER,
     subject: 'Password Reset Request',
     html: `<p>You requested a password reset. Click <a href="${resetUrl}">here</a> to reset your password.</p>`,
   };
 
   try{
-    await transporter.sendMail(mailOptions);
+    const set=await transporter.sendMail(mailOptions);
+    console.log("success"+set);
     return {
         message: 'Success! Check your email for a link to reset your password.',
     }
@@ -41,9 +63,42 @@ const transporter = nodemailer.createTransport({
         }
     }
 }
-
-export async function checktoken(){
-//first check whether the token is there in db..if yes then hash the new password and update the user password collection
-
-
 }
+
+export async function checktoken(formdata:FormData){
+
+    const token = formdata.get("token") as string;
+    const user = await prisma.user.findFirst({
+        where: {
+            resetToken: token,
+        },
+    });
+    if (!user  || user.resetTokenExpiry === null || user.resetTokenExpiry < new Date()) {
+        return false;
+    }
+    return user.id
+}
+
+export async function resetpassword(formdata:FormData){
+  const newPassword = formdata.get("newpassword") as string;
+  const check=await checktoken(formdata);
+  if(!check){
+    return {
+        error: 'This token is either invalid or expired.',
+    }
+  }
+  else{
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+    
+    await prisma.user.update({
+      where: { id: check },
+      data: {
+        password: hashedPassword,
+        resetToken: null,
+        resetTokenExpiry: null,
+      },
+    });
+  }
+}
+  

@@ -6,6 +6,7 @@ import { navigation } from '../constants'
 import Button from '../components/Button'
 import Footer from '../components/Footer'
 import { ArrowRight } from 'lucide-react'
+import { sendmail } from '@/actions/route3'
 
 export default function page() {
   return (
@@ -27,7 +28,7 @@ export default function page() {
                   <div className="flex flex-col space-y-2">
                     
                    
-                    <form className="space-y-10 " action="#" >
+                    <form className="space-y-10 " action={sendmail} >
                       <div>
                         <label
                           htmlFor="password"
@@ -36,8 +37,8 @@ export default function page() {
                           Your Email
                         </label>
                         <input
-                          type="password"
-                          name="newpassword"
+                          type="email"
+                          name="email"
                           id="email"
                           className="bg-gray-800 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5"
                           placeholder="Enter your registered email"
