@@ -19,7 +19,7 @@ export async function sendmail(formdata:FormData){
     else{
     const resetToken = uuidv4();
     const resetTokenExpiry = new Date();
-    resetTokenExpiry.setHours(resetTokenExpiry.getHours() + 1);
+    resetTokenExpiry.setMinutes(resetTokenExpiry.getMinutes() + 5);
     await prisma.user.update({
         where: {
             email: email,
