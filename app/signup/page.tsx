@@ -39,8 +39,8 @@ export default function Page() {
         <Section>
           <div className="flex justify-center lg:space-x-28 md:justify-center lg:justify-between px-9 md:px-2 xl:px-48 lg:px-36 py-24 md:py-18 lg:py-12">
 
-            <div className=" bg-conic-gradient p-0.25 rounded-2xl ">
-              <div className="flex flex-col p-12 max-w-[500px] flex-1 border border-n-6  bg-n-8 rounded-2xl">
+            <div className=" bg-conic-gradient p-0.25 rounded-2xl w-[400px] ">
+              <div className="flex flex-col p-12 max-w-[800px] flex-1 border border-n-6  bg-n-8 rounded-2xl">
                 <div>
                   <div className="flex items-center justify-center w-full mb-6">
                     <Image src={vslogo} width={100} height={100} alt="logo" />
