@@ -17,9 +17,6 @@ export async function sendmail(formdata:FormData){
         };
     }
     else{
-
-    
-
     const resetToken = uuidv4();
     const resetTokenExpiry = new Date();
     resetTokenExpiry.setHours(resetTokenExpiry.getHours() + 1);
@@ -34,7 +31,7 @@ export async function sendmail(formdata:FormData){
     });
 
 const transporter = nodemailer.createTransport({
-    service: 'your-email-service',  
+    service: 'Gmail',  
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -46,7 +43,7 @@ const transporter = nodemailer.createTransport({
     to: email,
     from: process.env.EMAIL_USER,
     subject: 'Password Reset Request',
-    html: `<p>You requested a password reset. Click <a href="${resetUrl}">here</a> to reset your password.</p>`,
+    html: `<p>You requested a password reset. Click <a href="${resetUrl}">here</a> to reset your password.</p>. Note that this link will is valid only for 5 minutes.`,
   };
 
   try{
@@ -68,6 +65,7 @@ const transporter = nodemailer.createTransport({
 export async function checktoken(formdata:FormData){
 
     const token = formdata.get("token") as string;
+    console.log("token is",token)
     const user = await prisma.user.findFirst({
         where: {
             resetToken: token,
@@ -83,14 +81,13 @@ export async function resetpassword(formdata:FormData){
   const newPassword = formdata.get("newpassword") as string;
   const check=await checktoken(formdata);
   if(!check){
+    console.log("Invalid Token")
     return {
         error: 'This token is either invalid or expired.',
     }
   }
   else{
-    const hashedPassword = await bcrypt.hash(newPassword, 10);
-
-    
+    const hashedPassword = await bcrypt.hash(newPassword, 10); 
     await prisma.user.update({
       where: { id: check },
       data: {
@@ -99,6 +96,7 @@ export async function resetpassword(formdata:FormData){
         resetTokenExpiry: null,
       },
     });
+    console.log("Password updated");
   }
 }
   

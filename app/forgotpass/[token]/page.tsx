@@ -11,17 +11,33 @@ import { checktoken, resetpassword } from '@/actions/route3'
 
 interface PageProps {
     params: {
-      number: string; 
+      token: string; 
     };
   }
 
   const Page: NextPage<PageProps> = async({ params }) => {
-    // const data=new FormData();
-    // data.append('token',params.number);
-    // const check=await checktoken(data);
-    // if(!check){
-    //   return <div>Invalid Token</div>
-    // }
+    const data=new FormData();
+    data.append('token',params.token);
+    console.log("data",params)
+    const check=await checktoken(data);
+    if(!check){
+      return <div>Invalid Token</div>
+    }
+    async function reset(formdata:FormData){
+      "use server"
+      const data=new FormData();
+      data.append('newpassword',formdata.get('newpassword') as string);
+      data.append('token',params.token);
+      
+      const reset=await resetpassword(data);
+      if(reset?.error){
+        console.log("error",reset.error)
+      }
+      else{
+        console.log("Password Updated")
+      }
+
+    }
 
   return (
   <>
@@ -42,7 +58,7 @@ interface PageProps {
                   <div className="flex flex-col space-y-2">
                     
                    
-                    <form className="space-y-10 " action={resetpassword} >
+                    <form className="space-y-10 " action={reset} >
                       <div>
                         <label
                           htmlFor="password"
