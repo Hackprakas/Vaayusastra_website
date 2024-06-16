@@ -12,6 +12,7 @@ import Section from "../components/Section";
 import Button from "../components/Button";
 import { gettoken } from "@/actions/route2";
 import { gethash } from "@/actions/route2";
+import Link from "next/link";
 
 export default function Page() {
   async function handleSignin() {
@@ -100,12 +101,12 @@ export default function Page() {
                           
                           
                         </div>
-                        <a
-                          href="#"
+                        <Link
+                          href="/forgotpass"
                           className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
                         >
                           Forgot password?
-                        </a>
+                        </Link>
                       </div>
                       <Button white
                         className="w-full text-black"
