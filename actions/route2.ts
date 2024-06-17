@@ -1,7 +1,9 @@
 "use server"
 import { getCsrfToken } from "next-auth/react";
 import { getServerSession } from "next-auth"
+import prisma from "@/app/lib/db";
 import bcrypt from "bcrypt";
+import { get } from "http";
 
 export async function getsession() {
     const session = await getServerSession();
@@ -9,12 +11,96 @@ export async function getsession() {
     return session;
    
 }
-export async function gettoken(){
-    const csrfToken = await getCsrfToken();
-    return csrfToken;
+export async function addgmailuser(formdata:FormData){
+    const email=formdata.get("email") as string;
+    const user=await getsession();
+    const currentuser=user?.user?.email as string;
+    
+    const check=await prisma.allowlist.findUnique({
+        where:{
+            email:currentuser,
+        }
+    });
+    if(!check){
+        return {
+            error: 'You are not authorized to add users.',
+        };
+    }
+    else if(check && check.read && check.write){
+        await prisma.allowlist.create({
+            data:{
+                email:email,
+                read:true,
+                write:true,
+            }
+        });
+        return {
+            message: 'User added successfully.',
+        };
+    }
+    else if(check && check.read && !check.write){
+        return {
+            error: 'You do not have write access.',
+        };
+    }
+    else if(check && !check.read && check.write){
+        return {
+            error: 'You do not have read access.',
+        };
+    }
 }
-export async function gethash(){
-    const hash = await bcrypt.hash("123456", 10);
+export async function addemailuser(formdata:FormData){
+    const email=formdata.get("email") as string;
+    const password=formdata.get("password") as string;
+    const name=formdata.get("name") as string;
+    const hash= await gethash(password);
+    const user=await getsession();
+    const currentuser=user?.user?.email as string;
+    
+    const check=await prisma.allowlist.findUnique({
+        where:{
+            email:currentuser,
+        }
+    });
+    if(!check){
+        return {
+            error: 'You are not authorized to add users.',
+        };
+    }
+    else if(check && check.read && check.write){
+        await prisma.user.create({
+            data:{
+                name:name,
+                email:email,
+                password:hash,
+            }
+        });
+        await prisma.allowlist.create({
+            data:{
+                email:email,
+                read:true,
+                write:true,
+            }
+        });
+
+        return {
+            message: 'User added successfully.',
+        };
+    }
+    else if(check && check.read && !check.write){
+        return {
+            error: 'You do not have write access.',
+        };
+    }
+    else if(check && !check.read && check.write){
+        return {
+            error: 'You do not have read access.',
+        };
+    }
+}
+
+ async function gethash(text:string){
+    const hash = await bcrypt.hash(text, 10);
     console.log(hash)
     return hash;
 }

@@ -29,7 +29,9 @@ ChartJS.register(
 
 // AdminPage Component
 const AdminPage = () => {
-  
+  const { data: session, status } = useSession();
+  if (status === 'loading') return <div>Loading.....</div>;
+  else if(!session) return <div>404 not found</div>;
 
   const data = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
