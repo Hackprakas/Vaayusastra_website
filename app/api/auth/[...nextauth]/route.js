@@ -1,11 +1,10 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
 import { signOut } from "next-auth/react";
-import EmailProvider from "next-auth/providers/email";
 import CredentialsProvider from "next-auth/providers/credentials";
-import nodemailer from "nodemailer";
 import prisma from "@/app/lib/db";
 import bcrypt from "bcrypt";
+
 
 const AuthOptions = {
   providers: [
@@ -50,8 +49,10 @@ const AuthOptions = {
     },
 
     async signIn({ profile, account, email, credentials }) {
+      const list=await prisma.allowlist.findMany();
+      const allowedEmails = list.map((item) => item.email);
       if (account?.provider === "google") {
-        if(profile.email === "krishnalakshman67@gmail.com" || profile.email === "ramkishore29861@gmail.com") {
+        if(allowedEmails.includes(profile.email)) {
           return true;
         } else {
           signOut();
@@ -59,8 +60,7 @@ const AuthOptions = {
         }
       }
       else if (
-        credentials.email === "krishnalakshman67@gmail.com" ||
-        credentials.email === "ramkishore29861@gmail.com"
+       allowedEmails.includes(credentials.email)
       ) {
         return true;
       } else {

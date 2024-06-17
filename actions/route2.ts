@@ -15,6 +15,12 @@ export async function addgmailuser(formdata:FormData){
     const email=formdata.get("email") as string;
     const user=await getsession();
     const currentuser=user?.user?.email as string;
+    if(!currentuser){
+        console.log("no user found");
+        return {
+            error: 'No user found.',
+        };
+    }
     
     const check=await prisma.allowlist.findUnique({
         where:{
@@ -22,6 +28,7 @@ export async function addgmailuser(formdata:FormData){
         }
     });
     if(!check){
+        console.log("you are not authorized to add users");
         return {
             error: 'You are not authorized to add users.',
         };
