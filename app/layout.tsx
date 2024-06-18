@@ -3,6 +3,7 @@ import { Sora} from "next/font/google";
 import "./globals.css";
 import CustomCursor from "./components/custom";
 import Authprovider from "../app/components/Authprovider"
+import Script from 'next/script'
 
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+  return (<>
     <html lang="en">
       <body className={sora.className}>
         
@@ -31,5 +32,7 @@ export default function RootLayout({
          
       </body>
     </html>
+    <Script src="https://checkout.razorpay.com/v1/checkout.js"/>
+  </>
   );
 }

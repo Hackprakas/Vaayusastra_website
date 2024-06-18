@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import Image from 'next/image';
 import product1 from "../components/assets/products/product1.jpg"
@@ -6,9 +7,73 @@ import { navigation } from '../constants';
 import Section from '../components/Section';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
+import { returnid, verifypayment } from '@/actions/route5';
+import Razorpay from 'razorpay';
 
 
 export default function Page() {
+
+  const makePayment = async () => {
+    // "use server"
+    const key = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID as string;
+    console.log("KEY"+key);
+    // Make API call to the serverless API
+    const data = await returnid();
+    console.log("id:"+data.id);
+    console.log(data.id);
+    const options = {
+      key: key,
+      name: "mmantratech",
+      currency: data.currency,
+      amount: data.amount,
+      order_id: data.id,
+      description: "Understanding RazorPay Integration",
+      // image: logoBase64,
+      handler: async function (response:any) {
+        // if (response.length==0) return <Loading/>;
+        console.log(response);
+        const datas=new FormData();
+        datas.append('razorpay_payment_id',response.razorpay_payment_id);
+        datas.append('razorpay_order_id',response.razorpay_order_id);
+        datas.append('razorpay_signature',response.razorpay_signature);
+
+        const data = await verifypayment(datas);
+        console.log("response verify==",data)
+
+        if(data.message)
+        {
+
+
+          console.log("redirected.......")
+          return {
+            redirect: {
+              destination: '/',
+              permanent: false,
+            },
+          }
+
+        }
+
+        // Validate payment at server - using webhooks is a better idea.
+        // alert(response.razorpay_payment_id);
+        // alert(response.razorpay_order_id);
+        // alert(response.razorpay_signature);
+      },
+      prefill: {
+        name: "mmantratech",
+        email: "mmantratech@gmail.com",
+        contact: "000000000",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+
+    paymentObject.on("payment.failed", function (response:any) {
+      alert("Payment failed. Please try again. Contact support for help");
+    });
+  };
+
   return (<>
     <Navbar data={navigation} position={true} hide={true} admin={false}/>
     <Section >
@@ -52,7 +117,7 @@ export default function Page() {
             </div>
 
             <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
-              <Button white>BuyNow</Button>
+              <Button white onClick={()=>makePayment()}>BuyNow</Button>
 
               <a
                 href="#"
