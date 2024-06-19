@@ -1375,5 +1375,31 @@ export const hindu = [
     },
 
 ];
+interface CartItem {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  quantity: number;
+  imageUrl?: any;
+}
 
-
+export const ShoppingCart:CartItem[]=[
+  
+    {
+      id: 1,
+      name: 'Glider',
+      description: ' Precision-engineered for effortless flight and stability, inspiring young minds with sleek design and vibrant colors."',
+      price: 50,
+      quantity: 2,
+      imageUrl: glider1,
+    },
+    {
+      id: 2,
+      name: 'Item 2',
+      description: 'Description for item 2',
+      price: 75,
+      quantity: 1,
+      imageUrl: 'https://via.placeholder.com/300',
+    }
+  ]
