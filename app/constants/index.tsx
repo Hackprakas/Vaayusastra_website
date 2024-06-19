@@ -150,7 +150,16 @@ import rec10 from "../components/assets/recognizations-images/rec10.jpg"
 import rec11 from "../components/assets/recognizations-images/rec11.jpg"
 import rec12 from "../components/assets/recognizations-images/rec12.jpg"
 
-import product1 from"../components/assets/products/product1.jpg"
+import product1 from "../components/assets/products/product1.jpg"
+import product2 from"../components/assets/products/product2.jpg"
+import product3 from"../components/assets/products/product3.jpg"
+import product4 from"../components/assets/products/product4.jpg"
+import product5 from"../components/assets/products/product5.jpg"
+import product6 from"../components/assets/products/product6.jpg"
+import product7 from"../components/assets/products/product7.jpg"
+import product8 from"../components/assets/products/product8.jpg"
+
+
 
 
 import grid from "../components/assets/grid.png"
