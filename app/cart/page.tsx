@@ -7,7 +7,6 @@ import Footer from "../components/Footer";
 import { navigation } from "../constants";
 import Section from "../components/Section";
 import Image from "next/image";
-import Link from 'next/link';
 
 interface CartItem {
   id: number;
@@ -146,16 +145,12 @@ const ShoppingCart = () => {
                       <span>Total</span>
                       <span>Rs.{total.toFixed(2)}</span>
                     </div>
-                    <Link href = "Product/checkout">
                     <Button white className="mt-4 w-full py-2">
                       Checkout
                     </Button>
-                    </Link>
-                    <Link href = "/#products">
                     <button className="mt-4 w-full py-2 bg-gray-800">
                       Back to Shopping
                     </button>
-                    </Link>
                   </div>
                 </div>
               </section>
