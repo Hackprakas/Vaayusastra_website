@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
-import { signOut } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "@/app/lib/db";
 import bcrypt from "bcrypt";
@@ -42,6 +42,7 @@ const AuthOptions = {
   ],
   pages: {
     error: "/auth/error",
+    signIn: "/signup",
   },
   callbacks: {
     session: ({ session, token }) => {
