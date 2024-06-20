@@ -14,11 +14,12 @@ import { navigation } from '../constants';
 import Section from '../components/Section';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
-import { returnid, verifypayment } from '@/actions/route5';
-import Razorpay from 'razorpay';
+
+
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Link from 'next/link';
 
 export default function Page() {
   var settings = {
@@ -57,54 +58,7 @@ export default function Page() {
     ],
   };
 
-  const makePayment = async () => {
-    const key = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID as string;
-    console.log("KEY" + key);
-    const data = await returnid();
-    console.log("id:" + data.id);
-    console.log(data.id);
-    const options = {
-      key: key,
-      name: "mmantratech",
-      currency: data.currency,
-      amount: data.amount,
-      order_id: data.id,
-      description: "Understanding RazorPay Integration",
-      handler: async function (response: any) {
-        console.log(response);
-        const datas = new FormData();
-        datas.append('razorpay_payment_id', response.razorpay_payment_id);
-        datas.append('razorpay_order_id', response.razorpay_order_id);
-        datas.append('razorpay_signature', response.razorpay_signature);
-
-        const data = await verifypayment(datas);
-        console.log("response verify==", data)
-
-        if (data.message) {
-          console.log("redirected.......")
-          return {
-            redirect: {
-              destination: '/',
-              permanent: false,
-            },
-          }
-        }
-      },
-      prefill: {
-        name: "mmantratech",
-        email: "mmantratech@gmail.com",
-        contact: "000000000",
-      },
-    };
-
-    const paymentObject = new window.Razorpay(options);
-    paymentObject.open();
-
-    paymentObject.on("payment.failed", function (response: any) {
-      alert("Payment failed. Please try again. Contact support for help");
-    });
-  };
-
+  
   return (
     <>
       <Navbar data={navigation} position={true} hide={true} admin={false} />
@@ -172,10 +126,11 @@ export default function Page() {
               </div>
 
               <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
-                <Button white onClick={() => makePayment()}>BuyNow</Button>
-
-                <a
-                  href="#"
+              <Link href="/Product/checkout">
+                <Button white>BuyNow</Button>
+              </Link>
+                <Link
+                  href="/cart"
                   className="text-white mt-4 sm:mt-0 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 flex items-center justify-center"
                   role="button"
                 >
@@ -197,7 +152,7 @@ export default function Page() {
                     />
                   </svg>
                   Add to cart
-                </a>
+               </Link>
               </div>
 
               <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
@@ -207,7 +162,7 @@ export default function Page() {
               </p>
 
               <p className="text-n-2">
-                Discover the joy of flight with our precision-engineered toy glider, it promises effortless soaring and stability. Its sleek design ensures hours of exhilarating fun for enthusiasts of all ages. Experience the thrill of flight with our exceptional toy glider today!
+                Discover the joy of flight with our precision-engineered toy glider, it promises effortless soaring and stability. It's sleek design ensures hours of exhilarating fun for enthusiasts of all ages. Experience the thrill of flight with our exceptional toy glider today!
               </p>
             </div>
           </div>

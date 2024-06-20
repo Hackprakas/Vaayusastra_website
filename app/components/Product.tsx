@@ -13,7 +13,7 @@ function Testimonials() {
   return (
     <>
       <div>
-        <Section>
+        <Section id="products">
           <div className="flex justify-center mb-7 mt-12">
             <Heading className="text-center mx-auto" tag="Igniting Innovation" title="Products" />
           </div>
@@ -29,7 +29,7 @@ function Testimonials() {
                     <div className="mb-10 text-center p-4 text-n-4">{card.text}</div>
                     <div className="bg-purple-700 h-10 w-10 rounded-full flex justify-center items-center mb-8">
                       <Button white href={card.url}>
-                        BuyNow
+                        ReadMore
                       </Button>
                     </div>
                   </div>
