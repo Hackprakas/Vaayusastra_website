@@ -16,7 +16,7 @@ if (formdata) {
 
       const mailOptions = {
         from: email?.toString() ,
-        to: 'ramkishore29861@gmail.com', // Replace with your destination email address
+        to: 'jaggu.ceo@vaayusastra.com', // Replace with your destination email address
         subject: 'New message from'+name?.toString(),
         text: email+" "+"has a new message for you:"+`\n ${message?.toString()}`,
       };
