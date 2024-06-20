@@ -1,11 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import Button from "../components/Button";
-import Image from "../components/assets/products/product8.jpg";
+import Images from "../components/assets/products/glider1.jpeg";
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
 import { navigation } from "../constants";
 import Section from "../components/Section";
+import Image from "next/image";
 
 interface CartItem {
   id: number;
@@ -25,16 +26,16 @@ const ShoppingCart = () => {
         ' Precision-engineered for effortless flight and stability, inspiring young minds with sleek design and vibrant colors."',
       price: 50,
       quantity: 2,
-      imageUrl: Image,
+      imageUrl: Images,
     },
-    {
-      id: 2,
-      name: "Item 2",
-      description: "Description for item 2",
-      price: 75,
-      quantity: 1,
-      imageUrl: "https://via.placeholder.com/300",
-    },
+    // {
+    //   id: 2,
+    //   name: "Item 2",
+    //   description: "Description for item 2",
+    //   price: 50,
+    //   quantity: 1,
+    //   imageUrl: "https://via.placeholder.com/300",
+    // },
   ]);
 
   const incrementQuantity = (itemId: number) => {
@@ -79,10 +80,12 @@ const ShoppingCart = () => {
               <div className="lg:w-2/3">
                 {cartItems.map((item) => (
                   <div key={item.id} className="flex items-center mb-4">
-                    <img
+                    <Image
                       src={item.imageUrl}
                       alt={item.name}
-                      className="w-20 h-30 object-cover mr-4"
+                      className="object-cover mr-4"
+                      height={150}
+                      width={150}
                     />
                     <div className="flex-1">
                       <h2 className="text-xl font-semibold">{item.name}</h2>
@@ -136,9 +139,11 @@ const ShoppingCart = () => {
                     <span>Total</span>
                     <span>Rs.{total.toFixed(2)}</span>
                   </div>
-                  <Button white className="mt-4 w-full py-2 ">
+                  <div className="flex justify-center mt-6">
+                  <Button white className="py-3 px-4 bg-primary-500  font-semibold rounded-lg hover:bg-primary-600 focus:outline-none focus:ring-4 focus:ring-primary-300 transition-colors dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-400">
                     Checkout
                   </Button>
+                </div>
                   <button className="mt-4 w-full py-2 bg-gray-800 ">
                     Back to Shopping
                   </button>
