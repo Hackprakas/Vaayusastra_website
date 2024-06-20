@@ -210,7 +210,7 @@ export default function Page() {
 
                 <div className="flex justify-center mt-6">
                   <Button white className="py-3 px-4 bg-primary-500  font-semibold rounded-lg hover:bg-primary-600 focus:outline-none focus:ring-4 focus:ring-primary-300 transition-colors dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-400">
-                    Place Order
+                    Proceed to Payment
                   </Button>
                 </div>
               </div>
