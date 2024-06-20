@@ -13,7 +13,7 @@ function Testimonials() {
   return (
     <>
       <div>
-        <Section>
+        <Section id="products">
           <div className="flex justify-center mb-7 mt-12">
             <Heading className="text-center mx-auto" tag="Igniting Innovation" title="Products" />
           </div>
