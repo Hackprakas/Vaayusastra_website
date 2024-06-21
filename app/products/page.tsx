@@ -126,7 +126,7 @@ export default function Page() {
               </div>
 
               <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
-              <Link href="/Product/checkout">
+              <Link href="/products/Checkout">
                 <Button white>BuyNow</Button>
               </Link>
                 <Link
