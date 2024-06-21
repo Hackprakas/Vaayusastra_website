@@ -9,13 +9,38 @@ import { ArrowRight } from 'lucide-react'
 import React from 'react'
 import { addemailuser, addgmailuser } from '@/actions/route2'
 import { useSession } from 'next-auth/react'
+import Notfound from '@/app/components/notfound'
+import { useEffect } from 'react'
+import Loader from '@/app/components/Loader'
 
 export default function page() {
-  const [choice, setChoice] = useState("");
-  const { data: session } = useSession();
+  const [choice, setChoice] = useState("Google");
+  const { data: session , status } = useSession();
+  const [loading, setLoading] = useState(true);
   console.log(choice)
-  if(!session){
-    return <div>404 not found</div>
+
+
+  useEffect(() => {
+    if (status == "authenticated") {
+      setLoading(false);
+    }
+  }, [status]);
+
+  console.log(choice);
+
+  if (loading) {
+    return <div>
+      <Loader />
+    </div>; 
+  }
+
+  if (!session) {
+    return (
+
+      <div>
+      <Notfound />
+      </div>
+    )
   }
  
   return (
@@ -23,10 +48,11 @@ export default function page() {
       <div className="overflow-auto">
         <Navbar data={adminNavigation} position={true} hide={true} admin={false} />
         <Section>
-          <div className="flex justify-center lg:space-x-28  px-9 md:px-2 xl:px-48 lg:px-36 py-24 md:py-12 lg:py-12">
+          <div className=''>
+          <div className="flex justify-center lg:space-x-28  px-9 md:px-2 xl:px-48 lg:px-36 py-32 md:py-12 lg:py-14">
 
             <div className=" bg-conic-gradient p-0.25 rounded-2xl">
-              <div className="flex flex-col p-12 max-w-[600px] flex-1 border border-n-6  bg-n-8 rounded-2xl">
+              <div className="flex flex-col p-12 lg:p-8 max-w-[600px] flex-1 border border-n-6  bg-n-8 rounded-2xl">
                 <div>
                   <div className="flex items-center justify-center w-full mb-6">
                     {/* <Image src={vslogo} width={100} height={100} alt="logo" /> */}
@@ -43,7 +69,7 @@ export default function page() {
                         >
                           Authentication type
                         </label>
-                        <select id="answer" name="answer" className='bg-gray-800 text-white sm:text-sm rounded-lg  block w-full p-2.5' onChange={(e)=>setChoice(e.currentTarget.value)}>
+                        <select id="answer" name="answer" className='bg-gray-800 text-white sm:text-sm rounded-lg  block w-full p-3' onChange={(e)=>setChoice(e.currentTarget.value)}>
                         <option value="Choose"   >Choose an option</option>
                           <option value="Google" >Google</option>
                           <option value="Email" >Email and Password</option>
@@ -64,7 +90,7 @@ export default function page() {
                             type="text"
                             name="name"
                             id="name"
-                            className="bg-gray-800 text-white sm:text-sm rounded-lg  block w-full p-2.5"
+                            className="bg-gray-800 text-white sm:text-sm rounded-lg  block w-full p-3"
                             placeholder="Name"
                             required
                           />
@@ -148,6 +174,7 @@ export default function page() {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </Section>
         <Footer />
