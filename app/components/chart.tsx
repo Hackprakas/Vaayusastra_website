@@ -119,20 +119,20 @@ export function Pies({ datas }: Props) {
     datasets: [{
       data: [datas.Tendayscamp, datas.WeekendBatches, datas.OnlineAirScience, datas.Summercamp, datas.Advancedlevelprogram],
       backgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        '#FFCE56',
-        '#2ECC71',
+        '#422259',
+        '#D38CD8',
+        '#BF7BB6',
         '#9B59B6',
-        '#FFA726'
+        '#6D4985',
+        '##7386E6'
       ],
       hoverBackgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        '#FFCE56',
-        '#2ECC71',
+        '#422259',
+        '#D38CD8',
+        '#BF7BB6',
         '#9B59B6',
-        '#FFA726'
+        '#6D4985',
+        '#7386E6'
       ]
     }]
   };
