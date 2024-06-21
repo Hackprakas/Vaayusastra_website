@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { navigation } from "../constants";
 import Section from "../components/Section";
 import Image from "next/image";
+import Link from 'next/link';
 
 interface CartItem {
   id: number;
@@ -42,8 +43,7 @@ const ShoppingCart = () => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
         item.id === itemId && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
+          ? { ...item, quantity: item.quantity - 1 } : item
       )
     );
   };
@@ -73,9 +73,13 @@ const ShoppingCart = () => {
           <div className="container mx-auto pt-24">
             <h1 className="text-2xl font-bold mb-4">Shopping Cart</h1>
             {cartItems.length === 0 ? (
-              <div className="flex justify-center items-center h-64">
-                <p className="text-xl">Your cart is empty.</p>
+              <div className="flex flex-col justify-center items-center h-64">
+                <p className="text-xl mb-4 flex justify-center">Your cart is empty.</p>
+                <Link href = "/#products">
+                <Button white className="mt-40">Back to Shopping</Button>
+                </Link>
               </div>
+              
             ) : (
               <section className="flex flex-col lg:flex-row justify-between">
                 <div className="lg:w-2/3">
@@ -145,12 +149,16 @@ const ShoppingCart = () => {
                       <span>Total</span>
                       <span>Rs.{total.toFixed(2)}</span>
                     </div>
+                    <Link href = "products/Checkout">
                     <Button white className="mt-4 w-full py-2">
                       Checkout
                     </Button>
+                    </Link>
+                    <Link href='/#products'>
                     <button className="mt-4 w-full py-2 bg-gray-800">
                       Back to Shopping
                     </button>
+                    </Link>
                   </div>
                 </div>
               </section>
