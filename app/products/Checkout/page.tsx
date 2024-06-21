@@ -1,11 +1,75 @@
+"use client"
 import Button from '@/app/components/Button';
 import React from 'react';
 import Footer from "../../components/Footer";
 import Navbar from '@/app/components/navbar';
 import { navigation } from "../../constants";
-import Section from "../../components/Section"
+import Section from "../../components/Section";
+import { returnid, verifypayment } from '@/actions/route5';
+import Razorpay from 'razorpay';
 
 export default function Page() {
+  const makePayment = async () => {
+    // "use server"
+    const key = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID as string;
+    console.log("KEY"+key);
+    // Make API call to the serverless API
+    const data = await returnid();
+    console.log("id:"+data.id);
+    console.log(data.id);
+    const options = {
+      key: key,
+      name: "mmantratech",
+      currency: data.currency,
+      amount: data.amount,
+      order_id: data.id,
+      description: "Understanding RazorPay Integration",
+      // image: logoBase64,
+      handler: async function (response:any) {
+        // if (response.length==0) return <Loading/>;
+        console.log(response);
+        const datas=new FormData();
+        datas.append('razorpay_payment_id',response.razorpay_payment_id);
+        datas.append('razorpay_order_id',response.razorpay_order_id);
+        datas.append('razorpay_signature',response.razorpay_signature);
+
+        const data = await verifypayment(datas);
+        console.log("response verify==",data)
+
+        if(data.message)
+        {
+
+
+          console.log("redirected.......")
+          return {
+            redirect: {
+              destination: '/',
+              permanent: false,
+            },
+          }
+
+        }
+
+        // Validate payment at server - using webhooks is a better idea.
+        // alert(response.razorpay_payment_id);
+        // alert(response.razorpay_order_id);
+        // alert(response.razorpay_signature);
+      },
+      prefill: {
+        name: "mmantratech",
+        email: "mmantratech@gmail.com",
+        contact: "000000000",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+
+    paymentObject.on("payment.failed", function (response:any) {
+      alert("Payment failed. Please try again. Contact support for help");
+    });
+  };
+
   return (
     <div>
         <Navbar position={true} data={navigation} hide={true} admin={false}/>
@@ -209,9 +273,7 @@ export default function Page() {
                 </div>
 
                 <div className="flex justify-center mt-6">
-                  <Button white className="py-3 px-4 bg-primary-500  font-semibold rounded-lg hover:bg-primary-600 focus:outline-none focus:ring-4 focus:ring-primary-300 transition-colors dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-400">
-                    Proceed to Payment
-                  </Button>
+                  <Button white onClick={()=>makePayment()}>Proceed to Payment</Button>
                 </div>
               </div>
             </div>
