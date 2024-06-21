@@ -16,11 +16,11 @@ export async function getdata(){
         select:{
             coursecompletedgrade:true,
         },
-        where:{
-            coursecompletedgrade:{
-                in:['S','A','A+']
-            }
-        }
+        // where:{
+        //     coursecompletedgrade:{
+        //         in:['S','A','A+']
+        //     }
+        // }
     })
     return data;
 }

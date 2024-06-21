@@ -54,23 +54,50 @@ datas.forEach((item) => {
 );
 console.log(courses);
 const no=await getdata();
-
+console.log(no);
 const grades:{[key:string]:number}={};
 
-no.forEach((item) => {
-  const gra=item.coursecompletedgrade ;
-
-  if (grades[gra as string]) {
-    courses[gra as string]++;
-  } else {
-    courses[gra as string] = 1;
+no.forEach((item)=>{
+  const grade=item.coursecompletedgrade as string;
+  console.log(grade);
+  const highestGrade = ['S','A+'];
+  if(highestGrade.includes(grade)){
+    if(grades[grade]){
+      grades[grade]++;
+    }
+    else{
+      grades[grade]=1;
+    }
   }
-
 }
 );
+const result = Object.entries(grades).map(([grade, count]) => `${grade}: ${count}`).join(', ');
+console.log(result);
+const count: { [key: string]: number } = {};
+var failing = 0;
+var total = 0;
+no.forEach((item) => {
+  const grade = item.coursecompletedgrade as string;
+  total++;
+  if(grade !== 'U'){
+    if(count[grade]){
+      count[grade]++;
+  }
+  else{
+    count[grade] = 1;
+  }
+}
+else{
+  failing += 1;
+}
+});
+
+const passing = total - failing;
+const passPercentage = (passing / total) * 100;
+console.log(passPercentage);
+// console.log(no[0].coursecompletedgrade);
 // console.log(grades);
-console.log(no[0].coursecompletedgrade);
-console.log(grades);
+
 
 
 
@@ -110,7 +137,7 @@ console.log(grades);
             <h2 className="text-xl font-bold mb-4">Toppers count</h2>
             <div className="w-full text-white flex items-center justify-center rounded">
              
-                <span className="text-sm">5</span>
+                <span className="text-sm">{result}</span>
              
             </div>
           </div>
@@ -119,7 +146,7 @@ console.log(grades);
             <h2 className="text-xl font-bold mb-4">Overall Pass Percentage</h2>
             <div className="w-full text-white flex items-center justify-center rounded">
               
-                <span className="text-sm">Loading...</span>
+                <span className="text-sm">{passPercentage}</span>
               
             </div>
           </div>
