@@ -5,6 +5,9 @@ import bcrypt from "bcrypt";
 import prisma from '@/app/lib/db';
 
 export async function sendmail(formdata:FormData){
+  try{
+
+  
     const email = formdata.get("email") as string;
     const user = await prisma.user.findUnique({
         where: {
@@ -60,6 +63,13 @@ const transporter = nodemailer.createTransport({
         }
     }
 }
+  }
+  catch(err){
+    console.log(err);
+    return {
+        error: err,
+    }
+  }
 }
 
 export async function checktoken(formdata:FormData){
@@ -96,7 +106,9 @@ export async function resetpassword(formdata:FormData){
         resetTokenExpiry: null,
       },
     });
-    console.log("Password updated");
+    return{
+      message: 'Password updated successfully.',
+    }
   }
 }
   

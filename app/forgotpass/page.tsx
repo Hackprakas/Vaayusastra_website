@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import Section from '../components/Section'
@@ -9,6 +10,16 @@ import { ArrowRight } from 'lucide-react'
 import { sendmail } from '@/actions/route3'
 
 export default function page() {
+
+  async function send(formdata:FormData){
+const res=await sendmail(formdata);
+if(res.error){
+  alert(res.error);
+  }
+  else{
+    alert(res.message);
+  }
+}
   return (
   <>
   <div className="overflow-auto">
@@ -28,7 +39,7 @@ export default function page() {
                   <div className="flex flex-col space-y-2">
                     
                    
-                    <form className="space-y-10 " action={sendmail} >
+                    <form className="space-y-10 " action={send} >
                       <div>
                         <label
                           htmlFor="password"

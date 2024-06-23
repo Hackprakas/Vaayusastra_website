@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import Section from '../../components/Section'
@@ -24,7 +25,7 @@ interface PageProps {
       return <div>Invalid Token</div>
     }
     async function reset(formdata:FormData){
-      "use server"
+      
       const data=new FormData();
       data.append('newpassword',formdata.get('newpassword') as string);
       data.append('token',params.token);
@@ -33,8 +34,8 @@ interface PageProps {
       if(reset?.error){
         console.log("error",reset.error)
       }
-      else{
-        console.log("Password Updated")
+      else if(reset?.message){
+        alert(reset.message)
       }
 
     }
@@ -70,7 +71,7 @@ interface PageProps {
                           type="password"
                           name="newpassword"
                           id="email"
-                          className="bg-gray-800 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5"
+                          className="bg-gray-800 text-white sm:text-sm rounded-lg  block w-full p-2.5"
                           placeholder="Your New Password"
                           required
                         />

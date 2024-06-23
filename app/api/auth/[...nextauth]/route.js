@@ -32,10 +32,11 @@ const AuthOptions = {
           if (match) {
             return user;
           } else {
-            return null;
+            throw new Error("Invalid password");
+            
           }
         } else {
-          return null;
+          throw new Error("No user found");
         }
       },
     }),
@@ -57,6 +58,7 @@ const AuthOptions = {
           return true;
         } else {
           signOut();
+          
           throw new Error("You are not authorized to login");
         }
       }
@@ -64,7 +66,10 @@ const AuthOptions = {
        allowedEmails.includes(credentials.email)
       ) {
         return true;
-      } else {
+      } 
+      
+      
+      else {
         signOut();
         throw new Error("You are not authorized to login");
       }

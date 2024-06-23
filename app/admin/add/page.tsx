@@ -13,15 +13,38 @@ import Notfound from '@/app/components/notfound'
 import { useEffect } from 'react'
 import Loader from '@/app/components/Loader'
 
+
 export default function page() {
   const [choice, setChoice] = useState("Google");
   const { data: session , status } = useSession();
   const [loading, setLoading] = useState(true);
   console.log(choice)
 
+  async function addgmailadmin(formdata:FormData){
+    const check=await addgmailuser(formdata);
+    if (check?.error){
+     alert(check.error);
+  }
+  else if(check?.message){
+    alert(check.message);
+  }
+  }
+  async function addemailadmin(formdata:FormData){
+    const check=await addemailuser(formdata);
+    if (check?.error){
+     alert(check.error);
+  }
+  else if(check?.message){
+    alert(check.message);
+  }
+  }
+
 
   useEffect(() => {
     if (status == "authenticated") {
+      setLoading(false);
+    }
+    else if(!session){
       setLoading(false);
     }
   }, [status]);
@@ -78,7 +101,7 @@ export default function page() {
                     </form>
 
                     {choice === "Email" ? (
-                      <form className="space-y-10 " action={addemailuser} >
+                      <form className="space-y-10 " action={addemailadmin} >
                         <div>
                           <label
                             htmlFor="Name"
@@ -122,7 +145,7 @@ export default function page() {
                             type="password"
                             name="password"
                             id="password"
-                            className="bg-gray-800 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                            className="bg-gray-800 text-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                             placeholder="Conform Password"
                             required
                           />
@@ -141,7 +164,7 @@ export default function page() {
 
                       </form>
                     ) :(choice==="Google")&&(
-                      <form className="space-y-10 " action={addgmailuser} >
+                      <form className="space-y-10 " action={addgmailadmin} >
                         <div>
                           <label
                             htmlFor="Name"

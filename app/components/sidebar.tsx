@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { LogOut, Gauge, LogIn, Users, UserPlus } from 'lucide-react';
 import vslogo from "../../public/VS Logo New 1_edited_edited.webp";
 import { signOut } from 'next-auth/react';
+import Link from 'next/link';
 
 
 
@@ -29,10 +30,10 @@ function Sidebar() {
 
           <nav className=" flex flex-col items-start ml-3 py-8 ">
             <ul>
-              <li className="py-2  flex items-center">
+              <Link href="/admin/add" className="py-2  flex items-center">
                 <UserPlus className="mr-2" />
                 Add Admin
-              </li>
+              </Link>
               <li className="py-2  flex items-center">
                 <Users className="mr-2" />
                 Stats
