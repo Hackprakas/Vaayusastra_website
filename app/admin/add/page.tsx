@@ -12,6 +12,7 @@ import { useSession } from 'next-auth/react'
 import Notfound from '@/app/components/notfound'
 import { useEffect } from 'react'
 import Loader from '@/app/components/Loader'
+import Sidebar from '@/app/components/sidebar'
 
 
 export default function page() {
@@ -68,14 +69,18 @@ export default function page() {
  
   return (
     <>
-      <div className="overflow-auto">
-        <Navbar data={adminNavigation} position={true} hide={true} admin={false} />
-        <Section>
-          <div className=''>
-          <div className="flex justify-center lg:space-x-28  px-9 md:px-2 xl:px-48 lg:px-36 py-32 md:py-12 lg:py-14">
+      <div className="overflow-auto flex">
+        <Sidebar/>
+      <div className='block md:hidden lg:hidden'>
 
-            <div className=" bg-conic-gradient p-0.25 rounded-2xl">
-              <div className="flex flex-col p-12 lg:p-8 max-w-[600px] flex-1 border border-n-6  bg-n-8 rounded-2xl">
+        <Navbar data={adminNavigation} position={true} hide={true} admin={false} />
+      </div>
+        
+          <div className='flex justify-center items-center w-full'>
+          <div className="flex justify-center items-center  w-[500px] md:w-full lg:w-[750px]  px-9 md:px-32 xl:px-48 lg:px-72 py-32 md:py-12 lg:py-14">
+
+            <div className=" bg-conic-gradient p-0.25 rounded-2xl flex-1   ">
+              <div className="flex flex-col p-12 h-full lg:p-8  border border-n-6  bg-n-8 rounded-2xl">
                 <div>
                   <div className="flex items-center justify-center w-full mb-6">
                     {/* <Image src={vslogo} width={100} height={100} alt="logo" /> */}
@@ -199,9 +204,9 @@ export default function page() {
             </div>
           </div>
           </div>
-        </Section>
-        <Footer />
+        
       </div>
+        
     </>
   )
 }

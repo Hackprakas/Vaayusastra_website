@@ -34,10 +34,10 @@ function Sidebar() {
                 <UserPlus className="mr-2" />
                 Add Admin
               </Link>
-              <li className="py-2  flex items-center">
+              <Link  href="/admin"className="py-2  flex items-center">
                 <Users className="mr-2" />
                 Stats
-              </li>
+              </Link>
             </ul>
           </nav>
         </div>
