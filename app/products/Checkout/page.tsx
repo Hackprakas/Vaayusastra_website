@@ -6,7 +6,7 @@ import Navbar from '@/app/components/navbar';
 import { navigation } from "../../constants";
 import Section from "../../components/Section";
 import { returnid, verifypayment } from '@/actions/route5';
-import Razorpay from 'razorpay';
+
 
 export default function Page() {
   const makePayment = async () => {
@@ -19,48 +19,41 @@ export default function Page() {
     console.log(data.id);
     const options = {
       key: key,
-      name: "mmantratech",
+      name: "Vaayusastra Aerospace",
       currency: data.currency,
-      amount: data.amount,
+      amount: "20000",
       order_id: data.id,
-      description: "Understanding RazorPay Integration",
-      // image: logoBase64,
+      description: "Payment Gateway",
       handler: async function (response:any) {
-        // if (response.length==0) return <Loading/>;
         console.log(response);
         const datas=new FormData();
         datas.append('razorpay_payment_id',response.razorpay_payment_id);
         datas.append('razorpay_order_id',response.razorpay_order_id);
         datas.append('razorpay_signature',response.razorpay_signature);
+        
+        
 
         const data = await verifypayment(datas);
         console.log("response verify==",data)
 
         if(data.message)
         {
-
-
-          console.log("redirected.......")
-          return {
-            redirect: {
-              destination: '/',
-              permanent: false,
-            },
-          }
+          alert("payment is success")
+          window.location.href="/"
 
         }
+        else if(data.error){
+          alert("payment is failed")
+        }
 
-        // Validate payment at server - using webhooks is a better idea.
-        // alert(response.razorpay_payment_id);
-        // alert(response.razorpay_order_id);
-        // alert(response.razorpay_signature);
       },
       prefill: {
-        name: "mmantratech",
-        email: "mmantratech@gmail.com",
+        name: "Customer Name",
+        email: "customer@gmail.com",
         contact: "000000000",
       },
     };
+
 
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
@@ -111,19 +104,19 @@ export default function Page() {
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
                     <label htmlFor="your_name" className="mb-2 block text-sm font-medium text-white">Your name*</label>
-                    <input type="text" id="your_name" className="block w-full rounded-lg border p-2.5 text-sm ] border-gray-800 bg-gray-800 text-white placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder='Enter Name'  required />
+                    <input type="text" id="your_name"name="name" className="block w-full rounded-lg border p-2.5 text-sm ] border-gray-800 bg-gray-800 text-white placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder='Enter Name'  required />
                   </div>
 
                   <div>
                     <label htmlFor="your_email" className="mb-2 block text-sm font-medium text-white">Your email*</label>
-                    <input type="email" id="your_email" className="block w-full rounded-lg border p-2.5 text-sm ] border-gray-800 bg-gray-800 text-white placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="name@gmail.com" required />
+                    <input type="email" id="your_email" name="email" className="block w-full rounded-lg border p-2.5 text-sm ] border-gray-800 bg-gray-800 text-white placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="name@gmail.com" required />
                   </div>
 
                   <div>
                     <div className="mb-2 flex items-center gap-2">
                       <label htmlFor="select-country-input-3" className="block text-sm font-medium text-white">Country*</label>
                     </div>
-                    <select id="select-country-input-3" className="block w-full rounded-lg border  p-2.5 text-sm text-gray-900] border-gray-800 bg-gray-800 text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500">
+                    <select id="select-country-input-3" name="Country" className="block w-full rounded-lg border  p-2.5 text-sm text-gray-900] border-gray-800 bg-gray-800 text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500">
                       <option selected>India</option>
                       <option value="AS">Australia</option>
                       <option value="FR">France</option>
@@ -136,7 +129,7 @@ export default function Page() {
                     <div className="mb-2 flex items-center gap-2">
                       <label htmlFor="select-city-input-3" className="block text-sm font-medium text-white">State*</label>
                     </div>
-                    <select id="select-city-input-3" className="block w-full rounded-lg border p-2.5 text-sm text-gray-900] border-gray-800 bg-gray-800 text-white dark:placeholder:text-gray-400 ">
+                    <select id="select-city-input-3" name="State"className="block w-full rounded-lg border p-2.5 text-sm text-gray-900] border-gray-800 bg-gray-800 text-white dark:placeholder:text-gray-400 ">
                       <option selected>Tamil Nadu</option>
                       <option value="AP">Andra Pradesh</option>
                       <option value="KL">Kerala</option>
@@ -170,18 +163,18 @@ export default function Page() {
                           </li>
                         </ul>
                       </div>
-                      <input type="number" id="phone-input-3" className="rounded-none rounded-e-lg border p-2.5 text-sm border-gray-800 bg-gray-800  text-white placeholder:text-gray-400 " placeholder="1234567890" required />
+                      <input type="number" id="phone-input-3" name="phoneno" className="rounded-none rounded-e-lg border p-2.5 text-sm border-gray-800 bg-gray-800  text-white placeholder:text-gray-400 " placeholder="1234567890" required />
                     </div>
                   </div>
 
                   <div>
                     <label htmlFor="address" className="mb-2 block text-sm font-medium text-white">Address</label>
-                    <input type="text" id="address" className="block w-full rounded-lg border p-2.5 text-sm  border-gray-800 bg-gray-800 text-white placeholder:text-gray-400 " placeholder="Enter Address" required />
+                    <input type="text" id="address"name="address" className="block w-full rounded-lg border p-2.5 text-sm  border-gray-800 bg-gray-800 text-white placeholder:text-gray-400 " placeholder="Enter Address" required />
                   </div>
 
                   <div>
-                    <label htmlFor="zipcode" className="mb-2 block text-sm font-medium text-white">Pin Code</label>
-                    <input type="text" id="zipcode" className="block w-full rounded-lg border p-2.5 text-sm  border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="XXXXXX" required />
+                    <label htmlFor="zipcode"  className="mb-2 block text-sm font-medium text-white">Pin Code</label>
+                    <input type="text" id="zipcode"name="pincode" className="block w-full rounded-lg border p-2.5 text-sm  border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="XXXXXX" required />
                   </div>
                 </div>
               </div>

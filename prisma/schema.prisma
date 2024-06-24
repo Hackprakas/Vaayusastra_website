@@ -40,3 +40,14 @@ model Students{
   coursecompletedgrade String?
 }
 
+model Orders{
+  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
+  orderid             String
+  amount              Int
+  status              String
+  customer_name       String
+  Email               String
+  Phone_No            Int
+  Address             String
+}
+
