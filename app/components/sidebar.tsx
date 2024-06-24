@@ -1,61 +1,56 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
-import { LogOut, Gauge, LogIn, Users, UserPlus } from 'lucide-react';
+import { LogOut, Users, UserPlus, CloudUpload } from 'lucide-react';
 import vslogo from "../../public/VS Logo New 1_edited_edited.webp";
 import { signOut } from 'next-auth/react';
 import Link from 'next/link';
 
-
-
-
 function Sidebar() {
-
   function signouts() {
     signOut({
       callbackUrl: "/signup"
-    })
-
+    });
   }
+
   return (
-    <div className=" bg-purple text-white p-6 px-2 w-72 h-screen border hidden md:flex lg:flex justify-between flex-col border-r-[0.5px] border-n-6 overflow-auto">
+    <div className="bg-purple text-white p-6 w-72 h-screen border-r border-n-6 hidden md:flex lg:flex flex-col justify-between overflow-auto">
       <div>
-        <div className='flex  items-center'>
-          <Image src={vslogo} className='w-16 h-16 ' alt="logo" />
-          <div className=" font-bold text-lg rounded ml-2">Vaayusastra Aerospace</div>
+        <div className='flex items-center'>
+          <Image src={vslogo} className='w-16 h-16' alt="logo" />
+          <div className="font-bold text-lg ml-2">Vaayusastra Aerospace</div>
         </div>
-        <div className='h-[0.3px] bg-n-6 mt-6 w-full' />
-        <div>
-
-
-          <nav className=" flex flex-col items-start ml-3 py-8 ">
-            <ul>
-              <Link href="/admin/add" className="py-2  flex items-center">
+        <div className='h-px bg-n-6 mt-6 w-auto' />
+        <nav className="flex flex-col mt-6">
+          <ul>
+            <li>
+              <Link href="/admin/add" className="flex items-center py-3 px-4 hover:bg-purple-700 rounded">
                 <UserPlus className="mr-2" />
                 Add Admin
               </Link>
-              <Link  href="/admin"className="py-2  flex items-center">
+            </li>
+            <li>
+              <Link href="/admin" className="flex items-center py-3 px-4 hover:bg-purple-700 rounded">
                 <Users className="mr-2" />
                 Stats
               </Link>
-            </ul>
-          </nav>
-        </div>
-
+            </li>
+            <li>
+              <Link href="/admin/upload" className="flex items-center py-3 px-4 hover:bg-purple-700 rounded">
+                <CloudUpload className="mr-2" />
+                Upload
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <div >
-      <div className='h-[0.3px] bg-n-6 mt-6 w-full mb-4' />
-
-      <button className="mt-auto mb-4" onClick={() => signouts()}> {/* Added margin bottom here */}
-        <ul>
-          <li className="py-4 ml-3 flex items-center">
-            <LogOut className="mr-2" />
-            Signout
-          </li>
-        </ul>
-      </button>
+      <div>
+        <div className='h-px bg-n-6 w-full mb-4' />
+        <button className="w-full text-left px-4 py-3 flex items-center hover:bg-purple-700 rounded" onClick={signouts}>
+          <LogOut className="mr-2" />
+          Signout
+        </button>
       </div>
-
     </div>
   );
 };
