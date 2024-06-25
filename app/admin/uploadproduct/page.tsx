@@ -17,6 +17,7 @@ export default function Page() {
   const [choice, setChoice] = useState<string>("Product1");
   const { data: session, status } = useSession();
   const [loading, setLoading] = useState<boolean>(true);
+  const [mainImage, setMainImage] = useState<ImageFile | null>(null);
   const [additionalImages, setAdditionalImages] = useState<ImageFile[]>([]);
 
   useEffect(() => {
@@ -26,6 +27,17 @@ export default function Page() {
       setLoading(false);
     }
   }, [session, status]);
+
+  const handleMainImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const imageFile: ImageFile = {
+        ...file,
+        preview: URL.createObjectURL(file), // Create a preview URL for the main image
+      };
+      setMainImage(imageFile);
+    }
+  };
 
   const handleAdditionalImagesChange = (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -39,10 +51,14 @@ export default function Page() {
     }
   };
 
-  const handleRemoveImage = (index: number) => {
-    setAdditionalImages((prevImages) =>
-      prevImages.filter((_, i) => i !== index)
-    );
+  const handleRemoveImage = (index: number, type: string) => {
+    if (type === 'main') {
+      setMainImage(null);
+    } else {
+      setAdditionalImages((prevImages) =>
+        prevImages.filter((_, i) => i !== index)
+      );
+    }
   };
 
   if (loading) {
@@ -104,22 +120,44 @@ export default function Page() {
                         />
                       </div>
                       <div>
-
-                        <p className='mb-2'>Upload Main Image</p>
-                        <div className="flex items-center justify-center w-20 h-20  bg-gray-700 text-white rounded-lg cursor-pointer">
+                        <label
+                          htmlFor="mainImage"
+                          className="block mb-2 text-sm font-medium text-white"
+                        >
+                          Upload Main Image
+                        </label>
+                        <div className="flex items-center justify-center w-20 h-20 bg-gray-700 text-white rounded-lg cursor-pointer">
                           <label className="cursor-pointer">
+                            {mainImage ? (
+                              <div className="relative">
+                                <img
+                                  src={mainImage.preview}
+                                  alt="Main Product"
+                                  className="w-20 h-20 object-cover rounded-lg mb-2"
+                                />
+                                <button
+                                  type="button"
+                                  className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1"
+                                  onClick={() => handleRemoveImage(0, 'main')}
+                                >
+                                  X
+                                </button>
+                              </div>
+                            ) : (
+                              <>
+                                <span className="flex items-center justify-center h-full text-gray-400 text-2xl">
+                                  +
+                                </span>
+                                <input
+                                  type="file"
+                                  name="mainImage"
+                                  className="hidden"
+                                  accept="image/*"
+                                  onChange={handleMainImageChange}
+                                />
+                              </>
+                            )}
                           </label>
-                          <span className="flex items-center justify-center h-full text-gray-400 text-2xl">
-                            +
-                          </span>
-                          <input
-                            type="file"
-                            name="additionalImages"
-                            className="hidden"
-                            accept="image/*"
-                            multiple
-                            onChange={handleAdditionalImagesChange}
-                          />
                         </div>
                       </div>
                       <div>
@@ -140,7 +178,7 @@ export default function Page() {
                               <button
                                 type="button"
                                 className="absolute top-0 right-0 bg-gray-0 text-red-600 rounded-full p-1"
-                                onClick={() => handleRemoveImage(index)}
+                                onClick={() => handleRemoveImage(index, 'additional')}
                               >
                                 X
                               </button>
