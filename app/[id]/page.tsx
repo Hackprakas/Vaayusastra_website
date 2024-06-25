@@ -1,4 +1,4 @@
-"use client"
+
 import React from 'react';
 import Image from 'next/image';
 import product1 from "../components/assets/products/product1.jpg";
@@ -14,50 +14,28 @@ import { navigation } from '../constants';
 import Section from '../components/Section';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
+import prisma from '../lib/db';
 
 
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
+import Productsslider from '../components/productsslider';
 
-export default function Page() {
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    rtl: false, // Ensure slides move from left to right
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+interface PageProps {
+  params: {
+    id: string;
   };
+}
 
+export default async function Page({params}: PageProps) {
+  
+const data=await prisma.product.findUnique({
+  where:{
+    id:params.id
+  }
+})
   
   return (
     <>
@@ -65,42 +43,15 @@ export default function Page() {
       <Section>
         <div className="max-w-screen-xl px-16 py-24 md:py-16 lg:py-16 mx-auto 2xl:px-0">
           <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
-            <div className="shrink-0 max-w-md lg:max-w-lg mx-auto">
-              <Slider {...settings}>
-                <div>
-                  <Image className="rounded-xl" src={product1} alt="Product 1" height={400} width={400} />
-                </div>
-                <div>
-                  <Image className="rounded-xl" src={product2} alt="Product 2" height={400} width={400} />
-                </div>
-                <div>
-                  <Image className="rounded-xl" src={product3} alt="Product 3" height={400} width={400} />
-                </div>
-                <div>
-                  <Image className="rounded-xl" src={product4} alt="Product 4" height={400} width={400} />
-                </div>
-                <div>
-                  <Image className="rounded-xl" src={product5} alt="Product 5" height={400} width={400} />
-                </div>
-                <div>
-                  <Image className="rounded-xl" src={product6} alt="Product 6" height={400} width={400} />
-                </div>
-                <div>
-                  <Image className="rounded-xl" src={product7} alt="Product 7" height={400} width={400} />
-                </div>
-                <div>
-                  <Image className="rounded-xl" src={product8} alt="Product 8" height={400} width={400} />
-                </div>
-              </Slider>
-            </div>
+            <Productsslider data={data} />
 
             <div className="mt-6 sm:mt-8 lg:mt-0">
               <h1 className="text-xl font-semibold text-white sm:text-2xl dark:text-white">
-                Young Aeronauts Toy Glider
+                {data?.name}
               </h1>
               <div className="mt-4 sm:items-center sm:gap-4 sm:flex">
                 <p className="text-2xl font-extrabold text-white sm:text-3xl dark:text-white">
-                  Rs.199
+                  {`Rs.${data?.price}`}
                 </p>
                 <div className="flex items-center gap-2 mt-2 sm:mt-0">
                   <div className="flex items-center gap-1">
@@ -158,12 +109,10 @@ export default function Page() {
               <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
 
               <p className="mb-6 text-n-2">
-                The Young Aeronauts Toy Glider is an educational and fun toy designed to inspire young minds with an interest in aeronautics. Created by Vaayusastra Aerospace Pvt. Ltd., this glider features a sleek design and vibrant colors that attract children and adults alike.
+                {data?.description}
               </p>
 
-              <p className="text-n-2">
-                Discover the joy of flight with our precision-engineered toy glider, it promises effortless soaring and stability. It's sleek design ensures hours of exhilarating fun for enthusiasts of all ages. Experience the thrill of flight with our exceptional toy glider today!
-              </p>
+              
             </div>
           </div>
         </div>
