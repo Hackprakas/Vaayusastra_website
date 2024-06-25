@@ -1,10 +1,13 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/app/lib/db';
 import { ObjectId } from 'mongodb';
+import { getusers } from '@/actions/route2';
 
 
 
 export async function POST(request: Request) {
+  const check=await getusers();
+  if(check?.users){
   const data = await request.json();
 
   const formattedData = data.map((record: any) => ({
@@ -28,4 +31,8 @@ export async function POST(request: Request) {
     console.error('Error uploading data:', error);
     return NextResponse.json({ success: false, error: 'Failed to upload data' });
   }
+}
+else if(check?.error){
+  return NextResponse.json({error:check.error})
+}
 }

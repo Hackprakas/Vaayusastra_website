@@ -47,7 +47,11 @@ model Orders{
   status              String
   customer_name       String
   Email               String
-  Phone_No            Int
+  Phone_No            String
+  Country             String
+  State               String
+  Zip_Code            Int
   Address             String
+
 }
 

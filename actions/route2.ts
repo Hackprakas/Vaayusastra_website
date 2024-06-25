@@ -10,31 +10,55 @@ export async function getsession() {
   console.log("sees" + session?.user?.email);
   return session;
 }
-export async function addgmailuser(formdata: FormData) {
-  const email = formdata.get("email") as string;
+
+export async function getusers() {
   const user = await getsession();
   const currentuser = user?.user?.email as string;
+  try {
+    if (!currentuser) {
+      return {
+        error: "No user found.",
+      };
+    }
+    const check = await prisma.allowlist.findUnique({
+      where: {
+        email: currentuser,
+      },
+    });
+    if (!check) {
+      return {
+        error: "You are not authorized to add users.",
+      };
+    } else if (check && check.read && check.write) {
+      
+      return {
+        users: "users",
+      };
+    } else if (check && check.read && !check.write) {
+      return {
+        error: "You do not have write access.",
+      };
+    } else if (check && !check.read && check.write) {
+      return {
+        error: "You do not have read access.",
+      };
+    }
+  } catch (e) {
+    console.log(e);
+    return {
+      error: e,
+    };
+  }
+}
+export async function addgmailuser(formdata: FormData) {
+  const email = formdata.get("email") as string;
   try{
 
   
-  if (!currentuser) {
-    console.log("no user found");
-    return {
-      error: "No user found.",
-    };
-  }
+  const check= await getusers();
+  if(check?.users){
 
-  const check = await prisma.allowlist.findUnique({
-    where: {
-      email: currentuser,
-    },
-  });
-  if (!check) {
-    console.log("you are not authorized to add users");
-    return {
-      error: "You are not authorized to add users.",
-    };
-  } else if (check && check.read && check.write) {
+  
     const find = await prisma.allowlist.findUnique({
       where: {
         email: email,
@@ -56,14 +80,11 @@ export async function addgmailuser(formdata: FormData) {
     return {
       message: "User added successfully.",
     };
-  } else if (check && check.read && !check.write) {
-    return {
-      error: "You do not have write access.",
-    };
-  } else if (check && !check.read && check.write) {
-    return {
-      error: "You do not have read access.",
-    };
+  }
+  else if(check?.error){
+    return{
+      error:check.error
+    }
   }
 }
 catch(e){
