@@ -44,7 +44,10 @@ export async function verifypayment(formdata:FormData){
                 Address:address,
                 Country:country,
                 State:state,
-                Zip_Code:zipcode,  
+                Zip_Code:zipcode,
+                Quantity:1,
+                Delivered:false,
+                OrderedDate:new Date().toISOString(), 
             }
         });
         console.log(order);

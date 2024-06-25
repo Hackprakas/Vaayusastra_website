@@ -15,7 +15,7 @@ model Allowlist {
 }
 
 model Orders {
-  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
   Address       String
   Country       String
   Email         String
@@ -26,24 +26,37 @@ model Orders {
   customer_name String
   orderid       String
   status        String
+  Delivered     Boolean   @default(false)
+  OrderedDate   DateTime
+  Quantity      Int
 }
 
 model Students {
-  id                   String   @id @default(auto()) @map("_id") @db.ObjectId
+  id                   String    @id @default(auto()) @map("_id") @db.ObjectId
   coursecompleted      Boolean
-  coursecompleteddate  DateTime @db.Date
-  coursecompletedgrade String
+  coursecompleteddate  DateTime?
+  coursecompletedgrade String?
   courseenrolled       String
-  courseenrolleddate   DateTime @db.Date
-  email                String   @unique
+  courseenrolleddate   DateTime
+  email                String    @unique
   name                 String
 }
 
 model User {
-  id               String @id @default(auto()) @map("_id") @db.ObjectId
-  email            String @unique
+  id               String  @id @default(auto()) @map("_id") @db.ObjectId
+  email            String  @unique
   name             String
   password         String
   resetToken       String?
-  resetTokenExpiry  String?
+  resetTokenExpiry String?
+}
+
+model Product {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  description  String
+  price        Float
+  image        String
+  Stock        String
+  addtionalimg String[]
 }
