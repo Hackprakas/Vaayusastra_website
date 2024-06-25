@@ -50,7 +50,7 @@ model Orders{
   Phone_No            String
   Country             String
   State               String
-  Zip_Code            Int
+  Zip_Code            String
   Address             String
 
 }

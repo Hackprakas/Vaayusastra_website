@@ -1,22 +1,19 @@
-"use client"
-import Button from '@/app/components/Button';
+"use client";
+
 import React from 'react';
-import Footer from "../../components/Footer";
 import Navbar from '@/app/components/navbar';
+import Footer from "@/app/components/Footer";
+import Section from "@/app/components/Section";
+import Button from "@/app/components/Button";
 import { navigation } from "../../constants";
-import Section from "../../components/Section";
 import { returnid, verifypayment } from '@/actions/route5';
 
-
 export default function Page() {
-  const makePayment = async () => {
-    // "use server"
+  const makePayment = async (formdata : FormData) => {    
     const key = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID as string;
-    console.log("KEY"+key);
-    // Make API call to the serverless API
+    console.log("KEY" + key);
     const data = await returnid();
-    console.log("id:"+data.id);
-    console.log(data.id);
+    console.log("id:" + data.id);
     const options = {
       key: key,
       name: "Vaayusastra Aerospace",
@@ -24,28 +21,28 @@ export default function Page() {
       amount: "20000",
       order_id: data.id,
       description: "Payment Gateway",
-      handler: async function (response:any) {
+      handler: async function (response: any) {
         console.log(response);
-        const datas=new FormData();
-        datas.append('razorpay_payment_id',response.razorpay_payment_id);
-        datas.append('razorpay_order_id',response.razorpay_order_id);
-        datas.append('razorpay_signature',response.razorpay_signature);
-        
-        
+        const datas = new FormData();
+        datas.append('razorpay_payment_id', response.razorpay_payment_id);
+        datas.append('razorpay_order_id', response.razorpay_order_id);
+        datas.append('razorpay_signature', response.razorpay_signature);
+        datas.append("name",formdata.get('name') as string);
+        datas.append("email",formdata.get('email') as string);
+        datas.append("country",formdata.get('country') as string);
+        datas.append("state",formdata.get('state') as string);
+        datas.append("phone_number",formdata.get('phone_number') as string);
+        datas.append("address",formdata.get('address') as string);
+        datas.append("zipcode",formdata.get("zipcode") as string);
+        const verifyData = await verifypayment(datas);
+        console.log("response verify==", verifyData);
 
-        const data = await verifypayment(datas);
-        console.log("response verify==",data)
-
-        if(data.message)
-        {
-          alert("payment is success")
-          window.location.href="/"
-
+        if (verifyData.message) {
+          alert("payment is success");
+          window.location.href = "/";
+        } else if (verifyData.error) {
+          alert("payment is failed");
         }
-        else if(data.error){
-          alert("payment is failed")
-        }
-
       },
       prefill: {
         name: "Customer Name",
@@ -54,228 +51,102 @@ export default function Page() {
       },
     };
 
-
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
 
-    paymentObject.on("payment.failed", function (response:any) {
+    paymentObject.on("payment.failed", function (response: any) {
       alert("Payment failed. Please try again. Contact support for help");
     });
   };
 
   return (
     <div>
-        <Navbar position={true} data={navigation} hide={true} admin={false}/>
-        <Section>
-      <section className=" py-8 antialiased md:py-16">
-        <form action="#" className="mx-auto max-w-screen-xl px-4 2xl:px-0">
-          <ol className="items-center flex w-full max-w-2xl text-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:text-base">
-            <li className="flex items-center text-primary-700 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 dark:text-primary-500 dark:after:border-gray-700 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10">
-              <span className="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] sm:after:hidden">
-                <svg className="me-2 h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                </svg>
-                Cart
-              </span>
-            </li>
-
-            <li className="flex items-center text-primary-700 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10">
-              <span className="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] sm:after:hidden">
-                <svg className="me-2 h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                </svg>
-                Checkout
-              </span>
-            </li>
-
-            <li className="flex shrink-0 items-center">
-              <svg className="me-2 h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-              </svg>
-              Order summary
-            </li>
-          </ol>
-
-          <div className="mt-6 sm:mt-8 lg:flex lg:items-start lg:gap-12 xl:gap-16">
-            <div className="min-w-0 flex-1 space-y-8">
-              <div className="space-y-4">
+      <Navbar position={true} data={navigation} hide={true} admin={false} />
+      <Section>
+        <section className="py-8 antialiased md:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <form action={makePayment}  className="mx-auto max-w-screen-xl px-4 2xl:px-0">
+              <div className="space-y-8">
                 <h2 className="text-xl font-semibold text-white">Delivery Details</h2>
-
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
                     <label htmlFor="your_name" className="mb-2 block text-sm font-medium text-white">Your name*</label>
-                    <input type="text" id="your_name"name="name" className="block w-full rounded-lg border p-2.5 text-sm ] border-gray-800 bg-gray-800 text-white placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder='Enter Name'  required />
+                    <input type="text" id="your_name" name="name" className="block w-full rounded-lg border p-2.5 text-sm border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="Enter Name" required />
                   </div>
 
                   <div>
                     <label htmlFor="your_email" className="mb-2 block text-sm font-medium text-white">Your email*</label>
-                    <input type="email" id="your_email" name="email" className="block w-full rounded-lg border p-2.5 text-sm ] border-gray-800 bg-gray-800 text-white placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="name@gmail.com" required />
+                    <input type="email" id="your_email" name="email" className="block w-full rounded-lg border p-2.5 text-sm border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="name@gmail.com" required />
                   </div>
 
                   <div>
-                    <div className="mb-2 flex items-center gap-2">
-                      <label htmlFor="select-country-input-3" className="block text-sm font-medium text-white">Country*</label>
-                    </div>
-                    <select id="select-country-input-3" name="Country" className="block w-full rounded-lg border  p-2.5 text-sm text-gray-900] border-gray-800 bg-gray-800 text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500">
-                      <option selected>India</option>
-                      <option value="AS">Australia</option>
-                      <option value="FR">France</option>
-                      <option value="ES">Spain</option>
-                      <option value="UK">United Kingdom</option>
-                    </select>
+                    <label htmlFor="country" className="mb-2 block text-sm font-medium text-white">Country*</label>
+                    <input type="text" id="country" name="country" className="block w-full rounded-lg border p-2.5 text-sm border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="Enter Country" required />
                   </div>
 
                   <div>
-                    <div className="mb-2 flex items-center gap-2">
-                      <label htmlFor="select-city-input-3" className="block text-sm font-medium text-white">State*</label>
-                    </div>
-                    <select id="select-city-input-3" name="State"className="block w-full rounded-lg border p-2.5 text-sm text-gray-900] border-gray-800 bg-gray-800 text-white dark:placeholder:text-gray-400 ">
-                      <option selected>Tamil Nadu</option>
-                      <option value="AP">Andra Pradesh</option>
-                      <option value="KL">Kerala</option>
-                      <option value="KA">Karnataka</option>
-                      <option value="TL">Telangana</option>
-                      <option value="PY">Pondicherry</option>
-                    </select>
+                    <label htmlFor="state" className="mb-2 block text-sm font-medium text-white">State*</label>
+                    <input type="text" id="state" name="state" className="block w-full rounded-lg border p-2.5 text-sm border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="Enter State" required />
                   </div>
 
                   <div>
-                    <label htmlFor="phone-input-3" className="mb-2 block text-sm font-medium text-white">Phone Number*</label>
-                    <div className="flex items-center">
-                      <button id="dropdown-phone-button-3" data-dropdown-toggle="dropdown-phone-3" className="z-10 inline-flex shrink-0 items-center rounded-s-lg border px-4 py-2.5 text-center text-sm font-medium hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gray-100 border-gray-800 bg-gray-800 text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700" type="button">
-                       
-                        +91
-                        
-                        <svg className="ms-1.5 h-2.5 w-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                        </svg>
-                      </button>
-                      <div id="dropdown-phone-3" className="z-10 hidden w-44 divide-y rounded-lg  divide-gray-800 bg-gray-800">
-                        <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-phone-button-3">
-                          <li>
-                            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">+44</a>
-                          </li>
-                          <li>
-                            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">+49</a>
-                          </li>
-                          <li>
-                            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">+97</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <input type="number" id="phone-input-3" name="phoneno" className="rounded-none rounded-e-lg border p-2.5 text-sm border-gray-800 bg-gray-800  text-white placeholder:text-gray-400 " placeholder="1234567890" required />
-                    </div>
+                    <label htmlFor="phone_number" className="mb-2 block text-sm font-medium text-white">Phone Number*</label>
+                    <input type="text" id="phone_number" name="phone_number" className="block w-full rounded-lg border p-2.5 text-sm border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="+91 1234567890" required />
                   </div>
 
                   <div>
-                    <label htmlFor="address" className="mb-2 block text-sm font-medium text-white">Address</label>
-                    <input type="text" id="address"name="address" className="block w-full rounded-lg border p-2.5 text-sm  border-gray-800 bg-gray-800 text-white placeholder:text-gray-400 " placeholder="Enter Address" required />
+                    <label htmlFor="address" className="mb-2 block text-sm font-medium text-white">Address*</label>
+                    <input type="text" id="address" name="address" className="block w-full rounded-lg border p-2.5 text-sm border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="Enter Address" required />
                   </div>
 
                   <div>
-                    <label htmlFor="zipcode"  className="mb-2 block text-sm font-medium text-white">Pin Code</label>
-                    <input type="text" id="zipcode"name="pincode" className="block w-full rounded-lg border p-2.5 text-sm  border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="XXXXXX" required />
+                    <label htmlFor="zipcode" className="mb-2 block text-sm font-medium text-white">Pin Code*</label>
+                    <input type="number" id="zipcode" name="zipcode" className="block w-full rounded-lg border p-2.5 text-sm border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="XXXXXX" required />
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <h2 className="text-xl font-semibold text-white">Billing Address</h2>
-
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div className="flex items-start">
-                    <input id="billing-same" type="checkbox" value="" className="mt-1.5 me-3 h-4 w-4 rounded focus:ring-3 focus:ring-primary-500 border-gray-800 bg-gray-800" />
-                    <label htmlFor="billing-same" className="mb-2 block text-sm font-medium text-white">Same as delivery address</label>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="billing_name" className="mb-2 block text-sm font-medium text-white">Billing name*</label>
-                    <input type="text" id="billing_name" className="block w-full rounded-lg border p-2.5 text-sm ] border-gray-800 bg-gray-800 text-white placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder='Enter Name'  required />
-                  </div>
-
-                  <div>
-                    <label htmlFor="billing_email" className="mb-2 block text-sm font-medium text-white">Billing email*</label>
-                    <input type="email" id="billing_email" className="block w-full rounded-lg border p-2.5 text-sm ] border-gray-800 bg-gray-800 text-white placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="name@gmail.com" required /></div>
-
-                  <div>
-                    <div className="mb-2 flex items-center gap-2">
-                      <label htmlFor="select-billing-country-input-3" className="block text-sm font-medium text-white">Country*</label>
-                    </div>
-                    <select id="select-billing-country-input-3" className="block w-full rounded-lg border  p-2.5 text-sm text-gray-900] border-gray-800 bg-gray-800 text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500">
-                      <option selected>India</option>
-                      <option value="AS">Australia</option>
-                      <option value="FR">France</option>
-                      <option value="ES">Spain</option>
-                      <option value="UK">United Kingdom</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <div className="mb-2 flex items-center gap-2">
-                      <label htmlFor="select-billing-city-input-3" className="block text-sm font-medium text-white">City*</label>
-                    </div>
-                    <select id="select-billing-city-input-3" className="block w-full rounded-lg border p-2.5 text-sm text-gray-900] border-gray-800 bg-gray-800 text-white dark:placeholder:text-gray-400 ">
-                      <option selected>Tamil Nadu</option>
-                      <option value="AP">Andra Pradesh</option>
-                      <option value="KL">Kerala</option>
-                      <option value="KA">Karnataka</option>
-                      <option value="TL">Telangana</option>
-                      <option value="PY">Pondicherry</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="billing_address" className="mb-2 block text-sm font-medium text-white">Billing Address</label>
-                    <input type="text" id="billing_address" className="block w-full rounded-lg border p-2.5 text-sm  border-gray-800 bg-gray-800 text-white placeholder:text-gray-400 " placeholder="Enter Address" required />
-                  </div>
-
-                  <div>
-                    <label htmlFor="billing_zipcode" className="mb-2 block text-sm font-medium text-white">Billing Pin Code</label>
-                    <input type="text" id="billing_zipcode" className="block w-full rounded-lg border p-2.5 text-sm  border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="XXXXXX" required />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="w-full lg:max-w-md">
-              <div className=" bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg">
+            <div className="w-full mt-8 lg:mt-0 lg:max-w-md">
+              <div className="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg">
                 <h2 className="text-lg font-semibold text-white">Order Summary</h2>
-
                 <div className="mt-4 space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-sm font-medium text-white">Subtotal</span>
                     <span className="text-sm font-medium text-white">Rs.180.00</span>
+                    {/* <input type="hidden" name="subtotal" value="180.00" /> */}
                   </div>
 
                   <div className="flex justify-between items-center">
                     <span className="text-sm font-medium text-white">Shipping</span>
                     <span className="text-sm font-medium text-white">Rs.10.00</span>
+                    {/* <input type="hidden" name="shipping" value="10.00" /> */}
                   </div>
 
                   <div className="flex justify-between items-center">
                     <span className="text-sm font-medium text-white">Tax (estimated)</span>
                     <span className="text-sm font-medium text-white">Rs.10.00</span>
+                    {/* <input type="hidden" name="tax" value="10.00" /> */}
                   </div>
 
                   <div className="flex justify-between items-center border-t border-gray-600 pt-4">
                     <span className="text-lg font-semibold text-white">Total</span>
                     <span className="text-lg font-semibold text-white">Rs.200.00</span>
+                    {/* <input type="hidden" name="total" value="200.00" /> */}
                   </div>
                 </div>
 
                 <div className="flex justify-center mt-6">
-                  <Button white onClick={()=>makePayment()}>Proceed to Payment</Button>
+                  <Button white className="bg-white text-gray-800 py-2 px-4 rounded-lg shadow">
+                    Proceed to Payment
+                  </Button>
                 </div>
               </div>
             </div>
+          </form>
           </div>
-        </form>
-      </section>
+        </section>
       </Section>
       <Footer />
     </div>
   );
 }
-

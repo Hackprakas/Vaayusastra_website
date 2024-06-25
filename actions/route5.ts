@@ -14,8 +14,13 @@ export async function verifypayment(formdata:FormData){
     const orderid=formdata.get('razorpay_order_id')as string;
     const paymentid=formdata.get('razorpay_payment_id');
     const signature=formdata.get('razorpay_signature');
-
-    
+    const name = formdata.get('name') as string;
+    const email = formdata.get('email') as string;
+    const phone = formdata.get('phonenumber') as string;
+    const address = formdata.get('address') as string;
+    const country = formdata.get('country') as string;
+    const state = formdata.get('state') as string;
+    const zipcode = formdata.get('zipcode') as string;
     const body=orderid+'|'+paymentid;
     const order=await instance.orders.fetch(orderid);
 
@@ -33,10 +38,13 @@ export async function verifypayment(formdata:FormData){
                 orderid:orderid,
                 amount:order.amount as number,
                 status:order.status,
-                customer_name:"Prakash",
-                Email:"vijayatrprakash@gmail.com",
-                Phone_No: 1234567890,
-                Address:"Chennai",  
+                customer_name:name,
+                Email:email,
+                Phone_No: phone,
+                Address:address,
+                Country:country,
+                State:state,
+                Zip_Code:zipcode,  
             }
         });
         console.log(order);
