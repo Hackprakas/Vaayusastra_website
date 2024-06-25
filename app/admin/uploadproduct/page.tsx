@@ -77,7 +77,7 @@ export default function Page() {
         <div className="flex justify-center items-center h-[calc(100vh-1rem)] overflow-auto w-full">
           <div className="flex justify-center mt-52 items-center w-[500px] md:w-full lg:w-[750px] px-9 md:px-32 xl:px-48 lg:px-72 py-32 md:py-12 lg:py-14">
             <div className="bg-conic-gradient p-0.25 rounded-2xl flex-1">
-              <div className="flex flex-col p-12 h-full lg:p-8 border border-n-6 bg-n-8 rounded-2xl">
+              <div className="flex flex-col p-12 h-full lg:p-8 border border-n-6 bg-n-8 rounded-2xl overflow-y-auto">
                 <div>
                   <h4 className="h4 mb-4 font-extrabold text-center">
                     Add Product
@@ -113,6 +113,38 @@ export default function Page() {
                           id="description"
                           className="bg-gray-800 text-white sm:text-sm rounded-lg block w-full p-2.5"
                           placeholder="Enter Description"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="price"
+                          className="block mb-2 text-sm font-medium text-white"
+                        >
+                          Price
+                        </label>
+                        <input
+                          type="text"
+                          name="price"
+                          id="price"
+                          className="bg-gray-800 text-white sm:text-sm rounded-lg block w-full p-2.5"
+                          placeholder="Enter price"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="stock"
+                          className="block mb-2 text-sm font-medium text-white"
+                        >
+                          Stock
+                        </label>
+                        <input
+                          type="text"
+                          name="stock"
+                          id="stock"
+                          className="bg-gray-800 text-white sm:text-sm rounded-lg block w-full p-2.5"
+                          placeholder="Enter stock"
                           required
                         />
                       </div>
