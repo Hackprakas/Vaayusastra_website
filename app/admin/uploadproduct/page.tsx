@@ -8,6 +8,7 @@ import Sidebar from '@/app/components/sidebar';
 import Button from '@/app/components/Button';
 import Navbar from '@/app/components/navbar';
 import { adminNavigation } from '@/app/constants';
+import { uploadproduct } from '@/actions/route7';
 
 interface ImageFile extends File {
   preview: string; // To store a preview URL for display purposes
@@ -17,7 +18,7 @@ export default function Page() {
   const [choice, setChoice] = useState<string>("Product1");
   const { data: session, status } = useSession();
   const [loading, setLoading] = useState<boolean>(true);
-  const [mainImage, setMainImage] = useState<ImageFile | null>(null);
+  const [mainImage, setMainImage] = useState<File | null>(null);
   const [additionalImages, setAdditionalImages] = useState<ImageFile[]>([]);
 
   useEffect(() => {
@@ -31,25 +32,21 @@ export default function Page() {
   const handleMainImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      const imageFile: ImageFile = {
-        ...file,
-        preview: URL.createObjectURL(file), // Create a preview URL for the main image
-      };
-      setMainImage(imageFile);
+      setMainImage(file);
     }
   };
 
-  const handleAdditionalImagesChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files;
-    if (files && files.length > 0) {
-      const selectedImages = Array.from(files).slice(0, 5); // Limit to 5 images
-      const imageFiles: ImageFile[] = selectedImages.map((file) => ({
-        ...file,
-        preview: URL.createObjectURL(file), // Create a preview URL for each image
-      }));
-      setAdditionalImages((prevImages) => [...prevImages, ...imageFiles]);
-    }
-  };
+  // const handleAdditionalImagesChange = (e: ChangeEvent<HTMLInputElement>) => {
+  //   const files = e.target.files;
+  //   if (files && files.length > 0) {
+  //     const selectedImages = Array.from(files).slice(0, 5); // Limit to 5 images
+  //     const imageFiles: ImageFile[] = selectedImages.map((file) => ({
+  //       ...file,
+  //       preview: URL.createObjectURL(file), // Create a preview URL for each image
+  //     }));
+  //     setAdditionalImages((prevImages) => [...prevImages, ...imageFiles]);
+  //   }
+  // };
 
   const handleRemoveImage = (index: number, type: string) => {
     if (type === 'main') {
@@ -77,7 +74,7 @@ export default function Page() {
           <Navbar data={adminNavigation} position={true} hide={true} admin={false} />
         </div>
 
-        <div className="flex justify-center items-center h-[calc(100vh-1rem)]  overflow-auto w-full">
+        <div className="flex justify-center items-center h-[calc(100vh-1rem)] overflow-auto w-full">
           <div className="flex justify-center mt-52 items-center w-[500px] md:w-full lg:w-[750px] px-9 md:px-32 xl:px-48 lg:px-72 py-32 md:py-12 lg:py-14">
             <div className="bg-conic-gradient p-0.25 rounded-2xl flex-1">
               <div className="flex flex-col p-12 h-full lg:p-8 border border-n-6 bg-n-8 rounded-2xl">
@@ -86,7 +83,7 @@ export default function Page() {
                     Add Product
                   </h4>
                   <div className="flex flex-col space-y-2">
-                    <form className="space-y-10" encType="multipart/form-data">
+                    <form className="space-y-10" action={uploadproduct}>
                       <div>
                         <label
                           htmlFor="name"
@@ -120,88 +117,16 @@ export default function Page() {
                         />
                       </div>
                       <div>
-                        <label
-                          htmlFor="mainImage"
-                          className="block mb-2 text-sm font-medium text-white"
-                        >
+                        <label className="block mb-2 text-sm font-medium text-white" htmlFor="multiple_files">
                           Upload Main Image
                         </label>
-                        <div className="flex items-center justify-center w-20 h-20 bg-gray-700 text-white rounded-lg cursor-pointer">
-                          <label className="cursor-pointer">
-                            {mainImage ? (
-                              <div className="relative">
-                                <img
-                                  src={mainImage.preview}
-                                  alt="Main Product"
-                                  className="w-20 h-20 object-cover rounded-lg mb-2"
-                                />
-                                <button
-                                  type="button"
-                                  className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1"
-                                  onClick={() => handleRemoveImage(0, 'main')}
-                                >
-                                  X
-                                </button>
-                              </div>
-                            ) : (
-                              <>
-                                <span className="flex items-center justify-center h-full text-gray-400 text-2xl">
-                                  +
-                                </span>
-                                <input
-                                  type="file"
-                                  name="mainImage"
-                                  className="hidden"
-                                  accept="image/*"
-                                  onChange={handleMainImageChange}
-                                />
-                              </>
-                            )}
-                          </label>
-                        </div>
+                        <input className="block w-full text-sm text-white  rounded-lg cursor-pointer bg-gray-800 p-2.5" id="multiple_files" type="file" name="main" />
                       </div>
                       <div>
-                        <label
-                          htmlFor="additionalImages"
-                          className="block mb-2 text-sm font-medium text-white"
-                        >
-                          Upload Additional Images (4 to 5)
-                        </label>
-                        <div className="flex flex-wrap space-x-2 mb-2">
-                          {additionalImages.map((image, index) => (
-                            <div key={index} className="relative">
-                              <img
-                                src={image.preview}
-                                alt={`Additional ${index}`}
-                                className="w-20 h-20 object-cover rounded-lg mb-2"
-                              />
-                              <button
-                                type="button"
-                                className="absolute top-0 right-0 bg-gray-0 text-red-600 rounded-full p-1"
-                                onClick={() => handleRemoveImage(index, 'additional')}
-                              >
-                                X
-                              </button>
-                            </div>
-                          ))}
-                          {additionalImages.length < 5 && (
-                            <div className="flex items-center justify-center w-20 h-20 bg-gray-700 text-white rounded-lg cursor-pointer">
-                              <label className="cursor-pointer">
-                                <span className="flex items-center justify-center h-full text-gray-400 text-2xl">
-                                  +
-                                </span>
-                                <input
-                                  type="file"
-                                  name="additionalImages"
-                                  className="hidden"
-                                  accept="image/*"
-                                  multiple
-                                  onChange={handleAdditionalImagesChange}
-                                />
-                              </label>
-                            </div>
-                          )}
-                        </div>
+
+                        <label className="block mb-2 text-sm font-medium text-white" htmlFor="multiple_files">Upload Additional Images</label>
+                        <input className="block w-full text-sm text-gray-white p-2.5 bg-gray-800 rounded-lg" id="multiple_files" type="file" multiple name="additionalImages" />
+
                       </div>
                       <Button white className="w-full text-black">
                         <div className="flex justify-center items-center">
