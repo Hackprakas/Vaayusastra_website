@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -13,45 +7,43 @@ datasource db {
   url      = env("MONGODB_URI")
 }
 
-model User{
-   id                   String   @id @default(auto()) @map("_id") @db.ObjectId
-   email                String   @unique
-   password             String
-   name                 String
-   resetToken           String?  
-   resetTokenExpiry     DateTime? 
-
-}
-model Allowlist{
-  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
-  email               String   @unique
-  read                Boolean
-  write               Boolean
+model Allowlist {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  email String  @unique
+  read  Boolean
+  write Boolean
 }
 
-model Students{
-  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
-  name                String
-  email               String   @unique
-  courseenrolled      String
-  courseenrolleddate  DateTime
-  coursecompleted     Boolean
-  coursecompleteddate DateTime?
-  coursecompletedgrade String?
+model Orders {
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  Address       String
+  Country       String
+  Email         String
+  Phone_No      String
+  State         String
+  Zip_Code      String
+  amount        BigInt
+  customer_name String
+  orderid       String
+  status        String
 }
 
-model Orders{
-  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
-  orderid             String
-  amount              Int
-  status              String
-  customer_name       String
-  Email               String
-  Phone_No            String
-  Country             String
-  State               String
-  Zip_Code            String
-  Address             String
-
+model Students {
+  id                   String   @id @default(auto()) @map("_id") @db.ObjectId
+  coursecompleted      Boolean
+  coursecompleteddate  DateTime @db.Date
+  coursecompletedgrade String
+  courseenrolled       String
+  courseenrolleddate   DateTime @db.Date
+  email                String   @unique
+  name                 String
 }
 
+model User {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  email            String @unique
+  name             String
+  password         String
+  resetToken       String?
+  resetTokenExpiry  String?
+}

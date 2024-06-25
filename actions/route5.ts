@@ -16,7 +16,7 @@ export async function verifypayment(formdata:FormData){
     const signature=formdata.get('razorpay_signature');
     const name = formdata.get('name') as string;
     const email = formdata.get('email') as string;
-    const phone = formdata.get('phonenumber') as string;
+    const phone = formdata.get('phone_number') as string;
     const address = formdata.get('address') as string;
     const country = formdata.get('country') as string;
     const state = formdata.get('state') as string;

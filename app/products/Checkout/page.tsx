@@ -31,7 +31,7 @@ export default function Page() {
         datas.append("email",formdata.get('email') as string);
         datas.append("country",formdata.get('country') as string);
         datas.append("state",formdata.get('state') as string);
-        datas.append("phone_number",formdata.get('phone_number') as string);
+        datas.append("phone_number",formdata.get('phonenumber') as string);
         datas.append("address",formdata.get('address') as string);
         datas.append("zipcode",formdata.get("zipcode") as string);
         const verifyData = await verifypayment(datas);
@@ -91,7 +91,7 @@ export default function Page() {
 
                   <div>
                     <label htmlFor="phone_number" className="mb-2 block text-sm font-medium text-white">Phone Number*</label>
-                    <input type="text" id="phone_number" name="phone_number" className="block w-full rounded-lg border p-2.5 text-sm border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="+91 1234567890" required />
+                    <input type="text" id="phone_number" name="phonenumber" className="block w-full rounded-lg border p-2.5 text-sm border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="+91 1234567890" required />
                   </div>
 
                   <div>
