@@ -99,20 +99,10 @@ export async function addemailuser(formdata: FormData) {
   const password = formdata.get("password") as string;
   const name = formdata.get("name") as string;
   const hash = await gethash(password);
-  const user = await getsession();
-  const currentuser = user?.user?.email as string;
-
+  const check=await getusers();
   try {
-    const check = await prisma.allowlist.findUnique({
-      where: {
-        email: currentuser,
-      },
-    });
-    if (!check) {
-      return {
-        error: "You are not authorized to add users.",
-      };
-    } else if (check && check.read && check.write) {
+    
+  if(check?.users){
       const find = await prisma.user.findUnique({
         where: {
           email: email,
@@ -142,14 +132,11 @@ export async function addemailuser(formdata: FormData) {
       return {
         message: "User added successfully.",
       };
-    } else if (check && check.read && !check.write) {
-      return {
-        error: "You do not have write access.",
-      };
-    } else if (check && !check.read && check.write) {
-      return {
-        error: "You do not have read access.",
-      };
+    }
+    else if(check?.error){
+      return{
+        error:check.error
+      }
     }
   } catch (e) {
     console.log(e);
