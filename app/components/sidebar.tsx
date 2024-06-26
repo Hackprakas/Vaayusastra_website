@@ -16,10 +16,12 @@ function Sidebar() {
   return (
     <div className="bg-purple text-white p-6 w-72 h-screen border-r border-n-6 hidden md:flex lg:flex flex-col justify-between overflow-auto">
       <div>
+        <Link href="/">
         <div className='flex items-center'>
           <Image src={vslogo} className='w-16 h-16' alt="logo" />
           <div className="font-bold text-lg ml-2">Vaayusastra Aerospace</div>
         </div>
+        </Link>
         <div className='h-px bg-n-6 mt-6 w-auto' />
         <nav className="flex flex-col mt-6">
           <ul>
