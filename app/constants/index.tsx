@@ -231,12 +231,12 @@ export const adminNavigation=[
     url: "#",
     link:"/admin"
   },
-  // {
-  //   id: "2",
-  //   title: "Upload",
-  //   url: "#",
-  //   link:"/admin/upload"
-  // },
+  {
+    id: "2",
+    title: "Upload",
+    url: "#",
+    link:"/admin/upload"
+  },
   {
     id: "3",
     title: "Products",
