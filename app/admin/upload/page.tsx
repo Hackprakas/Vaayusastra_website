@@ -58,13 +58,13 @@ const UploadPage: React.FC = () => {
 
   return (
     <>
-      <div className="overflow-auto flex">
+      <div className="overflow-hidden flex">
         <Sidebar />
         <div className='block md:hidden lg:hidden'>
           <Navbar data={adminNavigation} position={true} hide={true} admin={false} />
         </div>
-        <div className='flex justify-center items-center w-full'>
-          <div className="flex justify-center items-center w-[500px] md:w-full lg:w-[750px] px-9 md:px-32 xl:px-48 lg:px-72 py-32 md:py-12 lg:py-14">
+        <div className='flex justify-center items-center h-[calc(100vh-1rem overflow-auto)] w-full'>
+          <div className="pt-40 px-6 lg:py-10">
             <div className="bg-conic-gradient p-0.25 rounded-2xl flex-1">
               <div className="flex flex-col p-12 h-full lg:p-8 border border-n-6 bg-n-8 rounded-2xl">
                 <div>
@@ -79,7 +79,7 @@ const UploadPage: React.FC = () => {
                           <svg className="w-8 h-8 mb-4 text-n-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                           </svg>
-                          <p className="mb-2 text-sm text-n-3"><span className="font-semibold">Click to upload</span> or drag and drop</p>
+                          <p className="mb-2 mx-4 text-sm text-n-3"><span className="font-semibold ">Click to upload</span> or drag and drop</p>
                           <p className="text-xs text-n-3">XLSX</p>
                         </div>
                         <input id="dropzone-file" type="file" accept='.xlsx, .xls' className="hidden" onChange={handleFileChange} />

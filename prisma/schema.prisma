@@ -41,6 +41,7 @@ model Students {
   courseenrolleddate   DateTime
   email                String    @unique
   name                 String
+  collegeName          String?
 }
 
 model User {

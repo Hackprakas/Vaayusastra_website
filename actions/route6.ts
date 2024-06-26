@@ -24,3 +24,11 @@ export async function getdata(){
     })
     return data;
 }
+export async function getcollege(){
+    const data=await prisma.students.findMany({
+        select:{
+            collegeName:true,
+        }
+    })
+    return data;
+}

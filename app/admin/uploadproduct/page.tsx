@@ -74,7 +74,7 @@ export default function Page() {
           <Navbar data={adminNavigation} position={true} hide={true} admin={false} />
         </div>
 
-        <div className='flex justify-center  w-full h-[calc(100vh-1rem)] overflow-auto '>
+        <div className='flex justify-center mt-24 md:mt-0 lg:mt-0 px-6 w-full h-[calc(100vh-1rem)] overflow-auto '>
           <div className='py-10'>
 
           

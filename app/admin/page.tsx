@@ -1,10 +1,8 @@
-
-import { Line } from 'react-chartjs-2';
 import Sidebar from '../components/sidebar';
 import Navbar from '../components/navbar';
-import Chart, { DoughnutChart } from '../components/chart';
+import Chart, { DoughnutChart, RadarChart } from '../components/chart';
 import { Pies } from '../components/chart';
-import { getdata } from '@/actions/route6';
+import { getcollege, getdata } from '@/actions/route6';
 
 import { getdatetime } from '@/actions/route6';
 import { adminNavigation } from '../constants';
@@ -97,6 +95,17 @@ const AdminPage = async () => {
   console.log(passPercentage);
   // console.log(no[0].coursecompletedgrade);
   // console.log(grades);
+  const dataum = await getcollege();
+  const colleges: { [key: string]: number } = {};
+  dataum.forEach((item) => {
+    const college = item.collegeName as string;
+    if (colleges[college]) {
+      colleges[college]++;
+    } else {
+      colleges[college] = 1;
+    }
+  });
+  console.log(colleges);
 
 
 
@@ -105,13 +114,13 @@ const AdminPage = async () => {
   return (
     <div className='flex'>
       <Sidebar />
-      <div className='block md:hidden lg:hidden'>
+      <div className='block md:hidden lg:hidden '>
         <Navbar admin={true} data={adminNavigation} hide position />
       </div>
-      <div className="flex  h-[calc(100vh-2rem)]  overflow-auto w-full px-5">
+      <div className="flex  h-[calc(100vh-2rem)]  overflow-auto w-full px-5 py-28 lg:py-1 md:py-1">
         <div className="flex-1 p-6 bg-n-8 text-white ">
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-6">
-            <div className="bg-n-7  rounded shadow-lg">
+            <div className="bg-n-7 px-2 rounded shadow-lg">
               <h2 className="text-xl font-bold mb-4 mx-4 mt-4">Performance</h2>
               <Chart datas={monthCounts} />
 
@@ -157,7 +166,8 @@ const AdminPage = async () => {
               <h2 className="text-xl font-bold mb-4">Top 5 School Students</h2>
               <div className="w-full text-white flex items-center justify-center rounded">
 
-                <span className="text-sm">Loading...</span>
+                {/* <span className="text-sm">Loading...</span> */}
+                <RadarChart datas={colleges} />
 
               </div>
             </div>

@@ -231,6 +231,25 @@ export const adminNavigation=[
     url: "#",
     link:"/admin"
   },
+  // {
+  //   id: "2",
+  //   title: "Upload",
+  //   url: "#",
+  //   link:"/admin/upload"
+  // },
+  {
+    id: "3",
+    title: "Products",
+    url: "#",
+    link:"/admin/uploadproduct"
+  },
+  {
+    id: "4",
+    title: "Transactions",
+    url: "#",
+    link:"/admin/table"
+  },
+
 ]
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
