@@ -2,12 +2,13 @@
 import { Line } from 'react-chartjs-2';
 import Sidebar from '../components/sidebar';
 import Navbar from '../components/navbar';
-import Chart from '../components/chart';
+import Chart, { DoughnutChart } from '../components/chart';
 import { Pies } from '../components/chart';
 import { getdata } from '@/actions/route6';
 
 import { getdatetime } from '@/actions/route6';
 import { adminNavigation } from '../constants';
+import { BarChart } from '../components/barchart';
 
 
 
@@ -71,8 +72,7 @@ const AdminPage = async () => {
     }
   }
   );
-  const result = Object.entries(grades).map(([grade, count]) => `${grade}: ${count}`).join(', ');
-  console.log(result);
+  const result = Object.entries(grades).map(([grade, count]) => ({ grade, count }));  console.log(result);
   const count: { [key: string]: number } = {};
   var failing = 0;
   var total = 0;
@@ -111,13 +111,13 @@ const AdminPage = async () => {
       <div className="flex  h-[calc(100vh-2rem)]  overflow-auto w-full px-5">
         <div className="flex-1 p-6 bg-n-8 text-white ">
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-6">
-            <div className="bg-gray-800  rounded shadow-lg">
+            <div className="bg-n-7  rounded shadow-lg">
               <h2 className="text-xl font-bold mb-4 mx-4 mt-4">Performance</h2>
               <Chart datas={monthCounts} />
 
             </div>
 
-            <div className="bg-gray-800 p-6 rounded shadow-lg">
+            <div className="bg-n-7 p-6 rounded shadow-lg">
               <h2 className="text-xl font-bold mb-4">Number of Students Enrolled</h2>
               <div className="flex justify-between items-center mb-4">
                 <div>
@@ -133,26 +133,27 @@ const AdminPage = async () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-            <div className="bg-gray-800 p-6 rounded shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:gird-cols-3 xl:grid-cols-3 gap-6 mt-6">
+            <div className="bg-n-7 p-6 rounded shadow-lg">
               <h2 className="text-xl font-bold mb-4">Toppers count</h2>
               <div className="w-full text-white flex items-center justify-center rounded">
 
-                <span className="text-sm">{result}</span>
-
+                {/* <span className="text-sm">{result}</span> */}
+                <BarChart value ={result}/>
               </div>
             </div>
 
-            <div className="bg-gray-800 p-6 rounded shadow-lg">
+            <div className="bg-n-7 p-6 rounded shadow-lg">
               <h2 className="text-xl font-bold mb-4">Overall Pass Percentage</h2>
               <div className="w-full text-white flex items-center justify-center rounded">
 
-                <span className="text-sm">{passPercentage}</span>
+                {/* <span className="text-sm">{passPercentage}</span> */}
+                <DoughnutChart datas={passPercentage} />
 
               </div>
             </div>
 
-            <div className="bg-gray-800 p-6 rounded shadow-lg">
+            <div className="bg-n-7 p-6 rounded shadow-lg">
               <h2 className="text-xl font-bold mb-4">Top 5 School Students</h2>
               <div className="w-full text-white flex items-center justify-center rounded">
 

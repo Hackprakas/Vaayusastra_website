@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
-import { LogOut, Users, UserPlus, CloudUpload } from 'lucide-react';
+import { LogOut, Users, UserPlus, CloudUpload, FileUp, UserRoundPlus, PieChart } from 'lucide-react';
 import vslogo from "../../public/VS Logo New 1_edited_edited.webp";
 import { signOut } from 'next-auth/react';
 import Link from 'next/link';
@@ -24,21 +24,27 @@ function Sidebar() {
         <nav className="flex flex-col mt-6">
           <ul>
             <li>
-              <Link href="/admin/add" className="flex items-center py-3 px-4 hover:bg-purple-700 rounded">
-                <UserPlus className="mr-2" />
-                Add Admin
+              <Link href="/admin" className="flex items-center py-3 px-4 hover:bg-purple-700 rounded">
+                <PieChart className="mr-2" />
+                Stats
               </Link>
             </li>
             <li>
-              <Link href="/admin" className="flex items-center py-3 px-4 hover:bg-purple-700 rounded">
-                <Users className="mr-2" />
-                Stats
+              <Link href="/admin/add" className="flex items-center py-3 px-4 hover:bg-purple-700 rounded">
+                <UserRoundPlus className="mr-2" />
+                Add Admin
               </Link>
             </li>
             <li>
               <Link href="/admin/upload" className="flex items-center py-3 px-4 hover:bg-purple-700 rounded">
                 <CloudUpload className="mr-2" />
                 Upload
+              </Link>
+            </li>
+            <li>
+              <Link href="/admin/uploadproduct" className="flex items-center py-3 px-4 hover:bg-purple-700 rounded">
+                <FileUp className="mr-2" />
+                Products
               </Link>
             </li>
           </ul>

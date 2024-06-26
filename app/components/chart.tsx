@@ -1,8 +1,8 @@
 "use client"
 import React from 'react'
-import { Line } from 'react-chartjs-2';
+import { Bar, Line } from 'react-chartjs-2';
 import { Pie } from 'react-chartjs-2';
-
+import { Doughnut } from 'react-chartjs-2';
 
 import {
   Chart as ChartJS,
@@ -13,7 +13,8 @@ import {
   Title,
   Tooltip,
   Legend,
-  ArcElement
+  ArcElement,
+  BarElement
 } from 'chart.js';
 
 
@@ -25,7 +26,9 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  ArcElement
+  ArcElement,
+  BarElement
+ 
 );
 interface Props {
   datas: any;
@@ -165,3 +168,34 @@ export function Pies({ datas }: Props) {
   )
 }
 
+export function DoughnutChart({ datas }: Props) {
+  const data = {
+    labels: ['Pass', 'Fail'],
+    datasets: [
+      {
+        data: [datas, 100 - datas],
+        backgroundColor: ['', '#D38CD8'],
+        hoverBackgroundColor: ['#422259', '#9B59B6'],
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'top'as const,
+        labels: {
+          color: 'white',
+        },
+      },
+    },
+  };
+
+  return (
+    <div className="w-full h-64 bg-purple text-white flex items-center justify-center rounded">
+      <Doughnut data={data} options={options} />
+    </div>
+  );
+}
