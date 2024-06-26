@@ -40,9 +40,19 @@ if(!data){
             <Productsslider data={data} />
 
             <div className="mt-6 sm:mt-8 lg:mt-0">
+              <div className='flex w-full justify-between'>
+
               <h1 className="text-xl font-semibold text-white sm:text-2xl dark:text-white">
                 {data?.name}
               </h1>
+              {data?.Stock==="In Stock"?(<div className='-ml-8'>
+                <div className='text-green-300'>In Stock</div>
+              </div>):(<div className='-ml-8'>
+                <div className='text-red-500'>Out of Stock</div>
+              </div>)}
+              
+              
+              </div>
               <div className="mt-4 sm:items-center sm:gap-4 sm:flex">
                 <p className="text-2xl font-extrabold text-white sm:text-3xl dark:text-white">
                   {`Rs.${data?.price}`}
@@ -72,7 +82,7 @@ if(!data){
 
               <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
               <Link href="/products/Checkout">
-                <Button white>BuyNow</Button>
+                <Button white disabled={data?.Stock==="In Stock"? false:true}>{data?.Stock==="In Stock"? "Buy Now":"Out of Stock"}</Button>
               </Link>
                 <Link
                   href="/cart"

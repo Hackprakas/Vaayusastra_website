@@ -5,6 +5,7 @@ import Button from '@/app/components/Button';
 import Navbar from '@/app/components/navbar';
 import { adminNavigation } from '@/app/constants';
 import { uploadproduct } from '@/actions/route7';
+import Loadingbtn from '@/app/components/loading';
 
 
 export default function Page() {
@@ -106,11 +107,10 @@ export default function Page() {
                         <input className="block w-full text-sm text-gray-white p-2.5 bg-gray-800 rounded-lg" id="multiple_files" type="file" multiple name="additionalImages" />
 
                       </div>
-                      <Button white className="w-full text-black">
-                        <div className="flex justify-center items-center">
-                          Add Product <ArrowRight size={20} className="ml-2" />
-                        </div>
-                      </Button>
+                      <div className='flex w-full justify-center'>
+
+                       <Loadingbtn content='Add Product'/>
+</div>
                     </form>
                   </div>
                 </div>

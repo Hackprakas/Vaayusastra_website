@@ -10,44 +10,45 @@ import React from 'react'
 import { addemailuser, addgmailuser } from '@/actions/route2'
 import { useSession } from 'next-auth/react'
 import Sidebar from '@/app/components/sidebar'
+import Loadingbtn from '@/app/components/loading'
 
 
 export default function page() {
   const [choice, setChoice] = useState("Google");
- 
+
   console.log(choice)
 
-  async function addgmailadmin(formdata:FormData){
-    const check=await addgmailuser(formdata);
-    if (check?.error){
-     alert(check.error);
+  async function addgmailadmin(formdata: FormData) {
+    const check = await addgmailuser(formdata);
+    if (check?.error) {
+      alert(check.error);
+    }
+    else if (check?.message) {
+      alert(check.message);
+    }
   }
-  else if(check?.message){
-    alert(check.message);
-  }
-  }
-  async function addemailadmin(formdata:FormData){
-    const check=await addemailuser(formdata);
-    if (check?.error){
-     alert(check.error);
-  }
-  else if(check?.message){
-    alert(check.message);
-  }
+  async function addemailadmin(formdata: FormData) {
+    const check = await addemailuser(formdata);
+    if (check?.error) {
+      alert(check.error);
+    }
+    else if (check?.message) {
+      alert(check.message);
+    }
   }
 
 
-  
+
   return (
     <>
       <div className="overflow-auto flex">
-        <Sidebar/>
-      <div className='block md:hidden lg:hidden'>
+        <Sidebar />
+        <div className='block md:hidden lg:hidden'>
 
-        <Navbar data={adminNavigation} position={true} hide={true} admin={false} />
-      </div>
-        
-          <div className='flex justify-center items-center w-full'>
+          <Navbar data={adminNavigation} position={true} hide={true} admin={false} />
+        </div>
+
+        <div className='flex justify-center items-center w-full'>
           <div className="flex justify-center items-center  w-[500px] md:w-full lg:w-[750px]  px-9 md:px-32 xl:px-48 lg:px-72 py-32 md:py-12 lg:py-14">
 
             <div className=" bg-conic-gradient p-0.25 rounded-2xl flex-1   ">
@@ -68,8 +69,8 @@ export default function page() {
                         >
                           Authentication type
                         </label>
-                        <select id="answer" name="answer" className='bg-gray-800 text-white sm:text-sm rounded-lg  block w-full p-3' onChange={(e)=>setChoice(e.currentTarget.value)}>
-                        <option value="Choose"   >Choose an option</option>
+                        <select id="answer" name="answer" className='bg-gray-800 text-white sm:text-sm rounded-lg  block w-full p-3' onChange={(e) => setChoice(e.currentTarget.value)}>
+                          <option value="Choose"   >Choose an option</option>
                           <option value="Google" >Google</option>
                           <option value="Email" >Email and Password</option>
                         </select>
@@ -127,19 +128,13 @@ export default function page() {
                           />
                         </div>
 
+                        <div className='flex w-full justify-center'>
 
-                        <Button white
-                          className="w-full  text-black"
-                        >
-                          <div className='flex justify-center items-center'>
-
-                          Add User
-                            <ArrowRight size={20} className="ml-2" />
-                          </div>
-                        </Button>
+                          <Loadingbtn content='Add user' />
+                        </div>
 
                       </form>
-                    ) :(choice==="Google")&&(
+                    ) : (choice === "Google") && (
                       <form className="space-y-10 " action={addgmailadmin} >
                         <div>
                           <label
@@ -157,15 +152,7 @@ export default function page() {
                             required
                           />
                         </div>
-                        <Button white
-                          className="w-full  text-black"
-                        >
-                          <div className='flex justify-center items-center'>
-
-                            Add User
-                            <ArrowRight size={20} className="ml-2" />
-                          </div>
-                        </Button>
+                        <Loadingbtn content='Add user' />
                       </form>
                     )}
 
@@ -174,10 +161,10 @@ export default function page() {
               </div>
             </div>
           </div>
-          </div>
-        
+        </div>
+
       </div>
-        
+
     </>
   )
 }

@@ -8,6 +8,7 @@ import Button from '../components/Button'
 import Footer from '../components/Footer'
 import { ArrowRight } from 'lucide-react'
 import { sendmail } from '@/actions/route3'
+import Loadingbtn from '../components/loading'
 
 export default function page() {
 
@@ -59,15 +60,10 @@ if(res.error){
                         
                       
                       
-                      <Button white
-                        className="w-full  text-black"
-                      >
-                        <div className='flex justify-center items-center'>
+                        <div className='flex w-full justify-center'>
 
-                        Continue
-                        <ArrowRight size={20} className="ml-2" />
-                        </div>
-                      </Button>
+<Loadingbtn content='Continue'/>
+</div>
                       
                     </form>
                   </div>

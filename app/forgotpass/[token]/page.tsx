@@ -9,6 +9,7 @@ import Footer from '../../components/Footer'
 import { ArrowRight } from 'lucide-react'
 import { NextPage } from 'next';
 import { checktoken, resetpassword } from '@/actions/route3'
+import Loadingbtn from '@/app/components/loading'
 
 interface PageProps {
     params: {
@@ -94,15 +95,10 @@ interface PageProps {
                       </div>
                       
                       
-                      <Button white
-                        className="w-full  text-black"
-                      >
-                        <div className='flex justify-center items-center'>
+                      <div className='flex w-full justify-center'>
 
-                        Continue
-                        <ArrowRight size={20} className="ml-2" />
-                        </div>
-                      </Button>
+                       <Loadingbtn content='Reset Password'/>
+</div>
                       
                     </form>
                   </div>

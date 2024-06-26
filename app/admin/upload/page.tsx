@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 import { adminNavigation } from '@/app/constants';
 import Button from '@/app/components/Button'; // Import Button component
+import Loadingbtn from '@/app/components/loading';
 
 const UploadPage: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -85,7 +86,7 @@ const UploadPage: React.FC = () => {
                         <input id="dropzone-file" type="file" accept='.xlsx, .xls' className="hidden" onChange={handleFileChange} />
                       </label>
                     </div>
-                    <Button white >Upload</Button>
+                    <Loadingbtn content="Upload" />
                   </form>
                 </div>
               </div>
