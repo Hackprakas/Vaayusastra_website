@@ -48,6 +48,7 @@ export async function verifypayment(formdata:FormData){
                 Quantity:1,
                 Delivered:false,
                 OrderedDate:new Date().toISOString(), 
+                ProductName:["Glider"]
             }
         });
         console.log(order);

@@ -17,6 +17,7 @@ model Allowlist {
 model Orders {
   id            String    @id @default(auto()) @map("_id") @db.ObjectId
   Address       String
+  ProductName   String[]
   Country       String
   Email         String
   Phone_No      String
