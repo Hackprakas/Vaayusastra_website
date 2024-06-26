@@ -5,6 +5,7 @@ import { LogOut, Users, UserPlus, CloudUpload, FileUp, UserRoundPlus, PieChart }
 import vslogo from "../../public/VS Logo New 1_edited_edited.webp";
 import { signOut } from 'next-auth/react';
 import Link from 'next/link';
+import { ReceiptIndianRupee } from 'lucide-react';
 
 function Sidebar() {
   function signouts() {
@@ -47,6 +48,12 @@ function Sidebar() {
               <Link href="/admin/uploadproduct" className="flex items-center py-3 px-4 hover:bg-purple-700 rounded">
                 <FileUp className="mr-2" />
                 Products
+              </Link>
+            </li>
+              <li>
+              <Link href="/admin/table" className="flex items-center py-3 px-4 hover:bg-purple-700 rounded">
+                <ReceiptIndianRupee className="mr-2" />
+                Transactions
               </Link>
             </li>
           </ul>
