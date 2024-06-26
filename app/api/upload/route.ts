@@ -19,6 +19,7 @@ export async function POST(request: Request) {
     coursecompleted: record.coursecompleted,
     coursecompleteddate: record.coursecompleteddate ? new Date(record.coursecompleteddate) : null,
     coursecompletedgrade: record.coursecompletedgrade || null,
+    collegeName: record.collegeName,
   }));
 
   try {

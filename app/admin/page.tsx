@@ -4,7 +4,7 @@ import Sidebar from '../components/sidebar';
 import Navbar from '../components/navbar';
 import Chart, { DoughnutChart } from '../components/chart';
 import { Pies } from '../components/chart';
-import { getdata } from '@/actions/route6';
+import { getcollege, getdata } from '@/actions/route6';
 
 import { getdatetime } from '@/actions/route6';
 import { adminNavigation } from '../constants';
@@ -97,6 +97,17 @@ const AdminPage = async () => {
   console.log(passPercentage);
   // console.log(no[0].coursecompletedgrade);
   // console.log(grades);
+  const dataum = await getcollege();
+  const colleges: { [key: string]: number } = {};
+  dataum.forEach((item) => {
+    const college = item.collegeName;
+    if (colleges[college]) {
+      colleges[college]++;
+    } else {
+      colleges[college] = 1;
+    }
+  });
+  console.log(colleges);
 
 
 

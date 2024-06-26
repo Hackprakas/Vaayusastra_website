@@ -35,6 +35,7 @@ const UploadPage: React.FC = () => {
         coursecompleted: record.coursecompleted,
         coursecompleteddate: record.coursecompleteddate ? new Date(record.coursecompleteddate).toISOString() : null,
         coursecompletedgrade: record.coursecompletedgrade || null,
+        collegeName: record.collegeName,
       }));
 
       const response = await fetch('/api/upload', {
