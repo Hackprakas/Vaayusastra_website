@@ -1,71 +1,15 @@
-"use client"
-import { useState, useEffect, ChangeEvent } from 'react';
+
 import { ArrowRight } from 'lucide-react';
-import { useSession } from 'next-auth/react';
-import Notfound from '@/app/components/notfound';
-import Loader from '@/app/components/Loader';
 import Sidebar from '@/app/components/sidebar';
 import Button from '@/app/components/Button';
 import Navbar from '@/app/components/navbar';
 import { adminNavigation } from '@/app/constants';
 import { uploadproduct } from '@/actions/route7';
 
-interface ImageFile extends File {
-  preview: string; // To store a preview URL for display purposes
-}
 
 export default function Page() {
-  const [choice, setChoice] = useState<string>("Product1");
-  const { data: session, status } = useSession();
-  const [loading, setLoading] = useState<boolean>(true);
-  const [mainImage, setMainImage] = useState<File | null>(null);
-  const [additionalImages, setAdditionalImages] = useState<ImageFile[]>([]);
-
-  useEffect(() => {
-    if (status === "authenticated") {
-      setLoading(false);
-    } else if (!session) {
-      setLoading(false);
-    }
-  }, [session, status]);
-
-  const handleMainImageChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setMainImage(file);
-    }
-  };
-
-  // const handleAdditionalImagesChange = (e: ChangeEvent<HTMLInputElement>) => {
-  //   const files = e.target.files;
-  //   if (files && files.length > 0) {
-  //     const selectedImages = Array.from(files).slice(0, 5); // Limit to 5 images
-  //     const imageFiles: ImageFile[] = selectedImages.map((file) => ({
-  //       ...file,
-  //       preview: URL.createObjectURL(file), // Create a preview URL for each image
-  //     }));
-  //     setAdditionalImages((prevImages) => [...prevImages, ...imageFiles]);
-  //   }
-  // };
-
-  const handleRemoveImage = (index: number, type: string) => {
-    if (type === 'main') {
-      setMainImage(null);
-    } else {
-      setAdditionalImages((prevImages) =>
-        prevImages.filter((_, i) => i !== index)
-      );
-    }
-  };
-
-  if (loading) {
-    return <Loader />;
-  }
-
-  if (!session) {
-    return <Notfound />;
-  }
-
+ 
+  
   return (
     <>
       <div className="flex overflow-hidden">

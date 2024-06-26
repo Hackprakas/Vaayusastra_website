@@ -8,11 +8,19 @@ interface PageProps {
 }
 
 export default async function OrderDetails({params}: PageProps) {
+  if(params.id.length!=24){
+    return (<div>404 not found</div>)
+  }
+  
+
   const data=await prisma.orders.findUnique({
     where:{
       id:params.id
     }
   })
+  if(!data){
+    return (<div>404 not found</div>)
+  }
 
   return (
     <div className="flex h-screen overflow-hidden">

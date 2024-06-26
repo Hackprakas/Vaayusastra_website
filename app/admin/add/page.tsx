@@ -9,16 +9,12 @@ import { ArrowRight } from 'lucide-react'
 import React from 'react'
 import { addemailuser, addgmailuser } from '@/actions/route2'
 import { useSession } from 'next-auth/react'
-import Notfound from '@/app/components/notfound'
-import { useEffect } from 'react'
-import Loader from '@/app/components/Loader'
 import Sidebar from '@/app/components/sidebar'
 
 
 export default function page() {
   const [choice, setChoice] = useState("Google");
-  const { data: session , status } = useSession();
-  const [loading, setLoading] = useState(true);
+ 
   console.log(choice)
 
   async function addgmailadmin(formdata:FormData){
@@ -41,32 +37,7 @@ export default function page() {
   }
 
 
-  useEffect(() => {
-    if (status == "authenticated") {
-      setLoading(false);
-    }
-    else if(!session){
-      setLoading(false);
-    }
-  }, [status]);
-
-  console.log(choice);
-
-  if (loading) {
-    return <div>
-      <Loader />
-    </div>; 
-  }
-
-  if (!session) {
-    return (
-
-      <div>
-      <Notfound />
-      </div>
-    )
-  }
- 
+  
   return (
     <>
       <div className="overflow-auto flex">

@@ -1,14 +1,6 @@
 
 import React from 'react';
-import Image from 'next/image';
-import product1 from "../components/assets/products/product1.jpg";
-import product2 from "../components/assets/products/product2.jpg";
-import product3 from "../components/assets/products/product3.jpg";
-import product4 from "../components/assets/products/product4.jpg";
-import product5 from "../components/assets/products/product5.jpg";
-import product6 from "../components/assets/products/product6.jpg";
-import product7 from "../components/assets/products/product7.jpg";
-import product8 from "../components/assets/products/product8.jpg";
+
 import Navbar from '../components/navbar';
 import { navigation } from '../constants';
 import Section from '../components/Section';
@@ -16,10 +8,6 @@ import Footer from '../components/Footer';
 import Button from '../components/Button';
 import prisma from '../lib/db';
 
-
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
 import Productsslider from '../components/productsslider';
 
@@ -30,12 +18,18 @@ interface PageProps {
 }
 
 export default async function Page({params}: PageProps) {
+  if(params.id.length!=24){
+    return (<div>404 not found</div>)
+  }
   
 const data=await prisma.product.findUnique({
   where:{
     id:params.id
   }
 })
+if(!data){
+  return (<div>404 not found</div>)
+}
   
   return (
     <>
