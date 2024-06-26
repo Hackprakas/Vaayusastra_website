@@ -114,13 +114,13 @@ const AdminPage = async () => {
   return (
     <div className='flex'>
       <Sidebar />
-      <div className='block md:hidden lg:hidden'>
+      <div className='block md:hidden lg:hidden '>
         <Navbar admin={true} data={adminNavigation} hide position />
       </div>
-      <div className="flex  h-[calc(100vh-2rem)]  overflow-auto w-full px-5">
+      <div className="flex  h-[calc(100vh-2rem)]  overflow-auto w-full px-5 py-28 lg:py-1 md:py-1">
         <div className="flex-1 p-6 bg-n-8 text-white ">
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-6">
-            <div className="bg-n-7  rounded shadow-lg">
+            <div className="bg-n-7 px-2 rounded shadow-lg">
               <h2 className="text-xl font-bold mb-4 mx-4 mt-4">Performance</h2>
               <Chart datas={monthCounts} />
 
