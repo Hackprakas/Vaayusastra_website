@@ -1,8 +1,6 @@
-
-import { Line } from 'react-chartjs-2';
 import Sidebar from '../components/sidebar';
 import Navbar from '../components/navbar';
-import Chart, { DoughnutChart } from '../components/chart';
+import Chart, { DoughnutChart, RadarChart } from '../components/chart';
 import { Pies } from '../components/chart';
 import { getcollege, getdata } from '@/actions/route6';
 
@@ -100,7 +98,7 @@ const AdminPage = async () => {
   const dataum = await getcollege();
   const colleges: { [key: string]: number } = {};
   dataum.forEach((item) => {
-    const college = item.collegeName;
+    const college = item.collegeName as string;
     if (colleges[college]) {
       colleges[college]++;
     } else {
@@ -168,7 +166,8 @@ const AdminPage = async () => {
               <h2 className="text-xl font-bold mb-4">Top 5 School Students</h2>
               <div className="w-full text-white flex items-center justify-center rounded">
 
-                <span className="text-sm">Loading...</span>
+                {/* <span className="text-sm">Loading...</span> */}
+                <RadarChart datas={colleges} />
 
               </div>
             </div>

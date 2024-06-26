@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { Bar, Line } from 'react-chartjs-2';
+import { Bar, Line, PolarArea, Radar } from 'react-chartjs-2';
 import { Pie } from 'react-chartjs-2';
 import { Doughnut } from 'react-chartjs-2';
 
@@ -14,7 +14,8 @@ import {
   Tooltip,
   Legend,
   ArcElement,
-  BarElement
+  BarElement,
+  RadialLinearScale
 } from 'chart.js';
 
 
@@ -27,7 +28,8 @@ ChartJS.register(
   Tooltip,
   Legend,
   ArcElement,
-  BarElement
+  BarElement,
+  RadialLinearScale
  
 );
 interface Props {
@@ -199,3 +201,58 @@ export function DoughnutChart({ datas }: Props) {
     </div>
   );
 }
+
+export function RadarChart({ datas }: Props)  {
+  const chartData = {
+    labels: Object.keys(datas),
+    datasets: [
+      {
+        label: 'College Distribution',
+        data: Object.values(datas),
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.6)',
+          'rgba(54, 162, 235, 0.6)',
+          'rgba(255, 206, 86, 0.6)',
+          'rgba(75, 192, 192, 0.6)',
+          'rgba(153, 102, 255, 0.6)',
+          'rgba(255, 159, 64, 0.6)',
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      r: {
+        angleLines: {
+          color: 'rgba(255, 255, 255, 0.2)',
+        },
+        grid: {
+          color: 'rgba(255, 255, 255, 0.2)',
+        },
+        pointLabels: {
+          color: 'white',
+        },
+        max:5,
+      },
+    },
+    plugins: {
+      legend: {
+        position: 'bottom' as const,
+        labels: {
+          color: 'white',
+        },
+      },
+    },
+  };
+
+  return (
+    <div className="w-full h-64 bg-purple text-white flex items-center justify-center rounded">
+      <Radar data={chartData} options={chartOptions} />
+    </div>
+  );
+};
