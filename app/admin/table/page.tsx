@@ -21,10 +21,10 @@ export default function Page() {
         {orders.map(order => (
           <div
             key={order.id}
-            className=" p-16 bg-n-8 border-gray-100 rounded-lg shadow dark:bg-gray-800 "
+            className=" p-16 bg-n-7 border-gray-300 rounded-lg shadow  "
           >
             <Link href={`/orders/${order.id}`}>
-              <h4 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white cursor-pointer">
+              <h4 className="mb-2 text-2xl font-bold tracking-tight text-white">
                 Order_id: {order.id}
               </h4>
             </Link>
