@@ -7,23 +7,23 @@ interface PageProps {
     params: {
         id: string;
     };
-    datas:{
+    datas: {
         id: string;
-    Address: string;
-    ProductName: string[];
-    Country: string;
-    Email: string;
-    Phone_No: string;
-    State: string;
-    Zip_Code: string;
-    amount: bigint;
-    customer_name: string;
-    orderid: string;
-    status: string;
-    Delivered: boolean;
-    OrderedDate: Date;
-    Quantity: number;
-    }
+        Address: string;
+        ProductName: string[];
+        Country: string;
+        Email: string;
+        Phone_No: string;
+        State: string;
+        Zip_Code: string;
+        amount: bigint;
+        customer_name: string;
+        Quantity: string;
+        status: string;
+        OrderedDate: Date;
+        orderid: string;
+      };
+    
 }
 export default function Updatedelivery({ params }: PageProps, datas: any) {
 

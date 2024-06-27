@@ -8,7 +8,25 @@ interface PageProps {
   params: {
     id: string;
   };
+  datas: {
+    id: string;
+    Address: string;
+    ProductName: string[];
+    Country: string;
+    Email: string;
+    Phone_No: string;
+    State: string;
+    Zip_Code: string;
+    amount: bigint;
+    customer_name: string;
+    Quantity: string;
+    status: string;
+    OrderedDate: Date;
+    orderid: string;
+  };
 }
+
+
 
 export default async function OrderDetails({ params }: PageProps) {
   if (params.id.length !== 24) {
@@ -91,7 +109,7 @@ export default async function OrderDetails({ params }: PageProps) {
                 <div className='font-extrabold'>Ordered Date :</div>
                 <div className='ml-2'>{data?.OrderedDate.toString().slice(0, 10)}  {data?.OrderedDate.getFullYear()}</div>
               </div>
-<Updatedelivery params={params} datas={data}/>
+         <Updatedelivery params={params} datas={data}/>
             </div>
           </div>
         </div>
