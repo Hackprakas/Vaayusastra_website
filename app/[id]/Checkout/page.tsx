@@ -9,11 +9,15 @@ import { navigation } from "../../constants";
 import { returnid, verifypayment } from '@/actions/route5';
 import { useRouter } from 'next/navigation';
 import Loadingbtn from '@/app/components/loading';
+import CartContext from '@/app/components/context';
+import { useContext } from 'react';
 
 export default function Page() {
   const [state,setstate]=useState("Proceed to Payment");
   const [text, setText] = useState('Verifying Transaction');
+  const { cartIds, setCartIds } = useContext(CartContext);
   const router = useRouter();
+  
 
   useEffect(() => {
     const originalText = state;
@@ -32,17 +36,22 @@ export default function Page() {
     
   
   }, [text]);
+  
 
   const makePayment = async (formdata : FormData) => { 
     setstate("Payment is processing")   
     const key = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID as string;
-    const data = await returnid();
+    const datas=new FormData();
+    datas.append("id",cartIds);
+    datas.append("quantity",formdata.get("quantity") as string);
+    const data = await returnid(datas);
+    
     const options = {
       key: key,
       name: "Vaayusastra Aerospace",
-      currency: data.currency,
+      currency: data?.currency,
       amount: "20000",
-      order_id: data.id,
+      order_id: data?.id,
       description: "Payment Gateway",
       handler: async function (response: any) {
        
@@ -57,11 +66,13 @@ export default function Page() {
         datas.append("phone_number",formdata.get('phonenumber') as string);
         datas.append("address",formdata.get('address') as string);
         datas.append("zipcode",formdata.get("zipcode") as string);
+        datas.append("quantity",formdata.get("quantity") as string);
+        datas.append("productid",cartIds as string);
         setstate("Verifying Transaction.......")
         const verifyData = await verifypayment(datas);
         if (verifyData.message) {
           setstate("Proceed to Payment")
-          alert(`Your payment with orderid: ${this.order_id} is successful!! Thank you for shopping with Vaayusastra`);
+          alert(`Your payment with orderid: ${cartIds} is successful!! Thank you for shopping with Vaayusastra`);
          
         } else if (verifyData.error) {
           alert("payment is failed");
@@ -94,6 +105,10 @@ export default function Page() {
               <div>
                 <label htmlFor="your_name" className="mb-2 block text-sm font-medium text-white">Your name*</label>
                 <input type="text" id="your_name" name="name" className="block w-full rounded-lg border p-2.5 text-sm border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="Enter Name" required />
+              </div>
+              <div>
+                <label htmlFor="your_name" className="mb-2 block text-sm font-medium text-white">Quantity Required*</label>
+                <input type="number" id="your_name" name="quantity" className="block w-full rounded-lg border p-2.5 text-sm border-gray-800 bg-gray-800 text-white placeholder:text-gray-400" placeholder="Enter your Product quantity" required />
               </div>
               <div>
                 <label htmlFor="your_email" className="mb-2 block text-sm font-medium text-white">Your email*</label>

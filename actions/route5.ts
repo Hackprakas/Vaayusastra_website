@@ -21,6 +21,18 @@ export async function verifypayment(formdata:FormData){
     const country = formdata.get('country') as string;
     const state = formdata.get('state') as string;
     const zipcode = formdata.get('zipcode') as string;
+    const quantity = formdata.get('quantity') as string;
+    const productid = formdata.get('productid') as string;  
+    const data=await prisma.product.findUnique({
+        where:{
+            id:productid
+        },
+        select:{
+            
+            name:true,
+            
+        }
+    });
     const body=orderid+'|'+paymentid;
     const order=await instance.orders.fetch(orderid);
 
@@ -45,10 +57,10 @@ export async function verifypayment(formdata:FormData){
                 Country:country,
                 State:state,
                 Zip_Code:zipcode,
-                Quantity:1,
+                Quantity:"1",
                 Delivered:false,
                 OrderedDate:new Date().toISOString(), 
-                ProductName:["Glider"]
+                ProductName:[data?.name as string]
             }
         });
         console.log(order);
@@ -66,25 +78,42 @@ export async function verifypayment(formdata:FormData){
 
 }
 
-export async function returnid(){
-    const payment_capture = 1;
-    const amount = 2 * 100 // amount in paisa. In our case it's INR 1
-    const currency = "INR";
-    const options = {
-        amount: (amount).toString(),
-        currency,
-        receipt: shortid.generate(),
-        payment_capture,
-        notes: {
-            paymentFor: "testingDemo",
-            userId: "100",
-            productId: 'P100'
+export async function returnid(formdata:FormData){
+    const id=formdata.get('id') as string;
+    const quantity=formdata.get('quantity') as string;
+    const data=await prisma.product.findUnique({
+        where:{
+            id:id
+        },
+        select:{
+            price:true,
+            name:true,
+            id:true,
         }
-    };
+    });
+    const price= data?.price as number;
+    
 
-   const order = await instance.orders.create(options);
-   
-   return order;
+        const payment_capture = 1;
+        const amt=price * 100
+        const amount =   amt * parseInt(quantity);
+        const currency = "INR";
+        const options = {
+            amount: (amount).toString(),
+            currency,
+            receipt: shortid.generate(),
+            payment_capture,
+            notes: {
+                paymentFor:data?.name as string ,
+                
+                productId: data?.id as string,
+            }
+        };
+        
+        const order = await instance.orders.create(options);
+        
+        return order;
+    
 
    
 }

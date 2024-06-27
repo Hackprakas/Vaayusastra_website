@@ -8,18 +8,18 @@ interface CartContextProps {
 }
 
 interface CartContextValue {
-  cartIds: string[]; // Example type for cartIds, adjust as per your application
-  setCartIds: React.Dispatch<React.SetStateAction<string[]>>; // Type for setCartIds function
+  cartIds: string; // Example type for cartIds, adjust as per your application
+  setCartIds: React.Dispatch<React.SetStateAction<string>>; // Type for setCartIds function
 }
 
 // Create context with initial values/types
 const CartContext = createContext<CartContextValue>({
-  cartIds: [],
+  cartIds: "",
   setCartIds: () => {},
 });
 
 export const CartProvider: React.FC<CartContextProps> = ({ children }) => {
-  const [cartIds, setCartIds] = useState<string[]>([]); // Initialize cartIds as an array of strings
+  const [cartIds, setCartIds] = useState<string>(""); // Initialize cartIds as an array of strings
 
   return (
     <CartContext.Provider value={{ cartIds, setCartIds }}>

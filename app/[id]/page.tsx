@@ -10,7 +10,8 @@ import prisma from '../lib/db';
 
 import Link from 'next/link';
 import Productsslider from '../components/productsslider';
-import Addtocart from '../components/addtocart';
+import { productid } from '../constants';
+import Buynow from '../components/buynow';
 
 interface PageProps {
   params: {
@@ -19,15 +20,18 @@ interface PageProps {
 }
 
 export default async function Page({params}: PageProps) {
+
   if(params.id.length!=24){
     return (<div>404 not found</div>)
   }
   
-const data=await prisma.product.findUnique({
-  where:{
-    id:params.id
-  }
-})
+  const data=await prisma.product.findUnique({
+    where:{
+      id:params.id
+    }
+  })
+  productid.id=params.id;
+  console.log(productid.id);
 if(!data){
   return (<div>404 not found</div>)
 }
@@ -82,10 +86,10 @@ if(!data){
               </div>
 
               <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
-              <Link href={`${params.id}/Checkout`}>
-                <Button white disabled={data?.Stock==="In Stock"? false:true}>{data?.Stock==="In Stock"? "Buy Now":"Out of Stock"}</Button>
-              </Link>
-                <Addtocart params={params}/>
+              
+                <Buynow productid={params.id} />
+              
+                
               </div>
 
               <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
