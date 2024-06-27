@@ -218,6 +218,54 @@ export const navigation: NavigationItem[] = [
   }
   
 ];
+export const ProductNavigation=[
+  {
+    id: "0",
+    title: "About",
+    url: "#roadmap",
+    link:null
+  },
+  {
+    id: "1",
+    title: "Courses",
+    url: "#features",
+    link:null
+  },
+  {
+    id: "2",
+    title: "Papers",
+    url: "#",
+    link:"/papers"
+  },
+  {
+    id: "3",
+    title: "Recognitions",
+    url: "#",
+    link:"/recognitions"
+  },
+  {
+     id:"4",
+     title:"Cart",
+     url:"",
+     link:"/cart"
+
+  },
+  {
+    id: "5",
+    title: "Hindu Young World",
+    url: "",
+    onlyMobile: true,
+    link:"/hindu",
+  },
+  {
+    id: "6",
+    title: "sign in",
+    url: "",
+    onlyMobile: true,
+    link:"/signup",
+
+  }
+]
 export const adminNavigation=[
   {
     id: "0",

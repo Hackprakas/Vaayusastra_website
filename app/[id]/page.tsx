@@ -2,7 +2,7 @@
 import React from 'react';
 
 import Navbar from '../components/navbar';
-import { navigation } from '../constants';
+import { ProductNavigation } from '../constants';
 import Section from '../components/Section';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
@@ -33,7 +33,7 @@ if(!data){
   
   return (
     <>
-      <Navbar data={navigation} position={true} hide={true} admin={false} />
+      <Navbar data={ProductNavigation} position={true} hide={true} admin={false} />
       <Section>
         <div className="max-w-screen-xl px-16 py-24 md:py-16 lg:py-16 mx-auto 2xl:px-0">
           <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
@@ -81,7 +81,7 @@ if(!data){
               </div>
 
               <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
-              <Link href={`${params.id}/Checkout`}>
+              <Link href="/products/Checkout">
                 <Button white disabled={data?.Stock==="In Stock"? false:true}>{data?.Stock==="In Stock"? "Buy Now":"Out of Stock"}</Button>
               </Link>
                 <Link
