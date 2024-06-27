@@ -7,7 +7,7 @@ if (formdata) {
     const message=formdata.get('message');
 
     const transporter = nodemailer.createTransport({
-        service: 'Gmail', // You can use other services like SendGrid, Mailgun, etc.
+        service: 'Gmail', 
         auth: {
           user: process.env.EMAIL_USER,
           pass: process.env.EMAIL_PASS,
@@ -16,7 +16,7 @@ if (formdata) {
 
       const mailOptions = {
         from: email?.toString() ,
-        to: 'jaggu.ceo@vaayusastra.com', // Replace with your destination email address
+        to: process.env.EMAIL_USER, 
         subject: 'New message from'+name?.toString(),
         text: email+" "+"has a new message for you:"+`\n ${message?.toString()}`,
       };

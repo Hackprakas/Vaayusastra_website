@@ -1,13 +1,11 @@
 "use server";
-import { getCsrfToken } from "next-auth/react";
+
 import { getServerSession } from "next-auth";
 import prisma from "@/app/lib/db";
 import bcrypt from "bcrypt";
-import { get } from "http";
 
 export async function getsession() {
   const session = await getServerSession();
-  console.log("sees" + session?.user?.email);
   return session;
 }
 
@@ -44,7 +42,6 @@ export async function getusers() {
       };
     }
   } catch (e) {
-    console.log(e);
     return {
       error: e,
     };

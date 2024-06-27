@@ -3,7 +3,7 @@
 
 import { createClient } from '@supabase/supabase-js'
 import prisma from "@/app/lib/db";
-import { getsession, getusers } from './route2';
+import {  getusers } from './route2';
 
 // Create Supabase client
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_API_KEY!)
@@ -50,7 +50,7 @@ export async function uploadproduct(formdata:FormData){
     console.log("mainimage"+mainimage)
     const additionalimages=formdata.getAll("additionalImages") as File[];
     const additionalimageurls:any=[];
-    // const price=formdata.get("price") as string;
+    
 
     const mainimageurl=await uploadFile(mainimage);
     if(mainimageurl?.error){

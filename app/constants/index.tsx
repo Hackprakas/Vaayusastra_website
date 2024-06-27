@@ -47,9 +47,7 @@ import rounded7 from "../components/assets/roadmap/rounded7.png"
 import rounded8 from "../components/assets/roadmap/rounded8.png"
 import rounded9 from "../components/assets/roadmap/rounded9.jpg"
 import rounded10 from "../components/assets/roadmap/rounded10.jpg"
-import cards1 from "../components/assets/benefits/card-7.svg"
-import cards2 from "../components/assets/benefits/card-8.svg"
-import cards3 from "../components/assets/benefits/card-9.svg"
+
 
 import round1 from "../components/assets/hindu-images/round1.jpg"
 import round2 from "../components/assets/hindu-images/round2.jpg"
@@ -150,23 +148,9 @@ import rec10 from "../components/assets/recognizations-images/rec10.jpg"
 import rec11 from "../components/assets/recognizations-images/rec11.jpg"
 import rec12 from "../components/assets/recognizations-images/rec12.jpg"
 
-import product1 from "../components/assets/products/product1.jpg"
-import product2 from"../components/assets/products/product2.jpg"
-import product3 from"../components/assets/products/product3.jpg"
-import product4 from"../components/assets/products/product4.jpg"
-import product5 from"../components/assets/products/product5.jpg"
-import product6 from"../components/assets/products/product6.jpg"
-import product7 from"../components/assets/products/product7.jpg"
-import product8 from"../components/assets/products/product8.jpg"
-
-
-
-
-import grid from "../components/assets/grid.png"
 
 import youtube from "../components/assets/socials/youtube.svg"
-import { text } from "node:stream/consumers";
-import { title } from "node:process";
+
 
 interface NavigationItem {
   id: string;
@@ -415,142 +399,7 @@ export const roadmap: RoadmapItem[] = [
 
   },
 ];
-  "With smart automation and top-notch security, it's the perfect solution for teams looking to work smarter.";
-
-interface CollabContentItem {
-  id: string;
-  title: string;
-  text?: string;
-}
-
-export const collabContent: CollabContentItem[] = [
-  {
-    id: "0",
-    title: "Seamless Integration",
-
-  },
-  {
-    id: "1",
-    title: "Smart Automation",
-  },
-  {
-    id: "2",
-    title: "Top-notch Security",
-  },
-];
-
-interface CollabAppItem {
-  id: string;
-  title: string;
-  icon: any;
-  width: number;
-  height: number;
-}
-
-export const collabApps: CollabAppItem[] = [
-  {
-    id: "0",
-    title: "Figma",
-    icon: figma,
-    width: 26,
-    height: 36,
-  },
-  {
-    id: "1",
-    title: "Notion",
-    icon: notion,
-    width: 34,
-    height: 36,
-  },
-  {
-    id: "2",
-    title: "Discord",
-    icon: discord,
-    width: 36,
-    height: 28,
-  },
-  {
-    id: "3",
-    title: "Slack",
-    icon: slack,
-    width: 34,
-    height: 35,
-  },
-  {
-    id: "4",
-    title: "Photoshop",
-    icon: photoshop,
-    width: 34,
-    height: 34,
-  },
-  {
-    id: "5",
-    title: "Protopie",
-    icon: protopie,
-    width: 34,
-    height: 34,
-  },
-  {
-    id: "6",
-    title: "Framer",
-    icon: framer,
-    width: 26,
-    height: 34,
-  },
-  {
-    id: "7",
-    title: "Raindrop",
-    icon: raindrop,
-    width: 38,
-    height: 32,
-  },
-];
-interface PricingItem {
-  id: string;
-  title: string;
-  description: string;
-  price: string | null;
-  features: string[];
-}
-
-export const pricing: PricingItem[] = [
-  {
-    id: "0",
-    title: "Basic",
-    description: "AI chatbot, personalized recommendations",
-    price: "0",
-    features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
-    ],
-  },
-  {
-    id: "1",
-    title: "Premium",
-    description: "Advanced AI chatbot, priority support, analytics dashboard",
-    price: "9.99",
-    features: [
-      "An advanced AI chatbot that can understand complex queries",
-      "An analytics dashboard to track your conversations",
-      "Priority support to solve issues quickly",
-    ],
-  },
-  {
-    id: "2",
-    title: "Enterprise",
-    description: "Custom AI chatbot, advanced analytics, dedicated account",
-    price: null,
-    features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
-    ],
-  },
-];
-export const product = [
-  { id: 1, image: glider1, text: "A glider is a fixed-wing aircraft that is supported in flight by the dynamic reaction of the air against its lifting surfaces, and whose free flight does not depend on an engine.", name:"GLIDER",url:"/products"},
-]
+  
 
 interface BenefitItem {
   id: string;
@@ -568,7 +417,7 @@ export const benefits: BenefitItem[] = [
     id: "0",
     title: "Weekend Batches",
     text: "Engaging tales, theater illuminate aeronautics, teaching rocket, satellite, drone physics",
-    backgroundUrl: "./src/assets/benefits/card-1.svg",
+    backgroundUrl: " ",
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
     url: "https://docs.google.com/forms/d/e/1FAIpQLSebE2XSGVP4iR9xD97bYDVoW3npARfH6TaN6cc7lNPJv0PqqA/viewform",
@@ -577,7 +426,7 @@ export const benefits: BenefitItem[] = [
     id: "1",
     title: "10-Days Camp",
     text: "Integrating arts with academics cultivates a holistic skill set, driving both achievement and innovation.",
-    backgroundUrl: "./src/assets/benefits/card-2.svg",
+    backgroundUrl: " ",
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
     light: true,
@@ -587,7 +436,7 @@ export const benefits: BenefitItem[] = [
     id: "2",
     title: "Online-Air Science through Mythology",
     text: "Unique curriculum integrates stories, theater to teach aeronautics, aerospace physics.",
-    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    backgroundUrl: " ",
     iconUrl: benefitIcon3,
     imageUrl: benefitImage2,
     url: "https://docs.google.com/forms/d/e/1FAIpQLSd8hAT8Ja9qqPpM_vPuu-gU-O8X859HlBsryVpo6SyX9PO1Zw/viewform",
@@ -596,7 +445,7 @@ export const benefits: BenefitItem[] = [
     id: "3",
     title: "Advanced Level - College Program",
     text: "Industry-led hands-on Aeronautics/Aerospace programs tackle college knowledge transfer challenges.",
-    backgroundUrl: "./src/assets/benefits/card-4.svg",
+    backgroundUrl: " ",
     iconUrl: benefitIcon4,
     imageUrl: benefitImage2,
     light: true,
@@ -606,7 +455,7 @@ export const benefits: BenefitItem[] = [
     id: "4",
     title: "AASSC Certification Program",
     text: "Integrates CBSE, ICSE, NASA curriculum, hands-on models for aerospace education.",
-    backgroundUrl: "./src/assets/benefits/card-5.svg",
+    backgroundUrl: " ",
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
     url: "https://docs.google.com/forms/d/e/1FAIpQLSe-a_kLr4c_cIgHCzBUIE1VzF75KVZW_4Y-E-7O9e_DJ81AaQ/viewform",
@@ -615,7 +464,7 @@ export const benefits: BenefitItem[] = [
     id: "5",
     title: "Summer Camp - 2024",
     text: "Integrating creative disciplines enriches education beyond traditional theoretical learning and marks-based assessment.",
-    backgroundUrl: "./src/assets/benefits/card-6.svg",
+    backgroundUrl: " ",
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
     url: "https://docs.google.com/forms/d/e/1FAIpQLSd8hAT8Ja9qqPpM_vPuu-gU-O8X859HlBsryVpo6SyX9PO1Zw/viewform",

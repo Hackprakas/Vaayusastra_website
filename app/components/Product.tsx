@@ -1,10 +1,6 @@
 import React from "react";
-import { check2, grid } from "./assets";
 import Button from "./Button";
-import Tagline from "./Tagline";
-import { Gradient } from "./design/Roadmap";
 import Image from "next/image";
-import { product, roadmap } from "../constants";
 import prisma from "../lib/db";
 
 import Section from "./Section";
