@@ -4,6 +4,7 @@ import "./globals.css";
 import CustomCursor from "./components/custom";
 import Authprovider from "../app/components/Authprovider"
 import Script from 'next/script'
+import {CartProvider} from "../app/components/context"
 
 
 export const metadata: Metadata = {
@@ -25,9 +26,11 @@ export default function RootLayout({
       <body className={sora.className}>
         
          <Authprovider >
-          
+          <CartProvider>
+
             <CustomCursor />
             {children}
+          </CartProvider>
          </Authprovider>
          
       </body>
