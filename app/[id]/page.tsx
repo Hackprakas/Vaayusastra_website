@@ -81,7 +81,7 @@ if(!data){
               </div>
 
               <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
-              <Link href="/products/Checkout">
+              <Link href={`${params.id}/Checkout`}>
                 <Button white disabled={data?.Stock==="In Stock"? false:true}>{data?.Stock==="In Stock"? "Buy Now":"Out of Stock"}</Button>
               </Link>
                 <Link

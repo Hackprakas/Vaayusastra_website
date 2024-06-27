@@ -31,11 +31,11 @@ async function Testimonials() {
                     <div className="mt-[-30px] font-extrabold text-center">{card.name}</div>
                     <div className="mb-10 text-center p-4 text-n-4">{card.description}</div>
                     <div className="bg-purple-700 h-10 w-10 rounded-full flex justify-center items-center mb-8">
-                      <Button white >
                         <Link href={`/${card.id}`}>
+                      <Button white >
                           ReadMore
-                        </Link>
                       </Button>
+                        </Link>
                     </div>
                   </div>
                 </div>

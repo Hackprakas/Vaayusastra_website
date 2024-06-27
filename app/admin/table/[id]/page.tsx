@@ -1,6 +1,8 @@
 import Sidebar from '@/app/components/sidebar';
 import prisma from '@/app/lib/db';
 import { revalidatePath } from 'next/cache';
+import { updateDeliveryStatus } from '../../../../actions/route6'
+import Updatedelivery from '@/app/components/updatedelivery';
 
 interface PageProps {
   params: {
@@ -23,17 +25,7 @@ export default async function OrderDetails({ params }: PageProps) {
     return (<div>404 not found</div>);
   }
 
-  async function updateDeliveryStatus(formData: FormData) {
-    'use server';
-    const delivered = formData.get('delivered') === 'on';
-
-    await prisma.orders.update({
-      where: { id: params.id },
-      data: { Delivered: delivered },
-    });
-
-    revalidatePath(`/order-details/${params.id}`);
-  }
+  
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -99,15 +91,7 @@ export default async function OrderDetails({ params }: PageProps) {
                 <div className='font-extrabold'>Ordered Date :</div>
                 <div className='ml-2'>{data?.OrderedDate.toString().slice(0, 10)}  {data?.OrderedDate.getFullYear()}</div>
               </div>
-              <form action={updateDeliveryStatus}>
-                <div className='mb-6 text-xl flex'>
-                  <div className='font-extrabold'>Delivered :</div>
-                  <div className='ml-2 '>
-                    <input type="checkbox" name="delivered" defaultChecked={data?.Delivered} className='w-4 h-4 rounded-2xl' />
-                  </div>
-                </div>
-                <button type="submit" className="px-4 py-2 bg-violet-900 text-white rounded">Update</button>
-              </form>
+<Updatedelivery params={params} datas={data}/>
             </div>
           </div>
         </div>

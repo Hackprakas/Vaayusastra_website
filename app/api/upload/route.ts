@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true, data: createdStudents });
   } catch (error) {
     console.error('Error uploading data:', error);
-    return NextResponse.json({ success: false, error: 'Failed to upload data' });
+    return NextResponse.json({ success: false, error: error });
   }
 }
 else if(check?.error){

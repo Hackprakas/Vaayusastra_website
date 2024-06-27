@@ -5,11 +5,12 @@ import Sidebar from '@/app/components/sidebar';
 import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 import { adminNavigation } from '@/app/constants';
-import Button from '@/app/components/Button'; // Import Button component
-import Loadingbtn from '@/app/components/loading';
+import Button from '@/app/components/Button'; 
 
 const UploadPage: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
+  const [loading, setLoading] = useState(false);
+
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -20,6 +21,7 @@ const UploadPage: React.FC = () => {
   const handleFileUpload = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!file) return;
+    setLoading(true);
 
     const reader = new FileReader();
     reader.onload = async (event) => {
@@ -45,11 +47,16 @@ const UploadPage: React.FC = () => {
         },
         body: JSON.stringify(formattedData),
       });
+      const datas = await response.json();
 
-      if (response.ok) {
+      if (datas.success) {
         console.log('Data uploaded successfully');
-      } else {
-        console.error('Failed to upload data');
+        setLoading(false);
+        alert('Data uploaded successfully')
+      } else if (datas.error){
+        console.error('Failed to upload data'+ datas.error);
+        setLoading(false);
+        alert('Failed to upload data')
       }
     };
 
@@ -78,7 +85,7 @@ const UploadPage: React.FC = () => {
                       <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-transparent">
                         <div className="flex flex-col items-center justify-center pt-5 pb-6">
                           <svg className="w-8 h-8 mb-4 text-n-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                           </svg>
                           <p className="mb-2 mx-4 text-sm text-n-3"><span className="font-semibold ">Click to upload</span> or drag and drop</p>
                           <p className="text-xs text-n-3">XLSX</p>
@@ -86,7 +93,9 @@ const UploadPage: React.FC = () => {
                         <input id="dropzone-file" type="file" accept='.xlsx, .xls' className="hidden" onChange={handleFileChange} />
                       </label>
                     </div>
-                    <Loadingbtn content="Upload" />
+                    <Button white className="w-full" >
+                      {loading ? "Uploading...." : 'Upload'}
+                    </Button>
                   </form>
                 </div>
               </div>

@@ -12,6 +12,7 @@ import Section from "../components/Section";
 import Button from "../components/Button";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
+import Loadingbtn from "../components/loading";
 
 export default function Page() {
   const { data: session ,status} = useSession();
@@ -113,12 +114,10 @@ export default function Page() {
                           Forgot password?
                         </Link>
                       </div>
-                      <Button white
-                        className="w-full text-black"
+                      <div className="flex  justify-center items-center">
 
-                      >
-                        {loading ? ("signing in") : "Sign in"}
-                      </Button>
+                      <Loadingbtn content="Sign in"/>
+                      </div>
 
                     </form>
                   </div>
