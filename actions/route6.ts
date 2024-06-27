@@ -49,6 +49,22 @@ export async function updateDeliveryStatus(formData: FormData) {
     return true;
   }
 
+  export async function updateQuantity(formData: FormData) {
+    const quantity = formData.get('quantity')?.toString();
+    const id = formData.get('id') as string;
+
+    if (!quantity || !id) {
+        throw new Error('Invalid data');
+    }
+
+    await prisma.product.update({
+        where: { id: id },
+        data: { Stock: quantity },
+    });
+
+    return true;
+
+}
 export async function getproducts(formData: FormData) {
     const id=formData.getAll('id') as string[];
     if (!id) {

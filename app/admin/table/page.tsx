@@ -7,9 +7,16 @@ import Navbar from '@/app/components/navbar';
 import { adminNavigation } from '@/app/constants';
 import prisma from '@/app/lib/db';
 
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
 
-
-export default async function Page() {
+export default async function Page({ params }: PageProps) {
+  if (params.id.length !== 24) {
+    return (<div>404 not found</div>);
+  }
   const orders=await prisma.orders.findMany();
   return (
     <div className="flex">
