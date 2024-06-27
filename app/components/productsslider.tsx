@@ -46,10 +46,10 @@ export default function Productsslider({data}: Props) {
         ],
       };
   return (
-    <div className="shrink-0 max-w-md lg:max-w-lg mx-auto">
+    <div  className="shrink-0 max-w-md lg:max-w-lg mx-auto">
               <Slider {...settings}>
-                {data?.addtionalimg.map((image:any) => (
-                  <div>
+                {data?.addtionalimg.map((image:any,index:number) => (
+                  <div key={index}>
                   <Image className="rounded-xl" src={image} alt="Product 1" height={400} width={400} />
                 </div>))
                   }

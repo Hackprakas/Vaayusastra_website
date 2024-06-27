@@ -10,6 +10,7 @@ import prisma from '../lib/db';
 
 import Link from 'next/link';
 import Productsslider from '../components/productsslider';
+import Addtocart from '../components/addtocart';
 
 interface PageProps {
   params: {
@@ -84,7 +85,7 @@ if(!data){
               <Link href={`${params.id}/Checkout`}>
                 <Button white disabled={data?.Stock==="In Stock"? false:true}>{data?.Stock==="In Stock"? "Buy Now":"Out of Stock"}</Button>
               </Link>
-                
+                <Addtocart params={params}/>
               </div>
 
               <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />

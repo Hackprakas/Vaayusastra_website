@@ -48,3 +48,24 @@ export async function updateDeliveryStatus(formData: FormData) {
     revalidatePath(`/order-details/${id}`);
     return true;
   }
+
+export async function getproducts(formData: FormData) {
+    const id=formData.getAll('id') as string[];
+    if (!id) {
+        return [];
+    }
+    const idsArray: string[] = [];
+    id.forEach(idsString => {
+        // Split the string by commas, trim whitespace, and push each ID into idsArray
+        const individualIds = idsString.split(',').map(id => id.trim());
+        idsArray.push(...individualIds);
+    });
+    const data=await prisma.product.findMany({
+        where:{
+            id:{
+                in:idsArray
+            }
+        }
+    })
+    return data;
+}
