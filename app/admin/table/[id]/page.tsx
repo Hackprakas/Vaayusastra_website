@@ -8,22 +8,6 @@ interface PageProps {
   params: {
     id: string;
   };
-  datas: {
-    id: string;
-    Address: string;
-    ProductName: string[];
-    Country: string;
-    Email: string;
-    Phone_No: string;
-    State: string;
-    Zip_Code: string;
-    amount: bigint;
-    customer_name: string;
-    Quantity: string;
-    status: string;
-    OrderedDate: Date;
-    orderid: string;
-  };
 }
 
 
