@@ -729,7 +729,7 @@ interface SocialItem {
 }
 
 export const socials: SocialItem[] = [
-  {
+  /*{
     id: "0",
     title: "Discord",
     iconUrl: discordBlack,
@@ -740,19 +740,19 @@ export const socials: SocialItem[] = [
     title: "Twitter",
     iconUrl: twitter,
     url: "#",
-  },
+  },*/
   {
     id: "2",
     title: "Instagram",
     iconUrl: instagram,
     url: "https://www.instagram.com/vaayusastra/",
   },
-  {
+  /*{
     id: "3",
     title: "Telegram",
     iconUrl: telegram,
     url: "#",
-  },
+  },*/
   {
     id: "4",
     title: "Facebook",
