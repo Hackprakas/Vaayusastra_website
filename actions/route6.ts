@@ -50,7 +50,7 @@ export async function updateDeliveryStatus(formData: FormData) {
   }
 
   export async function updateQuantity(formData: FormData) {
-    const quantity = formData.get('quantity')?.toString();
+    const quantity = formData.get('quantity')as unknown as  number;
     const id = formData.get('id') as string;
 
     if (!quantity || !id) {

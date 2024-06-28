@@ -59,6 +59,6 @@ model Product {
   description  String
   price        Float
   image        String
-  Stock        String
+  Stock        Int
   addtionalimg String[]
 }

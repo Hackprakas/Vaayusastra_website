@@ -10,7 +10,7 @@ interface PageProps {
     datas: {
         id: string;
         name: string;
-        Stock: string;
+        Stock: number;
         price: number;
         description: string;
         image: string;

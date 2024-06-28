@@ -50,7 +50,7 @@ if(!data){
               <h1 className="text-xl font-semibold text-white sm:text-2xl dark:text-white">
                 {data?.name}
               </h1>
-              {data?.Stock==="In Stock"?(<div className='-ml-8'>
+              {data?.Stock > 0 ?(<div className='-ml-8'>
                 <div className='text-green-300'>In Stock</div>
               </div>):(<div className='-ml-8'>
                 <div className='text-red-500'>Out of Stock</div>

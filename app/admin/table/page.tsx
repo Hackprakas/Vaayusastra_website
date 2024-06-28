@@ -14,9 +14,7 @@ interface PageProps {
 }
 
 export default async function Page({ params }: PageProps) {
-  if (params.id.length !== 24) {
-    return (<div>404 not found</div>);
-  }
+  
   const orders=await prisma.orders.findMany();
   return (
     <div className="flex">
