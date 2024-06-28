@@ -3,37 +3,15 @@ import {
   benefitIcon2,
   benefitIcon3,
   benefitIcon4,
-  benefitImage2,
-  chromecast,
-  disc02,
-  discord,
-  discordBlack,
   facebook,
-  figma,
   file02,
-  framer,
   homeSmile,
   instagram,
   notification2,
   notification3,
   notification4,
-  notion,
-  photoshop,
   plusSquare,
-  protopie,
-  raindrop,
-  recording01,
-  recording03,
-  roadmap1,
-  roadmap2,
-  roadmap3,
-  roadmap4,
   searchMd,
-  slack,
-  sliders04,
-  telegram,
-  twitter,
-  yourlogo
 
 
 } from "../components/assets";
@@ -292,7 +270,6 @@ export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
 export const notificationImages = [notification4, notification3, notification2];
 
-export const companyLogos= [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
 
 export const brainwaveServices= [
   "Photo generating",
@@ -300,13 +277,7 @@ export const brainwaveServices= [
   "Seamless Integration",
 ];
 
-export const brainwaveServicesIcons: string[] = [
-  recording03,
-  recording01,
-  disc02,
-  chromecast,
-  sliders04,
-];
+
 
 interface RoadmapItem {
   id: string;
@@ -407,7 +378,6 @@ interface BenefitItem {
   text: string;
   backgroundUrl: string;
   iconUrl: string;
-  imageUrl: any;
   light?: boolean;
   url:string
 }
@@ -419,7 +389,6 @@ export const benefits: BenefitItem[] = [
     text: "Engaging tales, theater illuminate aeronautics, teaching rocket, satellite, drone physics",
     backgroundUrl: " ",
     iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
     url: "https://docs.google.com/forms/d/e/1FAIpQLSebE2XSGVP4iR9xD97bYDVoW3npARfH6TaN6cc7lNPJv0PqqA/viewform",
   },
   {
@@ -428,7 +397,6 @@ export const benefits: BenefitItem[] = [
     text: "Integrating arts with academics cultivates a holistic skill set, driving both achievement and innovation.",
     backgroundUrl: " ",
     iconUrl: benefitIcon2,
-    imageUrl: benefitImage2,
     light: true,
     url: "https://docs.google.com/forms/d/e/1FAIpQLSd8hAT8Ja9qqPpM_vPuu-gU-O8X859HlBsryVpo6SyX9PO1Zw/viewform",
   },
@@ -438,7 +406,6 @@ export const benefits: BenefitItem[] = [
     text: "Unique curriculum integrates stories, theater to teach aeronautics, aerospace physics.",
     backgroundUrl: " ",
     iconUrl: benefitIcon3,
-    imageUrl: benefitImage2,
     url: "https://docs.google.com/forms/d/e/1FAIpQLSd8hAT8Ja9qqPpM_vPuu-gU-O8X859HlBsryVpo6SyX9PO1Zw/viewform",
   },
   {
@@ -447,7 +414,6 @@ export const benefits: BenefitItem[] = [
     text: "Industry-led hands-on Aeronautics/Aerospace programs tackle college knowledge transfer challenges.",
     backgroundUrl: " ",
     iconUrl: benefitIcon4,
-    imageUrl: benefitImage2,
     light: true,
     url: "https://docs.google.com/forms/d/e/1FAIpQLSe4UNinNksujeVkuf21jgEjz-juJzOHE46G5qkJQTwW55rB4Q/viewform",
   },
@@ -457,7 +423,6 @@ export const benefits: BenefitItem[] = [
     text: "Integrates CBSE, ICSE, NASA curriculum, hands-on models for aerospace education.",
     backgroundUrl: " ",
     iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
     url: "https://docs.google.com/forms/d/e/1FAIpQLSe-a_kLr4c_cIgHCzBUIE1VzF75KVZW_4Y-E-7O9e_DJ81AaQ/viewform",
   },
   {
@@ -466,7 +431,6 @@ export const benefits: BenefitItem[] = [
     text: "Integrating creative disciplines enriches education beyond traditional theoretical learning and marks-based assessment.",
     backgroundUrl: " ",
     iconUrl: benefitIcon2,
-    imageUrl: benefitImage2,
     url: "https://docs.google.com/forms/d/e/1FAIpQLSd8hAT8Ja9qqPpM_vPuu-gU-O8X859HlBsryVpo6SyX9PO1Zw/viewform",
 
   },
@@ -478,7 +442,6 @@ interface PaperItem {
   text: string;
   backgroundUrl: string;
   iconUrl: string;
-  imageUrl: any;
   light?: boolean;
   url:string
 }
@@ -490,7 +453,7 @@ export const Papers: PaperItem[] = [
     text: " How did you get your idea or concept for the business?",
     backgroundUrl: "./src/assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
+    
     url: "https://www.greatcompanies.in/post/jagadeesh-kanna-founder-at-vaayusastra-aerospace",
   },
   {
@@ -499,7 +462,6 @@ export const Papers: PaperItem[] = [
     text: "Actor-turned-entrepreneur Jagadeesh Kanna on his firm taking aeronautics to children using theatre arts",
     backgroundUrl: "./src/assets/benefits/card-2.svg",
     iconUrl: benefitIcon2,
-    imageUrl: benefitImage2,
     light: true,
     url: "https://www.thehindu.com/entertainment/movies/aeronautics-and-mythology-keeps-this-filmmakers-dream-alive/article31517292.ece",
   },
@@ -509,7 +471,6 @@ export const Papers: PaperItem[] = [
     text: "Start-ups Infinite Engineers and Vaayusastra jazz up science education with all the pizzazz of theatre.",
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     iconUrl: benefitIcon3,
-    imageUrl: benefitImage2,
     url: "https://www.thehindu.com/education/start-ups-infinite-engineers-and-vaayusastra-jazz-up-science-education-with-all-the-pizzazz-of-theatre/article24820549.ece",
   },
   {
@@ -518,7 +479,6 @@ export const Papers: PaperItem[] = [
     text: "Chennai-based Vaayusastra brings aeronautics and theatrics together,to make lessons in science riveting for children.",
     backgroundUrl: "./src/assets/benefits/card-4.svg",
     iconUrl: benefitIcon4,
-    imageUrl: benefitImage2,
     light: true,
     url: "https://www.outlookbusiness.com/enterprise/big-idea/plane-tales-4925",
   },
@@ -529,7 +489,6 @@ export const Papers: PaperItem[] = [
     text: "Bridging Aeronautics and Theatre for Engaging Learning Experiences",
     backgroundUrl: "./src/assets/benefits/card-6.svg",
     iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
     url: "https://newstodaynet.com/2019/03/25/start-up-in-chennai-simplifies-aeronautics/",
 
   },
@@ -539,7 +498,6 @@ export const Papers: PaperItem[] = [
     text: "This k'wood actor teaches aeronautics through epics to kids during lockdown",
     backgroundUrl: "./src/assets/benefits/card-6.svg",
     iconUrl: benefitIcon2,
-    imageUrl: benefitImage2,
     url: "https://timesofindia.indiatimes.com/entertainment/tamil/movies/news/this-kwood-actor-teaches-aeronautics-through-epics-to-kids-during-lockdown/articleshow/75499867.cms?from=mdrhttps://timesofindia.indiatimes.com/entertainment/tamil/movies/news/this-kwood-actor-teaches-aeronautics-through-epics-to-kids-during-lockdown/articleshow/75499867.cms?from=mdr",
 
   },
@@ -549,7 +507,6 @@ export const Papers: PaperItem[] = [
     text: "This Chennai start-up's aeronautics summer camps are delivered using theatre, the epics and lots of Science",
     backgroundUrl:"./src/assets/benefits/card-7.svg",
     iconUrl: benefitIcon3,
-    imageUrl: benefitImage2,
     url: "https://www.edexlive.com/happening/2021/may/03/chennai-start-ups-aeronautics-summer-camps-use-theatre-the-epics-and-lots-of-science-20305.html",
 
   },
@@ -559,7 +516,6 @@ export const Papers: PaperItem[] = [
     text: "Mythology + Science stories by Vaayusastra CEO Jagadeesh kanna",
     backgroundUrl: "./src/assets/benefits/card-8.svg",
     iconUrl: benefitIcon4,
-    imageUrl: benefitImage2,
     light: true,
     url: "#",
 
@@ -570,7 +526,6 @@ export const Papers: PaperItem[] = [
     text: "Students under ‘Naan Mudhalvan’ scheme will now get to learn about drones and AI",
     backgroundUrl: "./src/assets/benefits/card-9.svg",
     iconUrl: benefitIcon2,
-    imageUrl: benefitImage2,
     url: "https://www.thehindu.com/news/national/tamil-nadu/students-under-naan-mudhalvan-scheme-will-now-get-to-learn-about-drones-and-ai/article67106626.ece",
   }
 ];

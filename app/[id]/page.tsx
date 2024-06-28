@@ -2,7 +2,7 @@
 import React from 'react';
 
 import Navbar from '../components/navbar';
-import { ProductNavigation } from '../constants';
+import { ProductNavigation, navigation } from '../constants';
 import Section from '../components/Section';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
@@ -37,7 +37,7 @@ if(!data){
   
   return (
     <>
-      <Navbar data={ProductNavigation} position={true} hide={true} admin={false} />
+      <Navbar data={navigation} position={true} hide={true} admin={false} />
       <Section>
         <div className="max-w-screen-xl px-16 py-24 md:py-16 lg:py-16 mx-auto 2xl:px-0">
           <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
