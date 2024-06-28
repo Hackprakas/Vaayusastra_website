@@ -50,7 +50,7 @@ export async function updateDeliveryStatus(formData: FormData) {
   }
 
   export async function updateQuantity(formData: FormData) {
-    const quantity = formData.get('quantity')as unknown as  number;
+    const quantity = formData.get('quantity')as string;
     const id = formData.get('id') as string;
 
     if (!quantity || !id) {
@@ -59,7 +59,7 @@ export async function updateDeliveryStatus(formData: FormData) {
 
     await prisma.product.update({
         where: { id: id },
-        data: { Stock: quantity },
+        data: { Stock: parseInt(quantity) },
     });
 
     return true;

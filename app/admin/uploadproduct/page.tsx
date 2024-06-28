@@ -87,7 +87,7 @@ export default function Page() {
                           Stock
                         </label>
                         <input
-                          type="text"
+                          type="number"
                           name="stock"
                           id="stock"
                           className="bg-gray-800 text-white sm:text-sm rounded-lg block w-full p-2.5"

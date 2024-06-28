@@ -44,10 +44,10 @@ export async function uploadproduct(formdata:FormData){
   const session=await getusers();
   if(session?.users){
     const productname=formdata.get("name") as string;
-    console.log("productname"+productname)
+  
     const description=formdata.get("description") as string;
     const mainimage=formdata.get("main") as File;
-    console.log("mainimage"+mainimage)
+    const stock=formdata.get("stock") as string;
     const additionalimages=formdata.getAll("additionalImages") as File[];
     const additionalimageurls:any=[];
     
@@ -69,7 +69,7 @@ export async function uploadproduct(formdata:FormData){
         image:mainimageurl?.message?.data.publicUrl as string,
         addtionalimg:additionalimageurls,
         price:200,
-        Stock:"In Stock",
+        Stock:parseInt(stock),
       }
     });
     console.log(res)
