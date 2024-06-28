@@ -75,7 +75,7 @@ export default function Page() {
           alert(`Your payment with orderid: ${cartIds} is successful!! Thank you for shopping with Vaayusastra`);
          
         } else if (verifyData.error) {
-          alert("payment is failed");
+          alert(verifyData.error);
         }
       },
       prefill: {

@@ -4,6 +4,7 @@ import Razorpay from "razorpay";
 import shortid from "shortid";
 import crypto from "crypto";
 import prisma from "@/app/lib/db";
+import nodemailer from "nodemailer";
 
 const instance = new Razorpay({
     key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID!,
@@ -69,10 +70,37 @@ export async function verifypayment(formdata:FormData){
             },
             data:{
                Stock:{
-                decrement:1
+                decrement:parseInt(quantity)
                }
             }
         });
+        const transporter = nodemailer.createTransport({
+            service: 'Gmail', 
+            auth: {
+              user: process.env.EMAIL_USER,
+              pass: process.env.EMAIL_PASS,
+            },
+          });
+    
+          const mailOptions = {
+            from: process.env.EMAIL_USER ,
+            to: email, 
+            subject: "Order Confirmation",
+            text: `Your order with orderid: ${orderid} is successful!! Thank you for shopping with Vaayusastra and your product will be delivered soon.`,
+          };
+      
+          try {
+            // Send email
+            await transporter.sendMail(mailOptions);
+            
+           
+          } catch (error) {
+            return {
+                error: error
+            };
+          
+        }
+
      return {
         message: "success",
      };
