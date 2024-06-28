@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+model Allowlist {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  email String  @unique
+  read  Boolean
+  write Boolean
+}
+
+model Orders {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  Address       String
+  ProductName   String[]
+  Country       String
+  Email         String
+  Phone_No      String
+  State         String
+  Zip_Code      String
+  amount        BigInt
+  customer_name String
+  orderid       String
+  status        String
+  Delivered     Boolean   @default(false)
+  OrderedDate   DateTime
+  Quantity      Int
+}
+
+model Students {
+  id                   String    @id @default(auto()) @map("_id") @db.ObjectId
+  coursecompleted      Boolean
+  coursecompleteddate  DateTime?
+  coursecompletedgrade String?
+  courseenrolled       String
+  courseenrolleddate   DateTime
+  email                String    @unique
+  name                 String
+  collegeName          String?
+}
+
+model User {
+  id               String  @id @default(auto()) @map("_id") @db.ObjectId
+  email            String  @unique
+  name             String
+  password         String
+  resetToken       String?
+  resetTokenExpiry DateTime ?
+}
+
+model Product {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  description  String
+  price        Float
+  image        String
+  Stock        Int
+  addtionalimg String[]
+}
