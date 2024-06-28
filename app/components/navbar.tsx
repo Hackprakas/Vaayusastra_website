@@ -107,13 +107,13 @@ const Navbar: React.FC<NavbarProps> = ({ data, position, hide, admin }) => {
         </Link>
         {session ? (
 
-          <Button white={false} className="sim-card-button hidden lg:flex " onClick={() => signOut()}>
+          <Button white={false} className=" sim-card-button hidden md:flex lg:flex " onClick={() => signOut()}>
             Sign out
           </Button>
 
 
         ) : (<Link href="/signup">
-          <Button white={false} className="sim-card-button hidden lg:flex " >
+          <Button white={false} className="sim-card-button hidden md:flex lg:flex " >
             Sign in
           </Button>
         </Link>)}

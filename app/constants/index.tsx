@@ -170,14 +170,6 @@ export const navigation: NavigationItem[] = [
     onlyMobile: true,
     link:"/hindu",
   },
-  {
-    id: "5",
-    title: "sign in",
-    url: "",
-    onlyMobile: true,
-    link:"/signup",
-
-  }
   
 ];
 export const ProductNavigation=[
@@ -219,14 +211,7 @@ export const ProductNavigation=[
     onlyMobile: true,
     link:"/hindu",
   },
-  {
-    id: "6",
-    title: "sign in",
-    url: "",
-    onlyMobile: true,
-    link:"/signup",
-
-  }
+  
 ]
 export const adminNavigation=[
   {
@@ -255,10 +240,17 @@ export const adminNavigation=[
   },
   {
     id: "4",
-    title: "Transactions",
+    title: "Orders",
     url: "#",
     link:"/admin/table"
   },
+  {
+    id: "5",
+    title: "Update Quantity",
+    url: "#",
+    link:"/admin/update"
+  },
+
 
 ]
 
@@ -271,11 +263,7 @@ export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 export const notificationImages = [notification4, notification3, notification2];
 
 
-export const brainwaveServices= [
-  "Photo generating",
-  "Photo enhance",
-  "Seamless Integration",
-];
+
 
 
 
