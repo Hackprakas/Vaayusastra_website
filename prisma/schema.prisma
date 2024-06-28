@@ -29,7 +29,7 @@ model Orders {
   status        String
   Delivered     Boolean   @default(false)
   OrderedDate   DateTime
-  Quantity      String
+  Quantity      Int
 }
 
 model Students {

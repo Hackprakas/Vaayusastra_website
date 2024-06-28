@@ -21,7 +21,7 @@ export async function verifypayment(formdata:FormData){
     const country = formdata.get('country') as string;
     const state = formdata.get('state') as string;
     const zipcode = formdata.get('zipcode') as string;
-    const quantity = formdata.get('quantity') as string;
+    const quantity = formdata.get('quantity') as unknown as number;
     const productid = formdata.get('productid') as string;  
     const data=await prisma.product.findUnique({
         where:{
@@ -57,7 +57,7 @@ export async function verifypayment(formdata:FormData){
                 Country:country,
                 State:state,
                 Zip_Code:zipcode,
-                Quantity:"1",
+                Quantity:quantity,
                 Delivered:false,
                 OrderedDate:new Date().toISOString(), 
                 ProductName:[data?.name as string]

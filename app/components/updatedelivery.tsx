@@ -18,7 +18,7 @@ interface PageProps {
         Zip_Code: string;
         amount: bigint;
         customer_name: string;
-        Quantity: string;
+        Quantity: number;
         status: string;
         OrderedDate: Date;
         orderid: string;
