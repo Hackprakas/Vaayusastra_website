@@ -1,6 +1,5 @@
 import React from "react";
-import {  gradient, play } from "../assets";
-import ChatBubbleWing from "../assets/svg/ChatBubbleWing";
+import {  gradient } from "../assets";
 import Image from "next/image";
 
 export const Gradient: React.FC = () => {

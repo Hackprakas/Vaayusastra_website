@@ -1,8 +1,7 @@
 import React from "react";
 import Section from "./Section";
 import Heading from "./Heading";
-import { service1, service2, service3, check, grid } from "./assets";
-import { brainwaveServices, brainwaveServicesIcons } from "../constants";
+import { grid } from "./assets";
 import { Gradient } from "./design/Services";
 import Image from "next/image";
 
@@ -19,13 +18,6 @@ const Offering: React.FC = () => {
           <div className="z-3">
             <div className="relative z-1 flex h-[39rem] p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[56rem] bg-n-8">
               <div className="absolute top-0 w-full h-full pointer-events-none md:w-3/5 xl:w-auto">
-                {/* <Image
-                  className="w-full h-full object-cover blur-3xl md:object-right"
-                  width={800}
-                  alt="Smartest AI"
-                  height={730}
-                  src={service1}
-                /> */}
               </div>
               <div className="absolute top-0 left-0 max-w-full">
                 <Image

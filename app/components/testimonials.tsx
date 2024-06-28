@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { check2, grid } from "../components/assets";
+import {  grid } from "../components/assets";
 import Button from "../components/Button";
 import Tagline from "../components/Tagline";
 import { Gradient } from "../components/design/Roadmap";
@@ -16,20 +16,6 @@ import  { useRef } from "react";
 
 
 function Testimonials() {
-  
-  // let sliderRef = useRef<Slider | null>(null);
-  // const play = () => {
-  //   if (sliderRef.current && sliderRef.current.slickPlay) {
-  //     sliderRef.current.slickPlay();
-  //   }
-  // };
-
-  // const pause = () => {
-  //   if (sliderRef.current && sliderRef.current.slickPause) {
-  //     sliderRef.current.slickPause();
-  //   }
-  // };
-
   var settings = {
     dots: true,
     infinite: true,

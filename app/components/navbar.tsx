@@ -1,10 +1,6 @@
 
 "use client"
 import React, { useState } from "react";
-// import { useLocation } from "react-router-dom";
-
-import { brainwave } from "./assets";
-
 import Button from "./Button";
 import MenuSvg from "./assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";

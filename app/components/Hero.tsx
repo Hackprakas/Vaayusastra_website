@@ -1,13 +1,12 @@
 "use client"
 import React, { useRef } from "react";
-import { curve, heroBackground, robot } from "./assets";
+import { curve, heroBackground } from "./assets";
 import Button from "./Button";
 import Section from "./Section";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
 import Notification from "./Notification";
-import CompanyLogos from "./CompanyLogos";
 import Image from "next/image";
 import { CldVideoPlayer } from 'next-cloudinary';
 import 'next-cloudinary/dist/cld-video-player.css';

@@ -1,6 +1,5 @@
 import React from "react";
-import  background  from "../../components/assets/background.jpg";
-import Image from "next/image";
+
 
 export const Rings: React.FC = () => {
   return (
