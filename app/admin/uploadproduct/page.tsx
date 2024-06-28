@@ -1,4 +1,4 @@
-
+"use client"
 import { ArrowRight } from 'lucide-react';
 import Sidebar from '@/app/components/sidebar';
 import Button from '@/app/components/Button';
@@ -6,6 +6,17 @@ import Navbar from '@/app/components/navbar';
 import { adminNavigation } from '@/app/constants';
 import { uploadproduct } from '@/actions/route7';
 import Loadingbtn from '@/app/components/loading';
+
+async function add(formdata: FormData){
+  const data = await uploadproduct(formdata);
+  if(data?.error){
+    alert(data.error);
+  
+}
+else if (data?.message){
+  alert('Product Added Successfully');
+}
+}
 
 
 export default function Page() {

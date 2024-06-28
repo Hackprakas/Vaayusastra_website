@@ -4,6 +4,7 @@ import { useState } from 'react'
 import React from 'react'
 import Button from './Button';
 import { sendemail } from '../../actions/route1';
+import Loadingbtn from './loading';
 
 function Contactus() {
 
@@ -12,6 +13,15 @@ function Contactus() {
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
+  async function send(formdata:FormData){
+const data = await sendemail(formdata);
+if(data?.error){
+  alert(data.error);
+  }
+  else if (data?.message){
+    alert(data.message);
+  }
+}
   return (
     <>
     <div className='fixed bottom-0 right-4 transform -translate-y-1/2 z-50'> 
@@ -42,7 +52,7 @@ function Contactus() {
               </button>
             </div>
             <div className="px-4 md:p-5">
-              <form className="space-y-6 p-2 ml-2  md:ml-1 lg:ml-1" action={sendemail}>
+              <form className="space-y-6 p-2 ml-2  md:ml-1 lg:ml-1" action={send}>
                 <div>
                   <label htmlFor="email" className="block mb-2 mt-3 md:mt-0 lg:mt-0 text-sm font-medium ">Email</label>
                   <input 
@@ -84,9 +94,7 @@ function Contactus() {
                   />
                 </div>
                 <div className='gap-2 flex justify-center mb-1'>
-                <Button  white>
-                  Submit
-                </Button>
+                <Loadingbtn content='Send' />
                 </div>
               </form>
             </div>

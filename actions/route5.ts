@@ -44,7 +44,7 @@ export async function verifypayment(formdata:FormData){
    .digest("hex");
 
     if (expectedSignature === signature) {
-        console.log("genuine payment")
+        
         await prisma.orders.create({
             data:{
                 orderid:orderid,
@@ -73,13 +73,12 @@ export async function verifypayment(formdata:FormData){
                }
             }
         });
-        console.log(order);
      return {
         message: "success",
      };
     }
     else{
-        console.log("fake payment")
+        
         return {
             error:"failed"
         };

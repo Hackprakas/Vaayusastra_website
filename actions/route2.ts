@@ -62,7 +62,7 @@ export async function addgmailuser(formdata: FormData) {
       },
     });
     if (find) {
-      console.log("User already exists");
+      
       return {
         error: "User already exists.",
       };
@@ -85,7 +85,7 @@ export async function addgmailuser(formdata: FormData) {
   }
 }
 catch(e){
-  console.log(e);
+  
   return {
     error: e,
   };
@@ -136,7 +136,7 @@ export async function addemailuser(formdata: FormData) {
       }
     }
   } catch (e) {
-    console.log(e);
+    
     return {
       error: e,
     };
@@ -145,6 +145,6 @@ export async function addemailuser(formdata: FormData) {
 
 async function gethash(text: string) {
   const hash = await bcrypt.hash(text, 10);
-  console.log(hash);
+  
   return hash;
 }

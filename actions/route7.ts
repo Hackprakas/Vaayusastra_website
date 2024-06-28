@@ -72,7 +72,9 @@ export async function uploadproduct(formdata:FormData){
         Stock:parseInt(stock),
       }
     });
-    console.log(res)
+    return{
+      message:"product added successfully"
+    }
 
 }
 }

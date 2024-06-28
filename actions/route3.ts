@@ -51,13 +51,13 @@ const transporter = nodemailer.createTransport({
 
   try{
     const set=await transporter.sendMail(mailOptions);
-    console.log("success"+set);
+  
     return {
         message: 'Success! Check your email for a link to reset your password.',
     }
   }
     catch(err){
-        console.log(err);
+        
         return {
             error: 'Sorry, something went wrong. Please try again.',
         }
@@ -65,7 +65,7 @@ const transporter = nodemailer.createTransport({
 }
   }
   catch(err){
-    console.log(err);
+    
     return {
         error: err,
     }
@@ -75,7 +75,6 @@ const transporter = nodemailer.createTransport({
 export async function checktoken(formdata:FormData){
 
     const token = formdata.get("token") as string;
-    console.log("token is",token)
     const user = await prisma.user.findFirst({
         where: {
             resetToken: token,
@@ -91,7 +90,7 @@ export async function resetpassword(formdata:FormData){
   const newPassword = formdata.get("newpassword") as string;
   const check=await checktoken(formdata);
   if(!check){
-    console.log("Invalid Token")
+    
     return {
         error: 'This token is either invalid or expired.',
     }

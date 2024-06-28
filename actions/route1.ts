@@ -24,10 +24,18 @@ if (formdata) {
       try {
         // Send email
         await transporter.sendMail(mailOptions);
-        console.log('Email sent');
+        return {
+            message: "Email sent successfully",
+          };
+       
       } catch (error) {
-        console.error(error);
+        return {
+            error: error
+        };
+      
       }
     }else{
-        console.log('Form data is empty');
+        return{
+            error:"Invalid data"
+        }
     } }
