@@ -16,8 +16,6 @@ import Loadingbtn from '@/app/components/loading'
 export default function page() {
   const [choice, setChoice] = useState("Google");
 
-  console.log(choice)
-
   async function addgmailadmin(formdata: FormData) {
     const check = await addgmailuser(formdata);
     if (check?.error) {

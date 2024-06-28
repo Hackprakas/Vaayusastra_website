@@ -22,7 +22,6 @@ export async function uploadFile(file: File) {
 
     
    if (res) {
-     console.log(res)
      return{
         message:res
      }

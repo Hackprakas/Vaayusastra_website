@@ -50,11 +50,9 @@ const UploadPage: React.FC = () => {
       const datas = await response.json();
 
       if (datas.success) {
-        console.log('Data uploaded successfully');
         setLoading(false);
         alert('Data uploaded successfully')
       } else if (datas.error){
-        console.error('Failed to upload data'+ datas.error);
         setLoading(false);
         alert('Failed to upload data')
       }

@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
                   autoplay={true}
                   muted={true}
                   loop={true}
-                  // onPlay={() => console.log('Video started!')}
+
                 />
 
 

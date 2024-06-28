@@ -31,7 +31,6 @@ export default async function Page({params}: PageProps) {
     }
   })
   productid.id=params.id;
-  console.log(productid.id);
 if(!data){
   return (<div>404 not found</div>)
 }

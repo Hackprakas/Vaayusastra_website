@@ -14,8 +14,6 @@ import { BarChart } from '../components/barchart';
 const AdminPage = async () => {
 
   const datas = await getdatetime();
-  console.log(datas);
-
   const monthCounts: { [key: string]: number } = {};
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -33,11 +31,8 @@ const AdminPage = async () => {
       monthCounts[monthName] = 1;
     }
   });
-  console.log(monthCounts);
 
   const length = Object.keys(datas).length;
-  console.log(length);
-
   const courses: { [key: string]: number } = {};
 
   datas.forEach((item) => {
@@ -51,14 +46,11 @@ const AdminPage = async () => {
 
   }
   );
-  console.log(courses);
   const no = await getdata();
-  console.log(no);
   const grades: { [key: string]: number } = {};
 
   no.forEach((item) => {
     const grade = item.coursecompletedgrade as string;
-    console.log(grade);
     const highestGrade = ['S', 'A+'];
     if (highestGrade.includes(grade)) {
       if (grades[grade]) {
@@ -70,7 +62,7 @@ const AdminPage = async () => {
     }
   }
   );
-  const result = Object.entries(grades).map(([grade, count]) => ({ grade, count }));  console.log(result);
+  const result = Object.entries(grades).map(([grade, count]) => ({ grade, count }));
   const count: { [key: string]: number } = {};
   var failing = 0;
   var total = 0;
@@ -92,9 +84,6 @@ const AdminPage = async () => {
 
   const passing = total - failing;
   const passPercentage = (passing / total) * 100;
-  console.log(passPercentage);
-  // console.log(no[0].coursecompletedgrade);
-  // console.log(grades);
   const dataum = await getcollege();
   const colleges: { [key: string]: number } = {};
   dataum.forEach((item) => {
@@ -105,7 +94,7 @@ const AdminPage = async () => {
       colleges[college] = 1;
     }
   });
-  console.log(colleges);
+  
 
 
 

@@ -20,7 +20,6 @@ interface PageProps {
   const Page: NextPage<PageProps> = async({ params }) => {
     const data=new FormData();
     data.append('token',params.token);
-    console.log("data",params)
     const check=await checktoken(data);
     if(!check){
       return <div>Invalid Token</div>
@@ -33,7 +32,7 @@ interface PageProps {
       
       const reset=await resetpassword(data);
       if(reset?.error){
-        console.log("error",reset.error)
+        alert("error"+reset?.error)
       }
       else if(reset?.message){
         alert(reset.message)
