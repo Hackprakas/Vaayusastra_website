@@ -1,17 +1,12 @@
 import React from "react";
-import { benefits, navigation } from "../constants";
+import {  navigation } from "../constants";
 import Heading from "../components/Heading";
 import Section from "../components/Section";
 import Arrow from "../components/assets/svg/Arrow";
-import GradientLight from "../components/design/Course";
-import ClipPath from "../components/assets/svg/ClipPath";
 import Image from "next/image";
-import Link from "next/link";
 import { Papers } from "../constants";
-import { grid } from "../components/assets"
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
-import { Gradient } from "../components/design/Roadmap";
 
 const Course: React.FC = () => {
   return (

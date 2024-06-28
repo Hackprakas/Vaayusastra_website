@@ -9,14 +9,10 @@ import Navbar from "../components/navbar";
 import { navigation } from "../constants";
 import { signIn } from 'next-auth/react';
 import Section from "../components/Section";
-import Button from "../components/Button";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
 import Loadingbtn from "../components/loading";
 
 export default function Page() {
-  const { data: session ,status} = useSession();
-  const [loading, setLoading] = useState(false);
   async function handleSignin() {
     await signIn("google", {
       redirect: false,
@@ -28,15 +24,12 @@ export default function Page() {
     formdata: FormData
   ) {
     try {
-      setLoading(true);
       const email = formdata.get("email");
       const password = formdata.get("password");
        await signIn("credentials", { email: email, password: password, callbackUrl: "/admin" });
     } catch (error) {
       console.error("Login failed:", error);
-    } finally {
-      setLoading(false);
-    }
+    } 
   
   }
   return (

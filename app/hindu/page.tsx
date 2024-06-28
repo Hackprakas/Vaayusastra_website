@@ -1,12 +1,6 @@
 import React from "react";
-import { check2, grid } from "../components/assets";
 import Button from "../components/Button";
-import Tagline from "../components/Tagline";
-import { Gradient } from "../components/design/Roadmap";
 import Image from "next/image";
-import { roadmap } from "../constants";
-import { Quote } from 'lucide-react';
-import { testmon } from "../constants";
 import Section from "../components/Section";
 import Navbar from "../components/navbar";
 import {navigation} from "../constants"

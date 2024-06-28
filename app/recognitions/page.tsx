@@ -1,8 +1,4 @@
 import React from "react";
-import { grid } from "../components/assets";
-import Button from "../components/Button";
-import Tagline from "../components/Tagline";
-import { Gradient } from "../components/design/Roadmap";
 import Image from "next/image";
 import { cards } from "../constants/index";
 import Navbar from "../components/navbar";
