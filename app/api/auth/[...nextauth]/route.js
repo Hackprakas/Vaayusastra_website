@@ -1,6 +1,5 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
-import { signIn, signOut } from "next-auth/react";
 import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "@/app/lib/db";
 import bcrypt from "bcrypt";
@@ -57,9 +56,8 @@ const AuthOptions = {
         if(allowedEmails.includes(profile.email)) {
           return true;
         } else {
-          signOut();
-          
           throw new Error("You are not authorized to login");
+          
         }
       }
       else if (
@@ -70,7 +68,6 @@ const AuthOptions = {
       
       
       else {
-        signOut();
         throw new Error("You are not authorized to login");
       }
     },

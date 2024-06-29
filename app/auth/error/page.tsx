@@ -13,7 +13,7 @@ import Button from '@/app/components/Button'
 
     <div className="flex items-center justify-center h-screen">
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-red-500">{message}</h1>
+        <h1 className="text-4xl font-bold mb-10 text-red-500">{message}</h1>
         <Link href="/signup">
           <Button white>Go Back</Button>
         </Link>

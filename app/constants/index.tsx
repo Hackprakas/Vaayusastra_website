@@ -218,7 +218,7 @@ export const adminNavigation=[
     id: "0",
     title: "Add Admin",
     url: "#",
-    link:"/addadmin"
+    link:"/admin/add"
   },
   {
     id: "1",

@@ -28,7 +28,7 @@ export default function Page() {
       const password = formdata.get("password");
        await signIn("credentials", { email: email, password: password, callbackUrl: "/admin" });
     } catch (error) {
-      console.error("Login failed:", error);
+alert(error)
     } 
   
   }
