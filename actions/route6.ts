@@ -17,7 +17,7 @@ export async function getdatetime(){
         return data;
     }
     else if(check?.error){
-        return check.error;
+        return check?.error;
     }
 }
 export async function getdata(){

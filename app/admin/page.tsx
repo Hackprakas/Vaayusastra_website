@@ -13,14 +13,14 @@ import { BarChart } from '../components/barchart';
 // AdminPage Component
 const AdminPage = async () => {
 
-  const datas = await getdatetime();
+  const datas: Array<{ courseenrolleddate: Date,courseenrolled:string }> = await getdatetime() as Array<{ courseenrolleddate: Date,courseenrolled:string }>;
   const monthCounts: { [key: string]: number } = {};
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
 
-  datas.forEach(item => {
+  datas?.forEach(item => {
     const date = new Date(item.courseenrolleddate);
     const month = date.getUTCMonth(); // getUTCMonth returns month index from 0 to 11
     const monthName = monthNames[month];
@@ -46,10 +46,10 @@ const AdminPage = async () => {
 
   }
   );
-  const no = await getdata();
+  const no: Array<{ coursecompletedgrade:string }> = await getdata() as Array<{ coursecompletedgrade:string }>;
   const grades: { [key: string]: number } = {};
 
-  no.forEach((item) => {
+  no?.forEach((item) => {
     const grade = item.coursecompletedgrade as string;
     const highestGrade = ['S', 'A+'];
     if (highestGrade.includes(grade)) {
@@ -84,7 +84,7 @@ const AdminPage = async () => {
 
   const passing = total - failing;
   const passPercentage = (passing / total) * 100;
-  const dataum = await getcollege();
+  const dataum: Array<{ collegeName:string }> = await getcollege() as Array<{ collegeName:string }>;
   const colleges: { [key: string]: number } = {};
   dataum.forEach((item) => {
     const college = item.collegeName as string;
