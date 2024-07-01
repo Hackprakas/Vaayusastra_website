@@ -47,32 +47,42 @@ export async function uploadproduct(formdata:FormData){
     const description=formdata.get("description") as string;
     const mainimage=formdata.get("main") as File;
     const stock=formdata.get("stock") as string;
+    const price=formdata.get("price") as string;
     const additionalimages=formdata.getAll("additionalImages") as File[];
     const additionalimageurls:any=[];
-    
 
-    const mainimageurl=await uploadFile(mainimage);
-    if(mainimageurl?.error){
+    try{
+        
+      
+      
+      const mainimageurl=await uploadFile(mainimage);
+      if(mainimageurl?.error){
+        return{
+          error:mainimageurl.error
+        }
+      }
+      await Promise.all(additionalimages.map(async (image) => {
+        const url = await uploadFile(image);
+        additionalimageurls.push(url?.message?.data.publicUrl); 
+      }));
+      await prisma.product.create({
+        data:{
+          name:productname,
+          description:description,
+          image:mainimageurl?.message?.data.publicUrl as string,
+          addtionalimg:additionalimageurls,
+          price:parseFloat(price),
+          Stock:parseInt(stock),
+        }
+      });
       return{
-        error:mainimageurl.error
+        message:"product added successfully"
       }
     }
-    await Promise.all(additionalimages.map(async (image) => {
-      const url = await uploadFile(image);
-      additionalimageurls.push(url?.message?.data.publicUrl); // Use push to add the url to the array
-    }));
-    const res=await prisma.product.create({
-      data:{
-        name:productname,
-        description:description,
-        image:mainimageurl?.message?.data.publicUrl as string,
-        addtionalimg:additionalimageurls,
-        price:200,
-        Stock:parseInt(stock),
+    catch(error){
+      return{
+        error:error
       }
-    });
-    return{
-      message:"product added successfully"
     }
 
 }
