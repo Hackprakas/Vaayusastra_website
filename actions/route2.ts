@@ -4,12 +4,12 @@ import { getServerSession } from "next-auth";
 import prisma from "@/app/lib/db";
 import bcrypt from "bcrypt";
 
-export async function getsession() {
+ async function getsession() {
   const session = await getServerSession();
   return session;
 }
 
-export async function getusers() {
+ async function getusers() {
   const user = await getsession();
   const currentuser = user?.user?.email as string;
   try {

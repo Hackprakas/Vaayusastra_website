@@ -3,7 +3,51 @@
 
 import { createClient } from '@supabase/supabase-js'
 import prisma from "@/app/lib/db";
-import {  getusers } from './route2';
+import { getServerSession } from 'next-auth';
+
+async function getsession() {
+  const session = await getServerSession();
+  return session;
+}
+
+ async function getusers() {
+  const user = await getsession();
+  const currentuser = user?.user?.email as string;
+  try {
+    if (!currentuser) {
+      return {
+        error: "No user found.",
+      };
+    }
+    const check = await prisma.allowlist.findUnique({
+      where: {
+        email: currentuser,
+      },
+    });
+    if (!check) {
+      return {
+        error: "You are not authorized to add users.",
+      };
+    } else if (check && check.read && check.write) {
+      
+      return {
+        users: "users",
+      };
+    } else if (check && check.read && !check.write) {
+      return {
+        error: "You do not have write access.",
+      };
+    } else if (check && !check.read && check.write) {
+      return {
+        error: "You do not have read access.",
+      };
+    }
+  } catch (e) {
+    return {
+      error: e,
+    };
+  }
+}
 
 // Create Supabase client
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_API_KEY!)
