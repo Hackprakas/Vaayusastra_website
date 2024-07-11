@@ -41,7 +41,7 @@ const Course: React.FC = () => {
                     className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider"
                   >
                     <div className="flex justify-center items-center">
-                      learn more
+                      See Course Details
                       <Arrow />
                     </div>
                   </a>
