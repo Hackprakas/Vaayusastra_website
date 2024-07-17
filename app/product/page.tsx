@@ -13,28 +13,29 @@ import Productsslider from '../components/productsslider';
 import { productid } from '../constants';
 import Buynow from '../components/buynow';
 
-interface PageProps {
-  params: {
-    id: string;
-  };
+
+
+interface SearchParams {
+  id: string;
 }
 
-export default async function Page({params}: PageProps) {
+export default async function Page({ searchParams }: { searchParams: SearchParams }) {
+  const id = searchParams.id;
 
-  if(params.id.length!=24){
+  if (id.length != 24) {
     return (<div>404 not found</div>)
   }
-  
-  const data=await prisma.product.findUnique({
-    where:{
-      id:params.id
+
+  const data = await prisma.product.findUnique({
+    where: {
+      id: id
     }
   })
-  productid.id=params.id;
-if(!data){
-  return (<div>404 not found</div>)
-}
-  
+  productid.id = id;
+  if (!data) {
+    return (<div>404 not found</div>)
+  }
+
   return (
     <>
       <Navbar data={navigation} position={true} hide={true} admin={false} />
@@ -46,16 +47,16 @@ if(!data){
             <div className="mt-6 sm:mt-8 lg:mt-0">
               <div className='flex w-full justify-between'>
 
-              <h1 className="text-xl font-semibold text-white sm:text-2xl dark:text-white">
-                {data?.name}
-              </h1>
-              {data?.Stock > 0 ?(<div className='-ml-8'>
-                <div className='text-green-300'>In Stock</div>
-              </div>):(<div className='-ml-8'>
-                <div className='text-red-500'>Out of Stock</div>
-              </div>)}
-              
-              
+                <h1 className="text-xl font-semibold text-white sm:text-2xl dark:text-white">
+                  {data?.name}
+                </h1>
+                {data?.Stock > 0 ? (<div className='-ml-8'>
+                  <div className='text-green-300'>In Stock</div>
+                </div>) : (<div className='-ml-8'>
+                  <div className='text-red-500'>Out of Stock</div>
+                </div>)}
+
+
               </div>
               <div className="mt-4 sm:items-center sm:gap-4 sm:flex">
                 <p className="text-2xl font-extrabold text-white sm:text-3xl dark:text-white">
@@ -85,10 +86,10 @@ if(!data){
               </div>
 
               <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
-              
-                <Buynow productid={params.id} />
-              
-                
+
+                <Buynow productid={id} />
+
+
               </div>
 
               <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
@@ -97,7 +98,7 @@ if(!data){
                 {data?.description}
               </p>
 
-              
+
             </div>
           </div>
         </div>
