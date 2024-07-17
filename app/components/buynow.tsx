@@ -13,12 +13,12 @@ export default function Buynow({ productid }: BuynowProps) {
 
     function handleclick() {
         setCartIds(productid);
-        router.push(`${productid}/Checkout`);
+        router.push(`/product/Checkout`);
     }
-        return (
-            <Button white onClick={handleclick}  >
-                Buy Now
-            </Button>
-        )
-    
+    return (
+        <Button white onClick={handleclick}  >
+            Buy Now
+        </Button>
+    )
+
 }
